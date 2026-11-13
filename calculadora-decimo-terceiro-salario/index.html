@@ -1,1 +1,285 @@
-x
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de 13º Salário 2026 — 1ª e 2ª Parcela com Descontos | TudoCalcula</title>
+<meta name="description" content="Calcule o 13º salário 2026: valor bruto, 1ª parcela (até 30/11) e 2ª parcela (até 18/12) com INSS e IRRF pelas tabelas de 2026 — incluindo a isenção da Lei 15.270/2025 para 13º de até R$ 5.000.">
+<style>
+  :root{
+    --green:#0e7a3d; --green-dark:#0a5c2e; --gold:#f5b301;
+    --ink:#1a2332; --muted:#5b6b7f; --bg:#f4f7f5; --card:#ffffff;
+    --line:#e2e8e4; --red:#c0392b;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 16px 48px;}
+  header{background:var(--green-dark); color:#fff; padding:14px 0;}
+  header .wrap{padding-bottom:0;}
+  .brand{font-size:22px; font-weight:800; letter-spacing:-.3px;}
+  .brand span{color:var(--gold);}
+  .brand small{display:block; font-size:12px; font-weight:400; opacity:.85; letter-spacing:0;}
+  h1{font-size:28px; line-height:1.25; margin:26px 0 10px;}
+  .intro{color:var(--muted); font-size:16px; margin-bottom:20px;}
+  .intro strong{color:var(--ink);}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:0 2px 10px rgba(16,60,36,.05);}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media (max-width:720px){ .grid{grid-template-columns:1fr;} h1{font-size:24px;} }
+  label{display:block; font-size:13px; font-weight:600; margin:14px 0 6px;}
+  label:first-child{margin-top:0;}
+  input[type=number]{width:100%; padding:12px 14px; font-size:17px; border:1.5px solid var(--line); border-radius:10px; outline:none;}
+  input:focus{border-color:var(--green);}
+  .hint{font-size:12px; color:var(--muted); margin-top:4px;}
+  .result-title{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:10px;}
+  table.payslip{width:100%; border-collapse:collapse; font-size:15px;}
+  table.payslip td{padding:8px 2px; border-bottom:1px dashed var(--line);}
+  table.payslip td.v{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  table.payslip tr.neg td.v{color:var(--red);}
+  table.payslip tr.parcela td{font-weight:700;}
+  table.payslip tr.parcela td.v{color:var(--green-dark);}
+  table.payslip tr.total td{border-bottom:none; border-top:2px solid var(--ink); font-size:18px; font-weight:800; padding-top:12px;}
+  table.payslip tr.total td.v{color:var(--green-dark);}
+  .data-prazo{display:block; font-size:11.5px; color:var(--muted); font-weight:400;}
+  details.memoria{margin-top:14px; font-size:13.5px; color:var(--muted);}
+  details.memoria summary{cursor:pointer; font-weight:600; color:var(--green-dark);}
+  details.memoria p{margin-top:8px; white-space:pre-line;}
+  h2{font-size:21px; margin:34px 0 12px;}
+  p.body{color:#33404f; margin-bottom:12px; font-size:15.5px;}
+  table.data{width:100%; border-collapse:collapse; font-size:14.5px; background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  table.data th{background:var(--green-dark); color:#fff; text-align:left; padding:10px 12px; font-size:13.5px;}
+  table.data td{padding:9px 12px; border-top:1px solid var(--line); font-variant-numeric:tabular-nums;}
+  .fonte{font-size:12.5px; color:var(--muted); margin-top:8px;}
+  ol.steps{margin:0 0 8px 20px; color:#33404f; font-size:15.5px;}
+  ol.steps li{margin-bottom:7px;}
+  .faq details{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:10px;}
+  .faq summary{cursor:pointer; font-weight:600; font-size:15.5px;}
+  .faq p{margin-top:8px; color:#33404f; font-size:15px;}
+  .stamp{display:inline-block; background:#e8f4ec; color:var(--green-dark); font-size:12.5px; font-weight:600; border-radius:20px; padding:5px 12px; margin-top:6px;}
+  .related{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:6px;}
+  .related a{display:block; background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; text-decoration:none; color:var(--ink); font-weight:600; font-size:14.5px;}
+  .related a:hover{border-color:var(--green);}
+  .related a small{display:block; font-weight:400; color:var(--muted); margin-top:3px; font-size:12.5px;}
+  footer{margin-top:40px; font-size:12.5px; color:var(--muted); border-top:1px solid var(--line); padding-top:16px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Tudo<span>Calcula</span>
+      <small>Calculadoras trabalhistas gratuitas, com as tabelas oficiais de 2026</small>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <h1>Calculadora de 13º Salário 2026</h1>
+  <p class="intro">Veja quanto você recebe de 13º em 2026: a <strong>1ª parcela até 30 de novembro</strong> (sem descontos) e a <strong>2ª parcela até 18 de dezembro</strong>, já com <strong>INSS</strong> e <strong>IRRF</strong> calculados em separado, pelas tabelas de 2026. Exemplo: quem ganha <strong>R$ 5.000,00</strong> e trabalhou o ano todo recebe <strong>R$ 2.500,00</strong> na 1ª parcela e <strong>R$ 1.998,49</strong> na 2ª — total líquido de <strong>R$ 4.498,49</strong>, sem nenhum Imposto de Renda, graças à Lei 15.270/2025.</p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label for="salario">Salário bruto mensal (R$)</label>
+        <input type="number" id="salario" value="5000" min="0" step="0.01" inputmode="decimal">
+        <label for="avos">Meses trabalhados no ano (avos)</label>
+        <input type="number" id="avos" value="12" min="0" max="12" step="1" inputmode="numeric">
+        <p class="hint">Conte 1 avo para cada mês em que você trabalhou 15 dias ou mais. Quem trabalhou o ano inteiro tem 12 avos.</p>
+        <label for="dependentes">Número de dependentes</label>
+        <input type="number" id="dependentes" value="0" min="0" max="20" step="1" inputmode="numeric">
+        <p class="hint">O resultado é atualizado automaticamente enquanto você digita.</p>
+      </div>
+      <div>
+        <div class="result-title">Seu 13º salário — resultado</div>
+        <table class="payslip">
+          <tr><td>13º salário bruto (<span id="r-avos-label">12</span>/12 avos)</td><td class="v" id="r-bruto">R$ 5.000,00</td></tr>
+          <tr class="parcela"><td>1ª parcela <span class="data-prazo">sem descontos — até 30/11/2026</span></td><td class="v" id="r-p1">R$ 2.500,00</td></tr>
+          <tr class="neg"><td>INSS sobre o 13º (em separado)</td><td class="v" id="r-inss">− R$ 501,51</td></tr>
+          <tr class="neg"><td>IRRF sobre o 13º (tributação exclusiva)</td><td class="v" id="r-irrf">− R$ 0,00</td></tr>
+          <tr class="parcela"><td>2ª parcela <span class="data-prazo">com os descontos — até 18/12/2026</span></td><td class="v" id="r-p2">R$ 1.998,49</td></tr>
+          <tr class="total"><td>Total líquido do 13º</td><td class="v" id="r-total">R$ 4.498,49</td></tr>
+        </table>
+        <details class="memoria">
+          <summary>Ver memória de cálculo</summary>
+          <p id="memoria-texto"></p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <span class="stamp">✓ Tabelas conferidas em novembro de 2026 — Portaria Interministerial MPS/MF nº 13/2026, Lei nº 4.090/1962 e Lei nº 15.270/2025</span>
+
+  <h2>Datas do 13º salário em 2026</h2>
+  <table class="data">
+    <tr><th>Parcela</th><th>Prazo em 2026</th><th>Descontos</th></tr>
+    <tr><td>1ª parcela (adiantamento)</td><td>Até 30 de novembro (segunda-feira)</td><td>Nenhum — metade do 13º bruto</td></tr>
+    <tr><td>2ª parcela (quitação)</td><td>Até 18 de dezembro (sexta-feira)*</td><td>INSS + IRRF sobre o 13º inteiro</td></tr>
+  </table>
+  <p class="fonte">*O prazo legal da 2ª parcela é 20 de dezembro (Lei nº 4.749/1965), mas em 2026 esse dia cai em um domingo — por isso o pagamento é antecipado para o dia útil anterior, sexta-feira, 18/12/2026.</p>
+
+  <h2>Como o cálculo é feito</h2>
+  <ol class="steps">
+    <li><strong>13º bruto:</strong> salário mensal ÷ 12 × meses trabalhados (avos). Mês com 15 dias ou mais de trabalho conta como avo inteiro.</li>
+    <li><strong>1ª parcela:</strong> metade do 13º bruto, paga até 30 de novembro, sem nenhum desconto.</li>
+    <li><strong>INSS:</strong> calculado sobre o 13º inteiro, pela tabela progressiva de 2026, <em>em separado</em> do salário de dezembro — são duas contribuições distintas.</li>
+    <li><strong>IRRF:</strong> o 13º tem tributação exclusiva na fonte: não se soma ao salário do mês. A base é o 13º menos o INSS e R$ 189,59 por dependente — ou menos o desconto simplificado de R$ 607,20, se for melhor. Depois aplica-se a redução da Lei 15.270/2025, medida pelo próprio valor bruto do 13º.</li>
+    <li><strong>2ª parcela:</strong> 13º bruto − 1ª parcela − INSS − IRRF.</li>
+  </ol>
+
+  <h2>A isenção do IR no 13º em 2026</h2>
+  <p class="body">A Lei nº 15.270/2025 manda aplicar ao 13º a mesma redução do imposto mensal (art. 3º-A, § 3º, da Lei nº 9.250/1995, regulamentado pela IN RFB nº 2.299/2025). Na prática: <strong>13º bruto de até R$ 5.000 fica sem IRRF</strong>; entre R$ 5.000,01 e R$ 7.350, a redução é decrescente (R$ 978,62 − 0,133145 × 13º bruto); acima de R$ 7.350, o imposto é integral. O INSS não muda com a nova lei.</p>
+
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details><summary>Quando cai a 1ª parcela do 13º em 2026?</summary>
+      <p>Até 30 de novembro de 2026 (segunda-feira). A empresa pode pagar a partir de fevereiro, e muitos trabalhadores pedem o adiantamento junto com as férias. A 1ª parcela não tem desconto de INSS nem de IRRF.</p></details>
+    <details><summary>Quando cai a 2ª parcela do 13º em 2026?</summary>
+      <p>O prazo legal é 20 de dezembro, mas em 2026 esse dia é um domingo. O pagamento deve ser antecipado para o dia útil anterior: sexta-feira, 18 de dezembro de 2026. É nessa parcela que são descontados INSS e IRRF sobre o valor total do 13º.</p></details>
+    <details><summary>Quem ganha R$ 5.000 paga Imposto de Renda no 13º?</summary>
+      <p>Não. A redução da Lei 15.270/2025 vale também para o 13º salário: até R$ 5.000 de 13º bruto, o IRRF é zero. Só o INSS é descontado.</p></details>
+    <details><summary>Como contam os meses para o 13º proporcional?</summary>
+      <p>Cada mês civil conta separadamente: se você trabalhou 15 dias ou mais naquele mês, ele vale 1 avo (1/12 do salário). Com 12 avos, o 13º é integral. Faltas injustificadas podem reduzir a contagem do mês.</p></details>
+    <details><summary>Horas extras e comissões entram no 13º?</summary>
+      <p>Sim. Quem recebe verbas variáveis (horas extras habituais, comissões, adicional noturno) tem o 13º calculado com a média dessas verbas ao longo do ano, somada ao salário fixo. Esta calculadora usa o salário fixo informado; se você recebe variáveis, some a média mensal delas ao salário para estimar.</p></details>
+    <details><summary>Fui demitido — tenho direito ao 13º proporcional?</summary>
+      <p>Sim, na demissão sem justa causa, no pedido de demissão e no término de contrato, o 13º proporcional entra no acerto, com INSS calculado sobre ele. Na demissão por justa causa, perde-se o 13º proporcional. Veja a calculadora de rescisão para o acerto completo.</p></details>
+    <details><summary>O INSS do 13º se soma ao INSS do salário de dezembro?</summary>
+      <p>Não. São cálculos separados: o 13º tem sua própria contribuição, pela mesma tabela progressiva, sem misturar com o salário do mês. Por isso, em dezembro, há dois descontos de INSS distintos no holerite.</p></details>
+  </div>
+
+  <h2>Outras calculadoras</h2>
+  <div class="related">
+    <a href="/calculadora-salario-liquido/">Calculadora de Salário Líquido<small>INSS e IRRF do salário mensal</small></a>
+    <a href="/calculadora-rescisao/">Calculadora de Rescisão<small>Todos os tipos de desligamento</small></a>
+    <a href="/calculadora-ferias/">Calculadora de Férias<small>Com o terço constitucional</small></a>
+    <a href="/calculadora-inss/">Calculadora de INSS<small>Somente a contribuição 2026</small></a>
+  </div>
+
+  <footer>
+    TudoCalcula — ferramenta gratuita de estimativa. Os resultados são aproximados e não substituem o holerite oficial nem a orientação de um contador. Base legal: Leis nº 4.090/1962 e 4.749/1965; tabelas da Portaria Interministerial MPS/MF nº 13/2026; redução do IRRF conforme a Lei nº 15.270/2025 e a IN RFB nº 2.299/2025.
+  </footer>
+
+</div>
+
+<script>
+// ENGINE START
+function round2(v){ return Math.round((v + 1e-9) * 100) / 100; } // half-up, corrigindo ruído de ponto flutuante
+
+// INSS 2026 — Portaria Interministerial MPS/MF nº 13/2026 (progressivo, teto R$ 8.475,55)
+var INSS_FAIXAS = [
+  { ate: 1621.00, aliq: 0.075 },
+  { ate: 2902.84, aliq: 0.09  },
+  { ate: 4354.27, aliq: 0.12  },
+  { ate: 8475.55, aliq: 0.14  }
+];
+function calcINSS(base){
+  var total = 0, anterior = 0, detalhe = [];
+  for (var i = 0; i < INSS_FAIXAS.length; i++){
+    var f = INSS_FAIXAS[i];
+    if (base <= anterior) break;
+    var faixaBase = Math.min(base, f.ate) - anterior;
+    var valor = faixaBase * f.aliq;
+    total += valor;
+    detalhe.push({ faixa: i + 1, base: round2(faixaBase), aliq: f.aliq * 100, valor: round2(valor) });
+    anterior = f.ate;
+  }
+  return { total: round2(total), detalhe: detalhe };
+}
+
+// IRRF — tabela mensal (tributação exclusiva do 13º usa a mesma tabela)
+var IRRF_TABELA = [
+  { ate: 2428.80, aliq: 0,     deduzir: 0 },
+  { ate: 2826.65, aliq: 0.075, deduzir: 182.16 },
+  { ate: 3751.05, aliq: 0.15,  deduzir: 394.16 },
+  { ate: 4664.68, aliq: 0.225, deduzir: 675.49 },
+  { ate: Infinity, aliq: 0.275, deduzir: 908.73 }
+];
+function irrfPelaTabela(base){
+  if (base <= 0) return { imposto: 0, aliq: 0 };
+  for (var i = 0; i < IRRF_TABELA.length; i++){
+    var f = IRRF_TABELA[i];
+    if (base <= f.ate){
+      return { imposto: Math.max(0, round2(base * f.aliq - f.deduzir)), aliq: f.aliq * 100 };
+    }
+  }
+  var u = IRRF_TABELA[IRRF_TABELA.length - 1];
+  return { imposto: Math.max(0, round2(base * u.aliq - u.deduzir)), aliq: u.aliq * 100 };
+}
+function reducaoLei15270(rendimento){
+  // Redução mensal — vale também para o 13º (Lei 9.250/1995, art. 3º-A, § 3º; IN RFB 2.299/2025)
+  if (rendimento <= 5000) return 312.89;
+  if (rendimento >= 7350) return 0;
+  return Math.max(0, round2(978.62 - 0.133145 * rendimento));
+}
+function calcIRRF13(bruto13, inss, dependentes){
+  var baseLegal = bruto13 - inss - 189.59 * dependentes;
+  var baseSimplificada = bruto13 - 607.20;
+  var tLegal = irrfPelaTabela(baseLegal);
+  var tSimp  = irrfPelaTabela(baseSimplificada);
+  var escolhido = (tSimp.imposto <= tLegal.imposto)
+    ? { t: tSimp,  base: baseSimplificada, modo: "desconto simplificado de R$ 607,20" }
+    : { t: tLegal, base: baseLegal,        modo: "INSS + dependentes" };
+  var reducao = reducaoLei15270(bruto13);
+  var imposto = Math.max(0, round2(escolhido.t.imposto - reducao));
+  return { imposto: imposto, base: round2(escolhido.base), aliq: escolhido.t.aliq,
+           antesReducao: escolhido.t.imposto, reducao: reducao, modo: escolhido.modo };
+}
+
+function calcularDecimoTerceiro(salario, avos, dependentes){
+  salario = Math.max(0, +salario || 0);
+  avos = Math.min(12, Math.max(0, parseInt(avos, 10) || 0));
+  dependentes = Math.max(0, parseInt(dependentes, 10) || 0);
+  var bruto13 = round2(salario * avos / 12);
+  var p1 = round2(bruto13 / 2);
+  var inssR = calcINSS(bruto13);
+  var irrfR = calcIRRF13(bruto13, inssR.total, dependentes);
+  var p2 = round2(bruto13 - p1 - inssR.total - irrfR.imposto);
+  var totalLiquido = round2(p1 + p2);
+  return { salario: round2(salario), avos: avos, bruto13: bruto13, p1: p1,
+           inss: inssR.total, inssDetalhe: inssR.detalhe,
+           irrf: irrfR.imposto, irrfBase: irrfR.base, irrfAliq: irrfR.aliq,
+           irrfAntesReducao: irrfR.antesReducao, reducao: irrfR.reducao, irrfModo: irrfR.modo,
+           p2: p2, totalLiquido: totalLiquido };
+}
+// ENGINE END
+
+function fmt(v){
+  return v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+}
+function atualizar(){
+  var salario = parseFloat(document.getElementById("salario").value) || 0;
+  var avos = document.getElementById("avos").value;
+  var dep = document.getElementById("dependentes").value;
+  var r = calcularDecimoTerceiro(salario, avos, dep);
+
+  document.getElementById("r-avos-label").textContent = r.avos;
+  document.getElementById("r-bruto").textContent = fmt(r.bruto13);
+  document.getElementById("r-p1").textContent = fmt(r.p1);
+  document.getElementById("r-inss").textContent = "− " + fmt(r.inss);
+  document.getElementById("r-irrf").textContent = "− " + fmt(r.irrf);
+  document.getElementById("r-p2").textContent = fmt(r.p2);
+  document.getElementById("r-total").textContent = fmt(r.totalLiquido);
+
+  var linhas = [];
+  linhas.push("13º bruto: " + fmt(r.salario) + " ÷ 12 × " + r.avos + " avos = " + fmt(r.bruto13));
+  linhas.push("1ª parcela (metade, sem descontos): " + fmt(r.p1));
+  linhas.push("");
+  linhas.push("INSS progressivo 2026 sobre o 13º (em separado):");
+  r.inssDetalhe.forEach(function(d){
+    linhas.push("• Faixa " + d.faixa + ": " + fmt(d.base) + " × " + String(d.aliq).replace(".", ",") + "% = " + fmt(d.valor));
+  });
+  linhas.push("Total INSS: " + fmt(r.inss));
+  linhas.push("");
+  linhas.push("IRRF (tributação exclusiva): base de " + fmt(r.irrfBase) + " (" + r.irrfModo + ") = " + fmt(r.irrfAntesReducao) +
+              "; redução Lei 15.270/2025: " + fmt(r.reducao) + "; IRRF final: " + fmt(r.irrf) + ".");
+  linhas.push("2ª parcela: " + fmt(r.bruto13) + " − " + fmt(r.p1) + " − " + fmt(r.inss) + " − " + fmt(r.irrf) + " = " + fmt(r.p2));
+  document.getElementById("memoria-texto").textContent = linhas.join("\n");
+}
+["salario", "avos", "dependentes"].forEach(function(id){
+  document.getElementById(id).addEventListener("input", atualizar);
+  document.getElementById(id).addEventListener("change", atualizar);
+});
+atualizar();
+</script>
+</body>
+</html>
