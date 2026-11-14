@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Juros Compostos — Com aportes mensais | TudoCalcula</title>
+<meta name="description" content="Simule juros compostos com depósito inicial e aportes mensais: veja o total acumulado, quanto você investiu e quanto veio de juros. R$ 1.000 a 12% ao ano viram R$ 1.120 em 1 ano.">
+<style>
+  :root{ --green:#0e7a3d; --green-dark:#0a5c2e; --gold:#f5b301; --ink:#1a2332; --muted:#5b6b7f; --bg:#f4f7f5; --card:#ffffff; --line:#e2e8e4; --red:#c0392b; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 16px 48px;}
+  header{background:var(--green-dark); color:#fff; padding:14px 0;}
+  header .wrap{padding-bottom:0;}
+  .brand{font-size:22px; font-weight:800; letter-spacing:-.3px;}
+  .brand span{color:var(--gold);}
+  .brand small{display:block; font-size:12px; font-weight:400; opacity:.85; letter-spacing:0;}
+  h1{font-size:28px; line-height:1.25; margin:26px 0 10px;}
+  .intro{color:var(--muted); font-size:16px; margin-bottom:20px;}
+  .intro strong{color:var(--ink);}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:0 2px 10px rgba(16,60,36,.05);}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media (max-width:720px){ .grid{grid-template-columns:1fr;} h1{font-size:24px;} }
+  label{display:block; font-size:13px; font-weight:600; margin:14px 0 6px;}
+  label:first-child{margin-top:0;}
+  input[type=number], input[type=text], select{width:100%; padding:12px 14px; font-size:17px; border:1.5px solid var(--line); border-radius:10px; outline:none; background:#fff;}
+  input:focus, select:focus{border-color:var(--green);}
+  .hint{font-size:12px; color:var(--muted); margin-top:4px;}
+  .result-title{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:10px;}
+  table.payslip{width:100%; border-collapse:collapse; font-size:15px;}
+  table.payslip td{padding:8px 2px; border-bottom:1px dashed var(--line);}
+  table.payslip td.v{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  table.payslip tr.total td{border-bottom:none; border-top:2px solid var(--ink); font-size:19px; font-weight:800; padding-top:12px;}
+  table.payslip tr.total td.v{color:var(--green-dark);}
+  .aliquota{display:block; font-size:11.5px; color:var(--muted); font-weight:400;}
+  h2{font-size:21px; margin:34px 0 12px;}
+  p.body{color:#33404f; margin-bottom:12px; font-size:15.5px;}
+  table.data{width:100%; border-collapse:collapse; font-size:14.5px; background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  table.data th{background:var(--green-dark); color:#fff; text-align:left; padding:10px 12px; font-size:13.5px;}
+  table.data td{padding:9px 12px; border-top:1px solid var(--line); font-variant-numeric:tabular-nums;}
+  table.data td:last-child, table.data th:last-child{text-align:right;}
+  .fonte{font-size:12.5px; color:var(--muted); margin-top:8px;}
+  ol.steps{margin:0 0 8px 20px; color:#33404f; font-size:15.5px;}
+  ol.steps li{margin-bottom:7px;}
+  .faq details{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:10px;}
+  .faq summary{cursor:pointer; font-weight:600; font-size:15.5px;}
+  .faq p{margin-top:8px; color:#33404f; font-size:15px;}
+  .stamp{display:inline-block; background:#e8f4ec; color:var(--green-dark); font-size:12.5px; font-weight:600; border-radius:20px; padding:5px 12px; margin-top:6px;}
+  .related{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:6px;}
+  .related a{display:block; background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; text-decoration:none; color:var(--ink); font-weight:600; font-size:14.5px;}
+  .related a:hover{border-color:var(--green);}
+  .related a small{display:block; font-weight:400; color:var(--muted); margin-top:3px; font-size:12.5px;}
+  footer{margin-top:40px; font-size:12.5px; color:var(--muted); border-top:1px solid var(--line); padding-top:16px;}
+</style>
+<link rel="canonical" href="https://tudocalcula.tudobem.workers.dev/calculadora-juros-compostos/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TudoCalcula">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Calculadora de Juros Compostos — Com aportes mensais | TudoCalcula">
+<meta property="og:description" content="Simule juros compostos com depósito inicial e aportes mensais: veja o total acumulado, quanto você investiu e quanto veio de juros. R$ 1.000 a 12% ao ano viram R$ 1.120 em 1 ano.">
+<meta property="og:url" content="https://tudocalcula.tudobem.workers.dev/calculadora-juros-compostos/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Calculadora de Juros Compostos — Com aportes mensais | TudoCalcula">
+<meta name="twitter:description" content="Simule juros compostos com depósito inicial e aportes mensais: veja o total acumulado, quanto você investiu e quanto veio de juros. R$ 1.000 a 12% ao ano viram R$ 1.120 em 1 ano.">
+<meta name="theme-color" content="#0a5c2e">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de Juros Compostos — Com aportes mensais", "url": "https://tudocalcula.tudobem.workers.dev/calculadora-juros-compostos/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "pt-BR", "description": "Simule juros compostos com depósito inicial e aportes mensais: veja o total acumulado, quanto você investiu e quanto veio de juros. R$ 1.000 a 12% ao ano viram R$ 1.120 em 1 ano.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}, "isPartOf": {"@type": "WebSite", "name": "TudoCalcula", "url": "https://tudocalcula.tudobem.workers.dev/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Juros compostos são os mesmos de um CDB?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, a matemática é a mesma — mas o CDB desconta IR (e IOF nos primeiros 30 dias) sobre o rendimento. Para o valor líquido do CDB, use nossa calculadora de CDB e CDI."}}, {"@type": "Question", "name": "A poupança rende juros compostos?", "acceptedAnswer": {"@type": "Answer", "text": "Rende, mas com regra própria: 0,5% ao mês + TR quando a Selic está acima de 8,5% ao ano, ou 70% da Selic quando ela está igual ou abaixo disso. Em geral, fica atrás de um CDB de 100% do CDI."}}, {"@type": "Question", "name": "Qual taxa anual devo usar para simular?", "acceptedAnswer": {"@type": "Answer", "text": "Use a taxa do investimento que você está avaliando (ex.: o % do CDI convertido, ou a taxa prefixada do título). Para uma ideia de longo prazo em renda fixa, simule também com 1 ou 2 pontos a menos — taxas mudam com o tempo."}}, {"@type": "Question", "name": "Os aportes entram no começo ou no fim do mês?", "acceptedAnswer": {"@type": "Answer", "text": "Nesta calculadora, ao fim de cada mês (como um investimento feito no dia do salário seguinte). Se você investe no dia 1º, o resultado real fica um pouquinho maior."}}]}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">Tudo<span>Calcula</span>
+      <small>Calculadoras gratuitas e atualizadas para o seu dinheiro</small>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+
+  <h1>Calculadora de Juros Compostos</h1>
+  <p class="intro">Juros sobre juros: é assim que o dinheiro cresce em CDB, Tesouro Direto e qualquer investimento. Informe o valor inicial, os <strong>aportes mensais</strong>, a taxa e o prazo — e veja quanto do total final foi <strong>seu esforço</strong> e quanto foi <strong>o juro trabalhando</strong>. Exemplo simples: <strong>R$ 1.000</strong> a 12% ao ano viram <strong>R$ 1.120</strong> em 12 meses.</p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label for="capital">Valor inicial (R$)</label>
+        <input type="number" id="capital" value="1000" min="0" step="0.01" inputmode="decimal">
+        <label for="aporte">Aporte mensal (R$)</label>
+        <input type="number" id="aporte" value="300" min="0" step="0.01" inputmode="decimal">
+        <label for="taxa">Taxa de juros (% ao ano)</label>
+        <input type="number" id="taxa" value="12" min="0" step="0.1" inputmode="decimal">
+        <p class="hint">A taxa anual é convertida para mensal de forma equivalente: (1 + taxa)<sup>1/12</sup> − 1.</p>
+        <label for="meses">Período (meses)</label>
+        <input type="number" id="meses" value="60" min="1" max="600" step="1" inputmode="numeric">
+      </div>
+      <div>
+        <div class="result-title">Resultado</div>
+        <table class="payslip">
+          <tr><td>Total investido por você</td><td class="v" id="r-investido">—</td></tr>
+          <tr><td>Total ganho em juros</td><td class="v" id="r-juros">—</td></tr>
+          <tr><td>Taxa mensal equivalente</td><td class="v" id="r-mensal">—</td></tr>
+          <tr class="total"><td>Valor final acumulado</td><td class="v" id="r-total">—</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <span class="stamp">✓ Fórmula conferida em novembro de 2026 — M = C × (1 + i)<sup>t</sup>, com aportes ao fim de cada mês</span>
+
+  <h2>Por que o tempo manda mais que a taxa?</h2>
+  <p class="body">Nos juros compostos, o rendimento de cada mês entra na base do mês seguinte. No começo o crescimento é tímido; depois de alguns anos, os juros de um único ano podem superar tudo o que você aportou no primeiro ano. É o chamado efeito "bola de neve" — e o motivo de começar cedo valer mais do que caçar a maior taxa.</p>
+  <table class="data">
+    <tr><th>Exemplo (R$ 300/mês a 12% ao ano)</th><th>Total investido</th><th>Valor final</th></tr>
+    <tr><td>5 anos</td><td>R$ 18.000</td><td>≈ R$ 24.300</td></tr>
+    <tr><td>10 anos</td><td>R$ 36.000</td><td>≈ R$ 66.800</td></tr>
+    <tr><td>20 anos</td><td>R$ 72.000</td><td>≈ R$ 257.500</td></tr>
+  </table>
+  <p class="fonte">Valores aproximados, só com aportes (sem valor inicial), calculados com esta mesma fórmula. Rentabilidade passada ou simulada não garante retorno futuro.</p>
+
+  <h2>Como o cálculo é feito</h2>
+  <ol class="steps">
+    <li><strong>Taxa mensal:</strong> i = (1 + taxa anual)<sup>1/12</sup> − 1.</li>
+    <li><strong>Valor inicial:</strong> cresce por (1 + i) elevado ao número de meses.</li>
+    <li><strong>Aportes:</strong> cada depósito mensal também rende até o fim do período — somados pela fórmula das rendas certas.</li>
+    <li><strong>Juros totais:</strong> valor final − (valor inicial + soma dos aportes).</li>
+  </ol>
+
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details><summary>Juros compostos são os mesmos de um CDB?</summary>
+      <p>Sim, a matemática é a mesma — mas o CDB desconta IR (e IOF nos primeiros 30 dias) sobre o rendimento. Para o valor líquido do CDB, use nossa calculadora de CDB e CDI.</p></details>
+    <details><summary>A poupança rende juros compostos?</summary>
+      <p>Rende, mas com regra própria: 0,5% ao mês + TR quando a Selic está acima de 8,5% ao ano, ou 70% da Selic quando ela está igual ou abaixo disso. Em geral, fica atrás de um CDB de 100% do CDI.</p></details>
+    <details><summary>Qual taxa anual devo usar para simular?</summary>
+      <p>Use a taxa do investimento que você está avaliando (ex.: o % do CDI convertido, ou a taxa prefixada do título). Para uma ideia de longo prazo em renda fixa, simule também com 1 ou 2 pontos a menos — taxas mudam com o tempo.</p></details>
+    <details><summary>Os aportes entram no começo ou no fim do mês?</summary>
+      <p>Nesta calculadora, ao fim de cada mês (como um investimento feito no dia do salário seguinte). Se você investe no dia 1º, o resultado real fica um pouquinho maior.</p></details>
+  </div>
+
+  <h2>Outras calculadoras</h2>
+  <div class="related">
+    <a href="/calculadora-cdb/">Calculadora de CDB e CDI<small>Rendimento líquido com IR e IOF</small></a>
+    <a href="/calculadora-financiamento-imobiliario/">Financiamento Imobiliário<small>SAC e Price comparados</small></a>
+    <a href="/calculadora-financiamento-veiculo/">Financiamento de Veículo<small>Parcela pela tabela Price</small></a>
+    <a href="/calculadora-porcentagem/">Calculadora de Porcentagem<small>Percentuais e regra de três</small></a>
+  </div>
+
+  <footer>
+    TudoCalcula — ferramenta gratuita de estimativa. Simulação com taxa constante; investimentos reais variam e podem ter impostos e taxas. Não é recomendação de investimento.
+  </footer>
+
+</div>
+
+<script>
+// ENGINE START
+function round2(v){ return Math.round((v + 1e-9) * 100) / 100; }
+function calcularJurosCompostos(capital, aporte, taxaAnualPct, meses){
+  capital = Math.max(0, +capital || 0);
+  aporte = Math.max(0, +aporte || 0);
+  taxaAnualPct = Math.max(0, +taxaAnualPct || 0);
+  meses = Math.max(1, parseInt(meses, 10) || 1);
+  var i = Math.pow(1 + taxaAnualPct / 100, 1 / 12) - 1;
+  var fator = Math.pow(1 + i, meses);
+  var fvCapital = capital * fator;
+  var fvAportes = i > 0 ? aporte * (fator - 1) / i : aporte * meses;
+  var investido = round2(capital + aporte * meses);
+  var total = round2(fvCapital + fvAportes);
+  return { capital: round2(capital), aporte: round2(aporte), meses: meses,
+           taxaMensalPct: round2(i * 10000) / 100, investido: investido,
+           total: total, juros: round2(total - investido) };
+}
+// ENGINE END
+
+function fmt(v){ return v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }); }
+function atualizar(){
+  var r = calcularJurosCompostos(
+    parseFloat(document.getElementById("capital").value) || 0,
+    parseFloat(document.getElementById("aporte").value) || 0,
+    parseFloat(document.getElementById("taxa").value) || 0,
+    document.getElementById("meses").value
+  );
+  document.getElementById("r-investido").textContent = fmt(r.investido);
+  document.getElementById("r-juros").textContent = fmt(r.juros);
+  document.getElementById("r-mensal").textContent = String(r.taxaMensalPct.toFixed(2)).replace(".", ",") + "% ao mês";
+  document.getElementById("r-total").textContent = fmt(r.total);
+}
+["capital", "aporte", "taxa", "meses"].forEach(function(id){
+  document.getElementById(id).addEventListener("input", atualizar);
+  document.getElementById(id).addEventListener("change", atualizar);
+});
+atualizar();
+</script>
+</body>
+</html>
