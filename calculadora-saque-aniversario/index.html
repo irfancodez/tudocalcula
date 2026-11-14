@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Saque-Aniversário FGTS 2026 — Tabela por saldo | TudoCalcula</title>
+<meta name="description" content="Calcule quanto você saca por ano no saque-aniversário do FGTS: alíquota + parcela adicional conforme o saldo (Lei 13.932/2019). Saldo de R$ 10.000 → R$ 2.650 por ano.">
+<style>
+  :root{ --green:#0e7a3d; --green-dark:#0a5c2e; --gold:#f5b301; --ink:#1a2332; --muted:#5b6b7f; --bg:#f4f7f5; --card:#ffffff; --line:#e2e8e4; --red:#c0392b; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 16px 48px;}
+  header{background:var(--green-dark); color:#fff; padding:14px 0;}
+  header .wrap{padding-bottom:0;}
+  .brand{font-size:22px; font-weight:800; letter-spacing:-.3px;}
+  .brand span{color:var(--gold);}
+  .brand small{display:block; font-size:12px; font-weight:400; opacity:.85; letter-spacing:0;}
+  h1{font-size:28px; line-height:1.25; margin:26px 0 10px;}
+  .intro{color:var(--muted); font-size:16px; margin-bottom:20px;}
+  .intro strong{color:var(--ink);}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:0 2px 10px rgba(16,60,36,.05);}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media (max-width:720px){ .grid{grid-template-columns:1fr;} h1{font-size:24px;} }
+  label{display:block; font-size:13px; font-weight:600; margin:14px 0 6px;}
+  label:first-child{margin-top:0;}
+  input[type=number], input[type=text], select{width:100%; padding:12px 14px; font-size:17px; border:1.5px solid var(--line); border-radius:10px; outline:none; background:#fff;}
+  input:focus, select:focus{border-color:var(--green);}
+  .hint{font-size:12px; color:var(--muted); margin-top:4px;}
+  .result-title{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:10px;}
+  table.payslip{width:100%; border-collapse:collapse; font-size:15px;}
+  table.payslip td{padding:8px 2px; border-bottom:1px dashed var(--line);}
+  table.payslip td.v{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  table.payslip tr.total td{border-bottom:none; border-top:2px solid var(--ink); font-size:19px; font-weight:800; padding-top:12px;}
+  table.payslip tr.total td.v{color:var(--green-dark);}
+  .aliquota{display:block; font-size:11.5px; color:var(--muted); font-weight:400;}
+  h2{font-size:21px; margin:34px 0 12px;}
+  p.body{color:#33404f; margin-bottom:12px; font-size:15.5px;}
+  table.data{width:100%; border-collapse:collapse; font-size:14.5px; background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  table.data th{background:var(--green-dark); color:#fff; text-align:left; padding:10px 12px; font-size:13.5px;}
+  table.data td{padding:9px 12px; border-top:1px solid var(--line); font-variant-numeric:tabular-nums;}
+  table.data td:last-child, table.data th:last-child{text-align:right;}
+  .fonte{font-size:12.5px; color:var(--muted); margin-top:8px;}
+  ol.steps{margin:0 0 8px 20px; color:#33404f; font-size:15.5px;}
+  ol.steps li{margin-bottom:7px;}
+  .faq details{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:10px;}
+  .faq summary{cursor:pointer; font-weight:600; font-size:15.5px;}
+  .faq p{margin-top:8px; color:#33404f; font-size:15px;}
+  .stamp{display:inline-block; background:#e8f4ec; color:var(--green-dark); font-size:12.5px; font-weight:600; border-radius:20px; padding:5px 12px; margin-top:6px;}
+  .related{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:6px;}
+  .related a{display:block; background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; text-decoration:none; color:var(--ink); font-weight:600; font-size:14.5px;}
+  .related a:hover{border-color:var(--green);}
+  .related a small{display:block; font-weight:400; color:var(--muted); margin-top:3px; font-size:12.5px;}
+  footer{margin-top:40px; font-size:12.5px; color:var(--muted); border-top:1px solid var(--line); padding-top:16px;}
+</style>
+<link rel="canonical" href="https://tudocalcula.tudobem.workers.dev/calculadora-saque-aniversario/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TudoCalcula">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Calculadora de Saque-Aniversário FGTS 2026 — Tabela por saldo | TudoCalcula">
+<meta property="og:description" content="Calcule quanto você saca por ano no saque-aniversário do FGTS: alíquota + parcela adicional conforme o saldo (Lei 13.932/2019). Saldo de R$ 10.000 → R$ 2.650 por ano.">
+<meta property="og:url" content="https://tudocalcula.tudobem.workers.dev/calculadora-saque-aniversario/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Calculadora de Saque-Aniversário FGTS 2026 — Tabela por saldo | TudoCalcula">
+<meta name="twitter:description" content="Calcule quanto você saca por ano no saque-aniversário do FGTS: alíquota + parcela adicional conforme o saldo (Lei 13.932/2019). Saldo de R$ 10.000 → R$ 2.650 por ano.">
+<meta name="theme-color" content="#0a5c2e">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de Saque-Aniversário FGTS 2026 — Tabela por saldo", "url": "https://tudocalcula.tudobem.workers.dev/calculadora-saque-aniversario/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "pt-BR", "description": "Calcule quanto você saca por ano no saque-aniversário do FGTS: alíquota + parcela adicional conforme o saldo (Lei 13.932/2019). Saldo de R$ 10.000 → R$ 2.650 por ano.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}, "isPartOf": {"@type": "WebSite", "name": "TudoCalcula", "url": "https://tudocalcula.tudobem.workers.dev/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Vale a pena aderir ao saque-aniversário?", "acceptedAnswer": {"@type": "Answer", "text": "Depende da sua segurança no emprego. Você ganha um saque anual, mas, se for demitido sem justa causa, não saca o saldo todo — recebe só a multa de 40% e o saldo continua saindo aos poucos, uma vez por ano. Quem tem reserva própria costuma aproveitar melhor; quem depende do FGTS como seguro, geralmente fica no saque-rescisão."}}, {"@type": "Question", "name": "Posso voltar para o saque-rescisão?", "acceptedAnswer": {"@type": "Answer", "text": "Pode, pelo app FGTS, mas a volta só vale a partir do 25º mês após o pedido (carência de 2 anos). Se for demitido nesse intervalo, vale a regra do saque-aniversário."}}, {"@type": "Question", "name": "Se eu não sacar no prazo, perco o dinheiro?", "acceptedAnswer": {"@type": "Answer", "text": "Não perde: o valor retorna para a sua conta do FGTS e só sai no próximo aniversário (ou em outra hipótese de saque)."}}, {"@type": "Question", "name": "Quem está no saque-aniversário pode usar o FGTS na casa própria?", "acceptedAnswer": {"@type": "Answer", "text": "Pode — as regras de uso para compra, construção e amortização de financiamento habitacional continuam valendo normalmente."}}, {"@type": "Question", "name": "Existe empréstimo com garantia do saque-aniversário?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, a antecipação: bancos adiantam várias parcelas anuais com desconto, usando os saques futuros como garantia. Compare o custo total — os juros comem parte do benefício."}}]}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">Tudo<span>Calcula</span>
+      <small>Calculadoras trabalhistas gratuitas, com as tabelas oficiais de 2026</small>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+
+  <h1>Calculadora de Saque-Aniversário do FGTS 2026</h1>
+  <p class="intro">No <strong>saque-aniversário</strong>, você retira uma parte do FGTS todo ano, no mês do seu aniversário. O valor é uma <strong>alíquota sobre o saldo + uma parcela adicional</strong>, conforme a tabela da Lei 13.932/2019. Exemplo: saldo de <strong>R$ 10.000,00</strong> → saque de <strong>R$ 2.650,00</strong> por ano.</p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label for="saldo">Saldo total do seu FGTS (R$)</label>
+        <input type="number" id="saldo" value="10000" min="0" step="0.01" inputmode="decimal">
+        <p class="hint">Consulte o saldo no app FGTS (soma de todas as contas, ativas e inativas). O saque fica disponível do 1º dia útil do mês do aniversário até o último dia útil do segundo mês seguinte.</p>
+      </div>
+      <div>
+        <div class="result-title">Seu saque-aniversário — resultado</div>
+        <table class="payslip">
+          <tr><td>Faixa do saldo<span class="aliquota" id="r-faixa-lbl"></span></td><td class="v" id="r-aliq">20% + R$ 650</td></tr>
+          <tr><td>Percentual que sai por ano</td><td class="v" id="r-efetivo">26,50% do saldo</td></tr>
+          <tr class="total"><td>Saque anual estimado</td><td class="v" id="r-valor">R$ 2.650,00</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <span class="stamp">✓ Tabela conferida em novembro de 2026 — Lei nº 13.932/2019</span>
+
+  <h2>Tabela do saque-aniversário (Lei 13.932/2019)</h2>
+  <table class="data">
+    <tr><th>Saldo do FGTS</th><th>Alíquota</th><th>Parcela adicional</th></tr>
+    <tr><td>Até R$ 500,00</td><td>50%</td><td>—</td></tr>
+    <tr><td>De R$ 500,01 a R$ 1.000,00</td><td>40%</td><td>R$ 50,00</td></tr>
+    <tr><td>De R$ 1.000,01 a R$ 5.000,00</td><td>30%</td><td>R$ 150,00</td></tr>
+    <tr><td>De R$ 5.000,01 a R$ 10.000,00</td><td>20%</td><td>R$ 650,00</td></tr>
+    <tr><td>De R$ 10.000,01 a R$ 15.000,00</td><td>15%</td><td>R$ 1.150,00</td></tr>
+    <tr><td>De R$ 15.000,01 a R$ 20.000,00</td><td>10%</td><td>R$ 1.900,00</td></tr>
+    <tr><td>Acima de R$ 20.000,00</td><td>5%</td><td>R$ 2.900,00</td></tr>
+  </table>
+  <p class="fonte">Fonte: Lei nº 13.932/2019. A parcela adicional existe para suavizar a virada de faixa: ninguém perde dinheiro por ter o saldo um pouco maior.</p>
+
+  <h2>Como o cálculo é feito</h2>
+  <ol class="steps">
+    <li><strong>Encontre sua faixa:</strong> compare o saldo total com a tabela.</li>
+    <li><strong>Aplique a fórmula:</strong> saldo × alíquota da faixa + parcela adicional.</li>
+    <li><strong>Repete todo ano:</strong> como o saldo cai a cada saque (e sobe com novos depósitos), o valor anual muda ano a ano.</li>
+  </ol>
+
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details><summary>Vale a pena aderir ao saque-aniversário?</summary>
+      <p>Depende da sua segurança no emprego. Você ganha um saque anual, mas, se for demitido sem justa causa, <strong>não saca o saldo todo</strong> — recebe só a multa de 40% e o saldo continua saindo aos poucos, uma vez por ano. Quem tem reserva própria costuma aproveitar melhor; quem depende do FGTS como seguro, geralmente fica no saque-rescisão.</p></details>
+    <details><summary>Posso voltar para o saque-rescisão?</summary>
+      <p>Pode, pelo app FGTS, mas a volta só vale a partir do 25º mês após o pedido (carência de 2 anos). Se for demitido nesse intervalo, vale a regra do saque-aniversário.</p></details>
+    <details><summary>Se eu não sacar no prazo, perco o dinheiro?</summary>
+      <p>Não perde: o valor retorna para a sua conta do FGTS e só sai no próximo aniversário (ou em outra hipótese de saque).</p></details>
+    <details><summary>Quem está no saque-aniversário pode usar o FGTS na casa própria?</summary>
+      <p>Pode — as regras de uso para compra, construção e amortização de financiamento habitacional continuam valendo normalmente.</p></details>
+    <details><summary>Existe empréstimo com garantia do saque-aniversário?</summary>
+      <p>Sim, a antecipação: bancos adiantam várias parcelas anuais com desconto, usando os saques futuros como garantia. Compare o custo total — os juros comem parte do benefício.</p></details>
+  </div>
+
+  <h2>Outras calculadoras</h2>
+  <div class="related">
+    <a href="/calculadora-fgts/">Calculadora de FGTS<small>Depósito de 8% e saldo estimado</small></a>
+    <a href="/calculadora-rescisao/">Calculadora de Rescisão<small>Todos os tipos de desligamento</small></a>
+    <a href="/calculadora-pis-pasep/">Calculadora de PIS/PASEP<small>Abono salarial 2026</small></a>
+    <a href="/calculadora-seguro-desemprego/">Calculadora de Seguro-Desemprego<small>Parcelas e valores de 2026</small></a>
+  </div>
+
+  <footer>
+    TudoCalcula — ferramenta gratuita de estimativa. O valor oficial de cada saque é confirmado no app FGTS, no mês do aniversário. Regras: Lei nº 13.932/2019.
+  </footer>
+
+</div>
+
+<script>
+// ENGINE START
+function round2(v){ return Math.round((v + 1e-9) * 100) / 100; }
+// Tabela do saque-aniversário — Lei nº 13.932/2019
+var SA_FAIXAS = [
+  { ate: 500,    aliq: 0.50, parcela: 0,    nome: "até R$ 500" },
+  { ate: 1000,   aliq: 0.40, parcela: 50,   nome: "R$ 500,01 a R$ 1.000" },
+  { ate: 5000,   aliq: 0.30, parcela: 150,  nome: "R$ 1.000,01 a R$ 5.000" },
+  { ate: 10000,  aliq: 0.20, parcela: 650,  nome: "R$ 5.000,01 a R$ 10.000" },
+  { ate: 15000,  aliq: 0.15, parcela: 1150, nome: "R$ 10.000,01 a R$ 15.000" },
+  { ate: 20000,  aliq: 0.10, parcela: 1900, nome: "R$ 15.000,01 a R$ 20.000" },
+  { ate: Infinity, aliq: 0.05, parcela: 2900, nome: "acima de R$ 20.000" }
+];
+function calcularSaqueAniversario(saldo){
+  saldo = Math.max(0, +saldo || 0);
+  for (var i = 0; i < SA_FAIXAS.length; i++){
+    var f = SA_FAIXAS[i];
+    if (saldo <= f.ate){
+      var valor = round2(saldo * f.aliq + f.parcela);
+      return { saldo: round2(saldo), faixa: f.nome, aliq: f.aliq * 100, parcela: f.parcela,
+               valor: valor, efetivo: saldo > 0 ? round2(valor / saldo * 10000) / 100 : 0 };
+    }
+  }
+}
+// ENGINE END
+
+function fmt(v){ return v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }); }
+function atualizar(){
+  var r = calcularSaqueAniversario(parseFloat(document.getElementById("saldo").value) || 0);
+  document.getElementById("r-faixa-lbl").textContent = "saldo " + r.faixa;
+  document.getElementById("r-aliq").textContent = String(r.aliq).replace(".", ",") + "%" + (r.parcela > 0 ? " + " + fmt(r.parcela) : "");
+  document.getElementById("r-efetivo").textContent = String(r.efetivo.toFixed(2)).replace(".", ",") + "% do saldo";
+  document.getElementById("r-valor").textContent = fmt(r.valor);
+}
+document.getElementById("saldo").addEventListener("input", atualizar);
+document.getElementById("saldo").addEventListener("change", atualizar);
+atualizar();
+</script>
+</body>
+</html>
