@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Financiamento Imobiliário 2026 — SAC e Price | TudoCalcula</title>
+<meta name="description" content="Simule financiamento de imóvel nos sistemas SAC e Price: parcela, total pago e juros. Compare os dois e veja quanto do imóvel você realmente paga ao banco.">
+<style>
+  :root{ --green:#0e7a3d; --green-dark:#0a5c2e; --gold:#f5b301; --ink:#1a2332; --muted:#5b6b7f; --bg:#f4f7f5; --card:#ffffff; --line:#e2e8e4; --red:#c0392b; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 16px 48px;}
+  header{background:var(--green-dark); color:#fff; padding:14px 0;}
+  header .wrap{padding-bottom:0;}
+  .brand{font-size:22px; font-weight:800; letter-spacing:-.3px;}
+  .brand span{color:var(--gold);}
+  .brand small{display:block; font-size:12px; font-weight:400; opacity:.85; letter-spacing:0;}
+  h1{font-size:28px; line-height:1.25; margin:26px 0 10px;}
+  .intro{color:var(--muted); font-size:16px; margin-bottom:20px;}
+  .intro strong{color:var(--ink);}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:0 2px 10px rgba(16,60,36,.05);}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media (max-width:720px){ .grid{grid-template-columns:1fr;} h1{font-size:24px;} }
+  label{display:block; font-size:13px; font-weight:600; margin:14px 0 6px;}
+  label:first-child{margin-top:0;}
+  input[type=number], input[type=text], select{width:100%; padding:12px 14px; font-size:17px; border:1.5px solid var(--line); border-radius:10px; outline:none; background:#fff;}
+  input:focus, select:focus{border-color:var(--green);}
+  .hint{font-size:12px; color:var(--muted); margin-top:4px;}
+  .result-title{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:10px;}
+  table.payslip{width:100%; border-collapse:collapse; font-size:15px;}
+  table.payslip td{padding:8px 2px; border-bottom:1px dashed var(--line);}
+  table.payslip td.v{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  table.payslip tr.total td{border-bottom:none; border-top:2px solid var(--ink); font-size:19px; font-weight:800; padding-top:12px;}
+  table.payslip tr.total td.v{color:var(--green-dark);}
+  .aliquota{display:block; font-size:11.5px; color:var(--muted); font-weight:400;}
+  h2{font-size:21px; margin:34px 0 12px;}
+  p.body{color:#33404f; margin-bottom:12px; font-size:15.5px;}
+  table.data{width:100%; border-collapse:collapse; font-size:14.5px; background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  table.data th{background:var(--green-dark); color:#fff; text-align:left; padding:10px 12px; font-size:13.5px;}
+  table.data td{padding:9px 12px; border-top:1px solid var(--line); font-variant-numeric:tabular-nums;}
+  table.data td:last-child, table.data th:last-child{text-align:right;}
+  .fonte{font-size:12.5px; color:var(--muted); margin-top:8px;}
+  ol.steps{margin:0 0 8px 20px; color:#33404f; font-size:15.5px;}
+  ol.steps li{margin-bottom:7px;}
+  .faq details{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:10px;}
+  .faq summary{cursor:pointer; font-weight:600; font-size:15.5px;}
+  .faq p{margin-top:8px; color:#33404f; font-size:15px;}
+  .stamp{display:inline-block; background:#e8f4ec; color:var(--green-dark); font-size:12.5px; font-weight:600; border-radius:20px; padding:5px 12px; margin-top:6px;}
+  .related{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:6px;}
+  .related a{display:block; background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; text-decoration:none; color:var(--ink); font-weight:600; font-size:14.5px;}
+  .related a:hover{border-color:var(--green);}
+  .related a small{display:block; font-weight:400; color:var(--muted); margin-top:3px; font-size:12.5px;}
+  footer{margin-top:40px; font-size:12.5px; color:var(--muted); border-top:1px solid var(--line); padding-top:16px;}
+</style>
+<link rel="canonical" href="https://tudocalcula.tudobem.workers.dev/calculadora-financiamento-imobiliario/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TudoCalcula">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Calculadora de Financiamento Imobiliário 2026 — SAC e Price | TudoCalcula">
+<meta property="og:description" content="Simule financiamento de imóvel nos sistemas SAC e Price: parcela, total pago e juros. Compare os dois e veja quanto do imóvel você realmente paga ao banco.">
+<meta property="og:url" content="https://tudocalcula.tudobem.workers.dev/calculadora-financiamento-imobiliario/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Calculadora de Financiamento Imobiliário 2026 — SAC e Price | TudoCalcula">
+<meta name="twitter:description" content="Simule financiamento de imóvel nos sistemas SAC e Price: parcela, total pago e juros. Compare os dois e veja quanto do imóvel você realmente paga ao banco.">
+<meta name="theme-color" content="#0a5c2e">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de Financiamento Imobiliário 2026 — SAC e Price", "url": "https://tudocalcula.tudobem.workers.dev/calculadora-financiamento-imobiliario/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "pt-BR", "description": "Simule financiamento de imóvel nos sistemas SAC e Price: parcela, total pago e juros. Compare os dois e veja quanto do imóvel você realmente paga ao banco.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}, "isPartOf": {"@type": "WebSite", "name": "TudoCalcula", "url": "https://tudocalcula.tudobem.workers.dev/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Posso usar o FGTS no financiamento?", "acceptedAnswer": {"@type": "Answer", "text": "Pode: na entrada, na amortização do saldo ou para abater parcelas, nas regras do SFH (imóvel residencial, limites de valor e de renda conforme o programa). Veja quanto você tem na calculadora de FGTS."}}, {"@type": "Question", "name": "Amortizar com parcelas extras vale a pena?", "acceptedAnswer": {"@type": "Answer", "text": "Quase sempre: cada real amortizado elimina os juros futuros sobre ele. Amortizar reduzindo o prazo costuma economizar mais juros do que reduzindo o valor da parcela."}}, {"@type": "Question", "name": "Qual taxa devo colocar na simulação?", "acceptedAnswer": {"@type": "Answer", "text": "A taxa efetiva anual do seu contrato ou da simulação do banco (em 2026, os grandes bancos trabalham em torno de 10% a 12% ao ano + TR para o SFH, variando pelo perfil). Use a taxa do CET para comparar propostas."}}, {"@type": "Question", "name": "Por que a parcela real é maior que a simulada?", "acceptedAnswer": {"@type": "Answer", "text": "Porque o banco soma os seguros (MIP — morte e invalidez; DFI — danos ao imóvel) e, em alguns contratos, taxa de administração mensal. Peça o CET (Custo Efetivo Total) para comparar."}}, {"@type": "Question", "name": "Financiamento de 420 meses existe?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, alguns bancos já oferecem até 35 anos. Prazo maior reduz a parcela, mas aumenta muito os juros totais — simule 360 e 420 e compare o total pago."}}]}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">Tudo<span>Calcula</span>
+      <small>Calculadoras gratuitas e atualizadas para o seu dinheiro</small>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+
+  <h1>Calculadora de Financiamento Imobiliário — SAC e Price</h1>
+  <p class="intro">Compare os dois sistemas de financiamento de imóvel lado a lado: no <strong>SAC</strong>, a parcela começa maior e cai todo mês; na <strong>Price</strong>, a parcela é fixa, mas os juros totais são maiores. Simule com o valor do imóvel, a entrada e a taxa do seu banco.</p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label for="imovel">Valor do imóvel (R$)</label>
+        <input type="number" id="imovel" value="400000" min="0" step="1000" inputmode="decimal">
+        <label for="entrada">Entrada (R$)</label>
+        <input type="number" id="entrada" value="80000" min="0" step="1000" inputmode="decimal">
+        <label for="taxa">Taxa de juros (% ao ano)</label>
+        <input type="number" id="taxa" value="10.5" min="0" step="0.05" inputmode="decimal">
+        <p class="hint">Taxa nominal dividida por 12 a cada mês — o padrão das simulações dos bancos.</p>
+        <label for="prazo">Prazo (meses)</label>
+        <input type="number" id="prazo" value="360" min="1" max="420" step="1" inputmode="numeric">
+        <p class="hint">360 meses = 30 anos. Bancos costumam financiar até 80% do valor do imóvel.</p>
+      </div>
+      <div>
+        <div class="result-title">Simulação — resultado</div>
+        <table class="payslip">
+          <tr><td>Valor financiado</td><td class="v" id="r-financiado">R$ 320.000,00</td></tr>
+          <tr><td><strong>Price</strong> — parcela fixa</td><td class="v" id="r-price-parcela">—</td></tr>
+          <tr><td>Price — total pago / juros</td><td class="v" id="r-price-total">—</td></tr>
+          <tr><td><strong>SAC</strong> — 1ª parcela</td><td class="v" id="r-sac-primeira">—</td></tr>
+          <tr><td>SAC — última parcela</td><td class="v" id="r-sac-ultima">—</td></tr>
+          <tr><td>SAC — total pago / juros</td><td class="v" id="r-sac-total">—</td></tr>
+          <tr class="total"><td>Economia do SAC em juros</td><td class="v" id="r-economia">—</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <span class="stamp">✓ Simulação matemática conferida em novembro de 2026 — valores sem seguros (MIP/DFI) e taxas bancárias</span>
+
+  <h2>SAC ou Price: qual compensa mais?</h2>
+  <table class="data">
+    <tr><th>Critério</th><th>SAC</th><th>Price</th></tr>
+    <tr><td>Parcela</td><td>Começa maior e diminui</td><td>Fixa do início ao fim</td></tr>
+    <tr><td>Amortização</td><td>Igual todo mês — dívida cai rápido</td><td>Cresce com o tempo — dívida cai devagar</td></tr>
+    <tr><td>Juros totais</td><td>Menores</td><td>Maiores</td></tr>
+    <tr><td>Renda exigida na aprovação</td><td>Maior (pela 1ª parcela)</td><td>Menor (parcela fixa menor que a 1ª do SAC)</td></tr>
+  </table>
+  <p class="fonte">Regra prática: se a renda comporta a primeira parcela do SAC, ele quase sempre sai mais barato no total. A Price facilita a aprovação e o planejamento, ao custo de mais juros.</p>
+
+  <h2>Como o cálculo é feito</h2>
+  <ol class="steps">
+    <li><strong>Valor financiado:</strong> preço do imóvel − entrada.</li>
+    <li><strong>Taxa mensal:</strong> taxa anual ÷ 12, aplicada sobre o saldo devedor de cada mês.</li>
+    <li><strong>Price:</strong> parcela = financiado × i ÷ (1 − (1 + i)<sup>−n</sup>) — fixa; os juros são a diferença entre o total pago e o financiado.</li>
+    <li><strong>SAC:</strong> amortização = financiado ÷ n (fixa); cada parcela = amortização + juros do saldo — por isso ela diminui.</li>
+    <li><strong>Fora da simulação:</strong> seguros obrigatórios (MIP e DFI), taxa de administração e correção pela TR (quando houver) entram na parcela real do banco.</li>
+  </ol>
+
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details><summary>Posso usar o FGTS no financiamento?</summary>
+      <p>Pode: na entrada, na amortização do saldo ou para abater parcelas, nas regras do SFH (imóvel residencial, limites de valor e de renda conforme o programa). Veja quanto você tem na calculadora de FGTS.</p></details>
+    <details><summary>Amortizar com parcelas extras vale a pena?</summary>
+      <p>Quase sempre: cada real amortizado elimina os juros futuros sobre ele. Amortizar reduzindo o prazo costuma economizar mais juros do que reduzindo o valor da parcela.</p></details>
+    <details><summary>Qual taxa devo colocar na simulação?</summary>
+      <p>A taxa efetiva anual do seu contrato ou da simulação do banco (em 2026, os grandes bancos trabalham em torno de 10% a 12% ao ano + TR para o SFH, variando pelo perfil). Use a taxa do CET para comparar propostas.</p></details>
+    <details><summary>Por que a parcela real é maior que a simulada?</summary>
+      <p>Porque o banco soma os seguros (MIP — morte e invalidez; DFI — danos ao imóvel) e, em alguns contratos, taxa de administração mensal. Peça o CET (Custo Efetivo Total) para comparar.</p></details>
+    <details><summary>Financiamento de 420 meses existe?</summary>
+      <p>Sim, alguns bancos já oferecem até 35 anos. Prazo maior reduz a parcela, mas aumenta muito os juros totais — simule 360 e 420 e compare o total pago.</p></details>
+  </div>
+
+  <h2>Outras calculadoras</h2>
+  <div class="related">
+    <a href="/calculadora-financiamento-veiculo/">Financiamento de Veículo<small>Parcela pela tabela Price</small></a>
+    <a href="/calculadora-juros-compostos/">Juros Compostos<small>Investimentos e aportes mensais</small></a>
+    <a href="/calculadora-fgts/">Calculadora de FGTS<small>Depósito de 8% e saldo estimado</small></a>
+    <a href="/calculadora-cdb/">Calculadora de CDB e CDI<small>Rendimento líquido com IR e IOF</small></a>
+  </div>
+
+  <footer>
+    TudoCalcula — ferramenta gratuita de estimativa. A simulação não inclui seguros, TR ou taxas e não substitui a proposta oficial do banco. Confira sempre o CET do contrato.
+  </footer>
+
+</div>
+
+<script>
+// ENGINE START
+function round2(v){ return Math.round((v + 1e-9) * 100) / 100; }
+function parcelaPrice(principal, taxaMensal, n){
+  if (taxaMensal <= 0) return principal / n;
+  return principal * taxaMensal / (1 - Math.pow(1 + taxaMensal, -n));
+}
+function calcularFinanciamentoImobiliario(valorImovel, entrada, taxaAnualPct, prazoMeses){
+  valorImovel = Math.max(0, +valorImovel || 0);
+  entrada = Math.min(valorImovel, Math.max(0, +entrada || 0));
+  taxaAnualPct = Math.max(0, +taxaAnualPct || 0);
+  prazoMeses = Math.max(1, parseInt(prazoMeses, 10) || 1);
+  var P = round2(valorImovel - entrada);
+  var i = taxaAnualPct / 100 / 12;
+  var n = prazoMeses;
+  // Price
+  var pmt = parcelaPrice(P, i, n);
+  var totalPrice = round2(pmt * n);
+  // SAC
+  var amort = P / n;
+  var primeiraSac = amort + P * i;
+  var ultimaSac = amort + amort * i;
+  var jurosSac = i * amort * n * (n + 1) / 2;
+  var totalSac = round2(P + jurosSac);
+  return { financiado: P, taxaMensal: i, n: n,
+           priceParcela: round2(pmt), priceTotal: totalPrice, priceJuros: round2(totalPrice - P),
+           sacPrimeira: round2(primeiraSac), sacUltima: round2(ultimaSac),
+           sacTotal: totalSac, sacJuros: round2(jurosSac),
+           economiaSac: round2((totalPrice - P) - jurosSac) };
+}
+// ENGINE END
+
+function fmt(v){ return v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }); }
+function atualizar(){
+  var r = calcularFinanciamentoImobiliario(
+    parseFloat(document.getElementById("imovel").value) || 0,
+    parseFloat(document.getElementById("entrada").value) || 0,
+    parseFloat(document.getElementById("taxa").value) || 0,
+    document.getElementById("prazo").value
+  );
+  document.getElementById("r-financiado").textContent = fmt(r.financiado);
+  document.getElementById("r-price-parcela").textContent = fmt(r.priceParcela);
+  document.getElementById("r-price-total").textContent = fmt(r.priceTotal) + " / " + fmt(r.priceJuros);
+  document.getElementById("r-sac-primeira").textContent = fmt(r.sacPrimeira);
+  document.getElementById("r-sac-ultima").textContent = fmt(r.sacUltima);
+  document.getElementById("r-sac-total").textContent = fmt(r.sacTotal) + " / " + fmt(r.sacJuros);
+  document.getElementById("r-economia").textContent = fmt(r.economiaSac);
+}
+["imovel", "entrada", "taxa", "prazo"].forEach(function(id){
+  document.getElementById(id).addEventListener("input", atualizar);
+  document.getElementById(id).addEventListener("change", atualizar);
+});
+atualizar();
+</script>
+</body>
+</html>
