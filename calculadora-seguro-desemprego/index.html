@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Seguro-Desemprego 2026 — Parcelas e valores | TudoCalcula</title>
+<meta name="description" content="Calcule o seguro-desemprego 2026: valor da parcela pela tabela do MTE (piso R$ 1.621, teto R$ 2.518,65) e quantas parcelas você recebe. Média de R$ 3.000 → parcela de R$ 2.166,66.">
+<style>
+  :root{ --green:#0e7a3d; --green-dark:#0a5c2e; --gold:#f5b301; --ink:#1a2332; --muted:#5b6b7f; --bg:#f4f7f5; --card:#ffffff; --line:#e2e8e4; --red:#c0392b; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 16px 48px;}
+  header{background:var(--green-dark); color:#fff; padding:14px 0;}
+  header .wrap{padding-bottom:0;}
+  .brand{font-size:22px; font-weight:800; letter-spacing:-.3px;}
+  .brand span{color:var(--gold);}
+  .brand small{display:block; font-size:12px; font-weight:400; opacity:.85; letter-spacing:0;}
+  h1{font-size:28px; line-height:1.25; margin:26px 0 10px;}
+  .intro{color:var(--muted); font-size:16px; margin-bottom:20px;}
+  .intro strong{color:var(--ink);}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:0 2px 10px rgba(16,60,36,.05);}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media (max-width:720px){ .grid{grid-template-columns:1fr;} h1{font-size:24px;} }
+  label{display:block; font-size:13px; font-weight:600; margin:14px 0 6px;}
+  label:first-child{margin-top:0;}
+  input[type=number], input[type=text], select{width:100%; padding:12px 14px; font-size:17px; border:1.5px solid var(--line); border-radius:10px; outline:none; background:#fff;}
+  input:focus, select:focus{border-color:var(--green);}
+  .hint{font-size:12px; color:var(--muted); margin-top:4px;}
+  .result-title{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:10px;}
+  table.payslip{width:100%; border-collapse:collapse; font-size:15px;}
+  table.payslip td{padding:8px 2px; border-bottom:1px dashed var(--line);}
+  table.payslip td.v{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  table.payslip tr.total td{border-bottom:none; border-top:2px solid var(--ink); font-size:19px; font-weight:800; padding-top:12px;}
+  table.payslip tr.total td.v{color:var(--green-dark);}
+  .aliquota{display:block; font-size:11.5px; color:var(--muted); font-weight:400;}
+  .alerta{background:#fff8e1; border:1px solid #ffe082; border-radius:10px; padding:12px 14px; font-size:14px; margin-top:14px; display:none;}
+  h2{font-size:21px; margin:34px 0 12px;}
+  p.body{color:#33404f; margin-bottom:12px; font-size:15.5px;}
+  table.data{width:100%; border-collapse:collapse; font-size:14.5px; background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  table.data th{background:var(--green-dark); color:#fff; text-align:left; padding:10px 12px; font-size:13.5px;}
+  table.data td{padding:9px 12px; border-top:1px solid var(--line); font-variant-numeric:tabular-nums;}
+  table.data td:last-child, table.data th:last-child{text-align:right;}
+  .fonte{font-size:12.5px; color:var(--muted); margin-top:8px;}
+  ol.steps{margin:0 0 8px 20px; color:#33404f; font-size:15.5px;}
+  ol.steps li{margin-bottom:7px;}
+  .faq details{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:10px;}
+  .faq summary{cursor:pointer; font-weight:600; font-size:15.5px;}
+  .faq p{margin-top:8px; color:#33404f; font-size:15px;}
+  .stamp{display:inline-block; background:#e8f4ec; color:var(--green-dark); font-size:12.5px; font-weight:600; border-radius:20px; padding:5px 12px; margin-top:6px;}
+  .related{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:6px;}
+  .related a{display:block; background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; text-decoration:none; color:var(--ink); font-weight:600; font-size:14.5px;}
+  .related a:hover{border-color:var(--green);}
+  .related a small{display:block; font-weight:400; color:var(--muted); margin-top:3px; font-size:12.5px;}
+  footer{margin-top:40px; font-size:12.5px; color:var(--muted); border-top:1px solid var(--line); padding-top:16px;}
+</style>
+<link rel="canonical" href="https://tudocalcula.tudobem.workers.dev/calculadora-seguro-desemprego/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TudoCalcula">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Calculadora de Seguro-Desemprego 2026 — Parcelas e valores | TudoCalcula">
+<meta property="og:description" content="Calcule o seguro-desemprego 2026: valor da parcela pela tabela do MTE (piso R$ 1.621, teto R$ 2.518,65) e quantas parcelas você recebe. Média de R$ 3.000 → parcela de R$ 2.166,66.">
+<meta property="og:url" content="https://tudocalcula.tudobem.workers.dev/calculadora-seguro-desemprego/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Calculadora de Seguro-Desemprego 2026 — Parcelas e valores | TudoCalcula">
+<meta name="twitter:description" content="Calcule o seguro-desemprego 2026: valor da parcela pela tabela do MTE (piso R$ 1.621, teto R$ 2.518,65) e quantas parcelas você recebe. Média de R$ 3.000 → parcela de R$ 2.166,66.">
+<meta name="theme-color" content="#0a5c2e">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de Seguro-Desemprego 2026 — Parcelas e valores", "url": "https://tudocalcula.tudobem.workers.dev/calculadora-seguro-desemprego/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "pt-BR", "description": "Calcule o seguro-desemprego 2026: valor da parcela pela tabela do MTE (piso R$ 1.621, teto R$ 2.518,65) e quantas parcelas você recebe. Média de R$ 3.000 → parcela de R$ 2.166,66.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}, "isPartOf": {"@type": "WebSite", "name": "TudoCalcula", "url": "https://tudocalcula.tudobem.workers.dev/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quem pediu demissão tem direito ao seguro-desemprego?", "acceptedAnswer": {"@type": "Answer", "text": "Não. O benefício é para demissão sem justa causa e rescisão indireta. Quem pede demissão ou é demitido por justa causa não recebe — mas na demissão por acordo também não há seguro-desemprego."}}, {"@type": "Question", "name": "Qual é o prazo para pedir?", "acceptedAnswer": {"@type": "Answer", "text": "Do 7º ao 120º dia após a demissão, pelo app Carteira de Trabalho Digital, pelo portal Gov.br ou presencialmente. A primeira parcela sai cerca de 30 dias após o pedido."}}, {"@type": "Question", "name": "Posso trabalhar enquanto recebo?", "acceptedAnswer": {"@type": "Answer", "text": "Um novo emprego com carteira assinada suspende o benefício (as parcelas restantes podem ser retomadas se houver nova demissão dentro do prazo). Trabalho informal que configure renda própria também pode cancelar o seguro."}}, {"@type": "Question", "name": "A média usa salário bruto ou líquido?", "acceptedAnswer": {"@type": "Answer", "text": "Bruto — os salários de contribuição dos 3 meses anteriores à demissão, incluindo adicionais habituais."}}, {"@type": "Question", "name": "Empregado doméstico tem direito?", "acceptedAnswer": {"@type": "Answer", "text": "Tem, com regras próprias: 3 parcelas de 1 salário mínimo, para quem trabalhou pelo menos 15 meses nos últimos 24 como doméstico. Esta calculadora segue a regra geral do trabalhador formal."}}]}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">Tudo<span>Calcula</span>
+      <small>Calculadoras trabalhistas gratuitas, com as tabelas oficiais de 2026</small>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+
+  <h1>Calculadora de Seguro-Desemprego 2026</h1>
+  <p class="intro">Descubra o <strong>valor da parcela</strong> e <strong>quantas parcelas</strong> você recebe, com a tabela do MTE vigente desde 11 de janeiro de 2026 (reajuste pelo INPC de 3,90%): piso de <strong>R$ 1.621,00</strong> e teto de <strong>R$ 2.518,65</strong>. Exemplo: média salarial de <strong>R$ 3.000,00</strong> → parcela de <strong>R$ 2.166,66</strong>.</p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label for="s1">Salário do último mês (R$)</label>
+        <input type="number" id="s1" value="3000" min="0" step="0.01" inputmode="decimal">
+        <label for="s2">Salário do penúltimo mês (R$)</label>
+        <input type="number" id="s2" value="3000" min="0" step="0.01" inputmode="decimal">
+        <label for="s3">Salário do antepenúltimo mês (R$)</label>
+        <input type="number" id="s3" value="3000" min="0" step="0.01" inputmode="decimal">
+        <label for="meses">Meses trabalhados nos últimos 36 meses</label>
+        <input type="number" id="meses" value="18" min="0" max="36" step="1" inputmode="numeric">
+        <label for="vezes">Quantas vezes já pediu o seguro antes?</label>
+        <select id="vezes">
+          <option value="0" selected>Nunca — é a primeira vez</option>
+          <option value="1">Uma vez</option>
+          <option value="2">Duas vezes ou mais</option>
+        </select>
+        <div class="alerta" id="alerta"></div>
+      </div>
+      <div>
+        <div class="result-title">Seu benefício — resultado</div>
+        <table class="payslip">
+          <tr><td>Média dos 3 últimos salários</td><td class="v" id="r-media">R$ 3.000,00</td></tr>
+          <tr><td>Valor de cada parcela<span class="aliquota" id="r-faixa"></span></td><td class="v" id="r-parcela">R$ 2.166,66</td></tr>
+          <tr><td>Número de parcelas</td><td class="v" id="r-num">4</td></tr>
+          <tr class="total"><td>Total do benefício</td><td class="v" id="r-total">R$ 8.666,64</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <span class="stamp">✓ Tabela conferida em novembro de 2026 — MTE/CODEFAT, vigente desde 11/01/2026 (Lei nº 7.998/1990)</span>
+
+  <h2>Tabela do seguro-desemprego 2026</h2>
+  <table class="data">
+    <tr><th>Média dos 3 últimos salários</th><th>Cálculo da parcela</th></tr>
+    <tr><td>Até R$ 2.222,17</td><td>Média × 0,8 (80%)</td></tr>
+    <tr><td>De R$ 2.222,18 a R$ 3.703,99</td><td>R$ 1.777,74 + 50% do que passar de R$ 2.222,17</td></tr>
+    <tr><td>Acima de R$ 3.703,99</td><td>R$ 2.518,65 (valor fixo — teto)</td></tr>
+  </table>
+  <p class="fonte">Fonte: Ministério do Trabalho e Emprego (MTE), tabela vigente a partir de 11/01/2026, reajustada pelo INPC. Piso: R$ 1.621,00 (salário mínimo de 2026, Decreto nº 12.797/2025) — nenhuma parcela pode ser menor que isso.</p>
+
+  <h2>Quantas parcelas? Depende do tempo trabalhado</h2>
+  <table class="data">
+    <tr><th>Meses trabalhados (últimos 36)</th><th>1º pedido</th><th>2º pedido</th><th>3º pedido em diante</th></tr>
+    <tr><td>De 6 a 11 meses</td><td>—</td><td>—</td><td>3 parcelas</td></tr>
+    <tr><td>De 9 a 11 meses</td><td>—</td><td>3 parcelas</td><td>3 parcelas</td></tr>
+    <tr><td>De 12 a 23 meses</td><td>4 parcelas</td><td>4 parcelas</td><td>4 parcelas</td></tr>
+    <tr><td>24 meses ou mais</td><td>5 parcelas</td><td>5 parcelas</td><td>5 parcelas</td></tr>
+  </table>
+  <p class="fonte">Regras da Lei nº 13.134/2015. Além do tempo, é preciso ter sido demitido sem justa causa (ou rescisão indireta), não ter renda própria suficiente e fazer o pedido entre 7 e 120 dias após a demissão.</p>
+
+  <h2>Como o cálculo é feito</h2>
+  <ol class="steps">
+    <li><strong>Média:</strong> some os 3 últimos salários brutos antes da demissão e divida por 3.</li>
+    <li><strong>Faixa:</strong> aplique a fórmula da faixa da média na tabela 2026.</li>
+    <li><strong>Piso e teto:</strong> a parcela nunca fica abaixo de R$ 1.621,00 nem acima de R$ 2.518,65.</li>
+    <li><strong>Parcelas:</strong> o número depende dos meses trabalhados nos últimos 36 meses e de quantas vezes você já recebeu o benefício.</li>
+  </ol>
+
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details><summary>Quem pediu demissão tem direito ao seguro-desemprego?</summary>
+      <p>Não. O benefício é para demissão sem justa causa e rescisão indireta. Quem pede demissão ou é demitido por justa causa não recebe — mas na demissão por acordo também não há seguro-desemprego.</p></details>
+    <details><summary>Qual é o prazo para pedir?</summary>
+      <p>Do 7º ao 120º dia após a demissão, pelo app Carteira de Trabalho Digital, pelo portal Gov.br ou presencialmente. A primeira parcela sai cerca de 30 dias após o pedido.</p></details>
+    <details><summary>Posso trabalhar enquanto recebo?</summary>
+      <p>Um novo emprego com carteira assinada suspende o benefício (as parcelas restantes podem ser retomadas se houver nova demissão dentro do prazo). Trabalho informal que configure renda própria também pode cancelar o seguro.</p></details>
+    <details><summary>A média usa salário bruto ou líquido?</summary>
+      <p>Bruto — os salários de contribuição dos 3 meses anteriores à demissão, incluindo adicionais habituais.</p></details>
+    <details><summary>Empregado doméstico tem direito?</summary>
+      <p>Tem, com regras próprias: 3 parcelas de 1 salário mínimo, para quem trabalhou pelo menos 15 meses nos últimos 24 como doméstico. Esta calculadora segue a regra geral do trabalhador formal.</p></details>
+  </div>
+
+  <h2>Outras calculadoras</h2>
+  <div class="related">
+    <a href="/calculadora-rescisao/">Calculadora de Rescisão<small>Todos os tipos de desligamento</small></a>
+    <a href="/calculadora-fgts/">Calculadora de FGTS<small>Depósito de 8% e saldo estimado</small></a>
+    <a href="/calculadora-pis-pasep/">Calculadora de PIS/PASEP<small>Abono salarial 2026</small></a>
+    <a href="/calculadora-salario-liquido/">Calculadora de Salário Líquido<small>INSS, IRRF e FGTS do mês</small></a>
+  </div>
+
+  <footer>
+    TudoCalcula — ferramenta gratuita de estimativa. A concessão e o valor final dependem da análise do Ministério do Trabalho e Emprego. Regras: Lei nº 7.998/1990 e Lei nº 13.134/2015.
+  </footer>
+
+</div>
+
+<script>
+// ENGINE START
+function round2(v){ return Math.round((v + 1e-9) * 100) / 100; }
+// Tabela MTE 2026 — vigente desde 11/01/2026 (reajuste INPC 3,90%)
+var SD_FAIXA1 = 2222.17, SD_FAIXA2 = 3703.99, SD_BASE2 = 1777.74, SD_TETO = 2518.65, SD_PISO = 1621.00;
+function valorParcelaSeguro(media){
+  media = Math.max(0, +media || 0);
+  var p;
+  if (media <= SD_FAIXA1) p = media * 0.8;
+  else if (media <= SD_FAIXA2) p = SD_BASE2 + 0.5 * (media - SD_FAIXA1);
+  else p = SD_TETO;
+  p = Math.max(SD_PISO, Math.min(SD_TETO, p));
+  return round2(p);
+}
+function numeroParcelasSeguro(meses36, pedidosAnteriores){
+  meses36 = Math.max(0, parseInt(meses36, 10) || 0);
+  pedidosAnteriores = parseInt(pedidosAnteriores, 10) || 0;
+  if (pedidosAnteriores === 0){
+    if (meses36 >= 24) return 5;
+    if (meses36 >= 12) return 4;
+    return 0;
+  }
+  if (pedidosAnteriores === 1){
+    if (meses36 >= 24) return 5;
+    if (meses36 >= 12) return 4;
+    if (meses36 >= 9) return 3;
+    return 0;
+  }
+  if (meses36 >= 24) return 5;
+  if (meses36 >= 12) return 4;
+  if (meses36 >= 6) return 3;
+  return 0;
+}
+function calcularSeguroDesemprego(s1, s2, s3, meses36, pedidosAnteriores){
+  var media = round2(((+s1 || 0) + (+s2 || 0) + (+s3 || 0)) / 3);
+  var parcela = valorParcelaSeguro(media);
+  var num = numeroParcelasSeguro(meses36, pedidosAnteriores);
+  return { media: media, parcela: parcela, numParcelas: num, total: round2(parcela * num) };
+}
+// ENGINE END
+
+function fmt(v){ return v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }); }
+function atualizar(){
+  var r = calcularSeguroDesemprego(
+    parseFloat(document.getElementById("s1").value) || 0,
+    parseFloat(document.getElementById("s2").value) || 0,
+    parseFloat(document.getElementById("s3").value) || 0,
+    document.getElementById("meses").value,
+    document.getElementById("vezes").value
+  );
+  document.getElementById("r-media").textContent = fmt(r.media);
+  document.getElementById("r-parcela").textContent = fmt(r.parcela);
+  document.getElementById("r-faixa").textContent =
+    r.media <= 2222.17 ? "faixa 1 — 80% da média" : (r.media <= 3703.99 ? "faixa 2 — R$ 1.777,74 + 50% do excedente" : "faixa 3 — teto de 2026");
+  document.getElementById("r-num").textContent = r.numParcelas > 0 ? r.numParcelas : "sem direito";
+  document.getElementById("r-total").textContent = fmt(r.total);
+  var alerta = document.getElementById("alerta");
+  if (r.numParcelas === 0){
+    alerta.style.display = "block";
+    alerta.textContent = "Com esse tempo de trabalho, ainda não há direito ao seguro neste pedido. Confira o tempo mínimo na tabela de parcelas abaixo.";
+  } else {
+    alerta.style.display = "none";
+  }
+}
+["s1", "s2", "s3", "meses", "vezes"].forEach(function(id){
+  document.getElementById(id).addEventListener("input", atualizar);
+  document.getElementById(id).addEventListener("change", atualizar);
+});
+atualizar();
+</script>
+</body>
+</html>
