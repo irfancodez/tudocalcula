@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Dias Úteis — Entre datas, com feriados 2026 | TudoCalcula</title>
+<meta name="description" content="Conte os dias úteis entre duas datas excluindo sábados, domingos e feriados nacionais. Útil para prazos, entregas, rescisões e planejamentos.">
+<style>
+  :root{ --green:#0e7a3d; --green-dark:#0a5c2e; --gold:#f5b301; --ink:#1a2332; --muted:#5b6b7f; --bg:#f4f7f5; --card:#ffffff; --line:#e2e8e4; --red:#c0392b; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 16px 48px;}
+  header{background:var(--green-dark); color:#fff; padding:14px 0;}
+  header .wrap{padding-bottom:0;}
+  .brand{font-size:22px; font-weight:800; letter-spacing:-.3px;}
+  .brand span{color:var(--gold);}
+  .brand small{display:block; font-size:12px; font-weight:400; opacity:.85; letter-spacing:0;}
+  h1{font-size:28px; line-height:1.25; margin:26px 0 10px;}
+  .intro{color:var(--muted); font-size:16px; margin-bottom:20px;}
+  .intro strong{color:var(--ink);}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:0 2px 10px rgba(16,60,36,.05);}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media (max-width:720px){ .grid{grid-template-columns:1fr;} h1{font-size:24px;} }
+  label{display:block; font-size:13px; font-weight:600; margin:14px 0 6px;}
+  label:first-child{margin-top:0;}
+  input[type=number], input[type=text], input[type=date], select{width:100%; padding:12px 14px; font-size:17px; border:1.5px solid var(--line); border-radius:10px; outline:none; background:#fff;}
+  input:focus, select:focus{border-color:var(--green);}
+  .hint{font-size:12px; color:var(--muted); margin-top:4px;}
+  .result-title{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:10px;}
+  table.payslip{width:100%; border-collapse:collapse; font-size:15px;}
+  table.payslip td{padding:8px 2px; border-bottom:1px dashed var(--line);}
+  table.payslip td.v{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  table.payslip tr.total td{border-bottom:none; border-top:2px solid var(--ink); font-size:19px; font-weight:800; padding-top:12px;}
+  table.payslip tr.total td.v{color:var(--green-dark);}
+  .aliquota{display:block; font-size:11.5px; color:var(--muted); font-weight:400;}
+  h2{font-size:21px; margin:34px 0 12px;}
+  p.body{color:#33404f; margin-bottom:12px; font-size:15.5px;}
+  table.data{width:100%; border-collapse:collapse; font-size:14.5px; background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  table.data th{background:var(--green-dark); color:#fff; text-align:left; padding:10px 12px; font-size:13.5px;}
+  table.data td{padding:9px 12px; border-top:1px solid var(--line); font-variant-numeric:tabular-nums;}
+  table.data td:last-child, table.data th:last-child{text-align:right;}
+  .fonte{font-size:12.5px; color:var(--muted); margin-top:8px;}
+  ol.steps{margin:0 0 8px 20px; color:#33404f; font-size:15.5px;}
+  ol.steps li{margin-bottom:7px;}
+  .faq details{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:10px;}
+  .faq summary{cursor:pointer; font-weight:600; font-size:15.5px;}
+  .faq p{margin-top:8px; color:#33404f; font-size:15px;}
+  .stamp{display:inline-block; background:#e8f4ec; color:var(--green-dark); font-size:12.5px; font-weight:600; border-radius:20px; padding:5px 12px; margin-top:6px;}
+  .related{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:6px;}
+  .related a{display:block; background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; text-decoration:none; color:var(--ink); font-weight:600; font-size:14.5px;}
+  .related a:hover{border-color:var(--green);}
+  .related a small{display:block; font-weight:400; color:var(--muted); margin-top:3px; font-size:12.5px;}
+  footer{margin-top:40px; font-size:12.5px; color:var(--muted); border-top:1px solid var(--line); padding-top:16px;}
+</style>
+<link rel="canonical" href="https://tudocalcula.tudobem.workers.dev/calculadora-dias-uteis/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TudoCalcula">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Calculadora de Dias Úteis — Entre datas, com feriados 2026 | TudoCalcula">
+<meta property="og:description" content="Conte os dias úteis entre duas datas excluindo sábados, domingos e feriados nacionais. Útil para prazos, entregas, rescisões e planejamentos.">
+<meta property="og:url" content="https://tudocalcula.tudobem.workers.dev/calculadora-dias-uteis/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Calculadora de Dias Úteis — Entre datas, com feriados 2026 | TudoCalcula">
+<meta name="twitter:description" content="Conte os dias úteis entre duas datas excluindo sábados, domingos e feriados nacionais. Útil para prazos, entregas, rescisões e planejamentos.">
+<meta name="theme-color" content="#0a5c2e">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de Dias Úteis — Entre datas, com feriados 2026", "url": "https://tudocalcula.tudobem.workers.dev/calculadora-dias-uteis/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "inLanguage": "pt-BR", "description": "Conte os dias úteis entre duas datas excluindo sábados, domingos e feriados nacionais. Útil para prazos, entregas, rescisões e planejamentos.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}, "isPartOf": {"@type": "WebSite", "name": "TudoCalcula", "url": "https://tudocalcula.tudobem.workers.dev/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Prazo em \"dias úteis\" no contrato conta assim?", "acceptedAnswer": {"@type": "Answer", "text": "Em regra, sim: excluem-se fins de semana e feriados. Mas atenção ao início da contagem — muitos prazos jurídicos começam no primeiro dia útil seguinte ao fato. Confira a cláusula ou a lei do seu caso."}}, {"@type": "Question", "name": "O prazo da rescisão (10 dias) é corrido ou útil?", "acceptedAnswer": {"@type": "Answer", "text": "Corrido: o art. 477 da CLT dá 10 dias corridos, contados do término do contrato, para pagar as verbas rescisórias — com multa de um salário se atrasar."}}, {"@type": "Question", "name": "Sábado conta como dia útil para banco?", "acceptedAnswer": {"@type": "Answer", "text": "Para compensação bancária, não — boletos e transferências seguem dias úteis de segunda a sexta. Para jornada de trabalho, o sábado pode ser dia normal de trabalho, conforme o contrato."}}, {"@type": "Question", "name": "E os feriados da minha cidade?", "acceptedAnswer": {"@type": "Answer", "text": "Some os feriados municipais/estaduais que caírem em dia de semana dentro do seu intervalo e desconte do resultado — cada cidade tem os seus (aniversário do município, padroeiro etc.)."}}]}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">Tudo<span>Calcula</span>
+      <small>Calculadoras gratuitas e atualizadas para o seu dia a dia</small>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+
+  <h1>Calculadora de Dias Úteis</h1>
+  <p class="intro">Conte quantos <strong>dias úteis</strong> existem entre duas datas, já descontando <strong>sábados, domingos e feriados nacionais</strong> — incluindo Carnaval e Corpus Christi, que o Brasil inteiro costuma emendar. Perfeito para conferir prazos de pagamento, entrega, experiência e o prazo de 10 dias da rescisão.</p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label for="inicio">Data inicial</label>
+        <input type="date" id="inicio" value="2026-01-01">
+        <label for="fim">Data final</label>
+        <input type="date" id="fim" value="2026-01-31">
+        <p class="hint">A contagem inclui os dois extremos (o primeiro e o último dia do intervalo).</p>
+      </div>
+      <div>
+        <div class="result-title">Contagem — resultado</div>
+        <table class="payslip">
+          <tr><td>Dias corridos no intervalo</td><td class="v" id="r-total">31</td></tr>
+          <tr><td>Sábados e domingos</td><td class="v" id="r-fds">9</td></tr>
+          <tr><td>Feriados em dia de semana</td><td class="v" id="r-feriados">1</td></tr>
+          <tr class="total"><td>Dias úteis</td><td class="v" id="r-uteis">21</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <span class="stamp">✓ Calendário conferido em novembro de 2026 — feriados nacionais de 2025 a 2027</span>
+
+  <h2>Feriados nacionais usados na conta</h2>
+  <p class="body">Fixos: Confraternização Universal (1º/jan), Tiradentes (21/abr), Dia do Trabalhador (1º/mai), Independência (7/set), Nossa Senhora Aparecida (12/out), Finados (2/nov), Proclamação da República (15/nov), Consciência Negra (20/nov) e Natal (25/dez). Móveis: Carnaval (segunda e terça), Sexta-feira Santa e Corpus Christi — calculados ano a ano pela data da Páscoa.</p>
+  <p class="body">Feriados estaduais e municipais não entram na conta (variam por cidade). Carnaval e Corpus Christi são tecnicamente pontos facultativos na lei federal, mas são tratados como feriados pela imensa maioria das empresas — por isso estão incluídos.</p>
+
+  <h2>Como o cálculo é feito</h2>
+  <ol class="steps">
+    <li>Percorremos cada dia do intervalo, do início ao fim.</li>
+    <li>Sábados e domingos são marcados como fim de semana.</li>
+    <li>Dias de semana que caem em feriado nacional são marcados como feriado.</li>
+    <li><strong>Dias úteis</strong> = dias corridos − fins de semana − feriados em dia útil.</li>
+  </ol>
+
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details><summary>Prazo em "dias úteis" no contrato conta assim?</summary>
+      <p>Em regra, sim: excluem-se fins de semana e feriados. Mas atenção ao início da contagem — muitos prazos jurídicos começam no primeiro dia útil seguinte ao fato. Confira a cláusula ou a lei do seu caso.</p></details>
+    <details><summary>O prazo da rescisão (10 dias) é corrido ou útil?</summary>
+      <p>Corrido: o art. 477 da CLT dá 10 dias corridos, contados do término do contrato, para pagar as verbas rescisórias — com multa de um salário se atrasar.</p></details>
+    <details><summary>Sábado conta como dia útil para banco?</summary>
+      <p>Para compensação bancária, não — boletos e transferências seguem dias úteis de segunda a sexta. Para jornada de trabalho, o sábado pode ser dia normal de trabalho, conforme o contrato.</p></details>
+    <details><summary>E os feriados da minha cidade?</summary>
+      <p>Some os feriados municipais/estaduais que caírem em dia de semana dentro do seu intervalo e desconte do resultado — cada cidade tem os seus (aniversário do município, padroeiro etc.).</p></details>
+  </div>
+
+  <h2>Outras calculadoras</h2>
+  <div class="related">
+    <a href="/calculadora-idade/">Calculadora de Idade<small>Idade exata e dias vividos</small></a>
+    <a href="/calculadora-porcentagem/">Calculadora de Porcentagem<small>Percentuais e regra de três</small></a>
+    <a href="/calculadora-rescisao/">Calculadora de Rescisão<small>Todos os tipos de desligamento</small></a>
+    <a href="/calculadora-aviso-previo/">Calculadora de Aviso Prévio<small>30 dias + 3 por ano</small></a>
+  </div>
+
+  <footer>
+    TudoCalcula — ferramenta gratuita de estimativa. Feriados locais não incluídos; confira o calendário oficial da sua cidade para prazos formais.
+  </footer>
+
+</div>
+
+<script>
+// ENGINE START
+// Feriados fixos nacionais (mês-dia) e móveis por ano (Carnaval seg/ter, Sexta-feira Santa, Corpus Christi)
+var FERIADOS_FIXOS = ["01-01", "04-21", "05-01", "09-07", "10-12", "11-02", "11-15", "11-20", "12-25"];
+var FERIADOS_MOVEIS = {
+  "2025": ["2025-03-03", "2025-03-04", "2025-04-18", "2025-06-19"],
+  "2026": ["2026-02-16", "2026-02-17", "2026-04-03", "2026-06-04"],
+  "2027": ["2027-02-08", "2027-02-09", "2027-03-26", "2027-05-27"]
+};
+function isoDe(d){
+  var m = String(d.getMonth() + 1).padStart(2, "0");
+  var dia = String(d.getDate()).padStart(2, "0");
+  return d.getFullYear() + "-" + m + "-" + dia;
+}
+function ehFeriado(d){
+  var md = isoDe(d).slice(5);
+  if (FERIADOS_FIXOS.indexOf(md) !== -1) return true;
+  var lista = FERIADOS_MOVEIS[String(d.getFullYear())] || [];
+  return lista.indexOf(isoDe(d)) !== -1;
+}
+function calcularDiasUteis(inicioISO, fimISO){
+  var ini = new Date(inicioISO + "T12:00:00");
+  var fim = new Date(fimISO + "T12:00:00");
+  if (isNaN(ini) || isNaN(fim)) return { total: 0, fds: 0, feriados: 0, uteis: 0 };
+  if (fim < ini){ var t = ini; ini = fim; fim = t; }
+  var total = 0, fds = 0, feriados = 0, uteis = 0;
+  var d = new Date(ini);
+  while (d <= fim){
+    total++;
+    var dow = d.getDay();
+    if (dow === 0 || dow === 6) fds++;
+    else if (ehFeriado(d)) feriados++;
+    else uteis++;
+    d.setDate(d.getDate() + 1);
+  }
+  return { total: total, fds: fds, feriados: feriados, uteis: uteis };
+}
+// ENGINE END
+
+function atualizar(){
+  var r = calcularDiasUteis(document.getElementById("inicio").value, document.getElementById("fim").value);
+  document.getElementById("r-total").textContent = r.total;
+  document.getElementById("r-fds").textContent = r.fds;
+  document.getElementById("r-feriados").textContent = r.feriados;
+  document.getElementById("r-uteis").textContent = r.uteis;
+}
+["inicio", "fim"].forEach(function(id){
+  document.getElementById(id).addEventListener("input", atualizar);
+  document.getElementById(id).addEventListener("change", atualizar);
+});
+atualizar();
+</script>
+</body>
+</html>
