@@ -16,7 +16,10 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TudoCalcula — Calculadoras Online Gratuitas 2026">
 <meta name="twitter:description" content="20 calculadoras gratuitas com as tabelas oficiais de 2026: trabalhistas, financeiras e utilidades. Sem cadastro, cálculo no navegador.">
-<meta name="theme-color" content="#0a5c2e">
+<meta name="theme-color" content="#0b1220">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"TudoCalcula","url":"https://tudocalcula.tudobem.workers.dev/","inLanguage":"pt-BR","description":"Calculadoras online gratuitas e atualizadas para 2026: trabalhistas, financeiras e utilidades."}
 </script>
@@ -53,52 +56,74 @@
 ]}
 </script>
 <style>
-:root{ --green:#0e7a3d; --green-dark:#0a5c2e; --gold:#f5b301; --ink:#1a2332; --muted:#5b6b7f; --line:#e2e8e4; --bg:#f6f8f7; }
+:root{ --bg:#0b1220; --bg2:#0e1628; --card:#131e33; --card-hover:#182742; --line:#22314f; --ink:#e8eef7; --muted:#93a4bd; --green:#22b573; --green-dark:#0e7a3d; --gold:#f5b301; }
 *{ margin:0; padding:0; box-sizing:border-box; }
-body{ font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:var(--bg); line-height:1.6; }
-header{ background:var(--green-dark); color:#fff; padding:14px 20px; }
-header .wrap{ max-width:980px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
-.logo{ font-size:22px; font-weight:800; color:#fff; text-decoration:none; }
-.logo span{ color:var(--gold); }
-nav a{ color:#dff2e4; text-decoration:none; font-size:14px; margin-left:16px; }
-nav a:hover{ text-decoration:underline; }
-main{ max-width:980px; margin:0 auto; padding:28px 20px 40px; }
-.hero{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:30px 26px; text-align:center; box-shadow:0 2px 10px rgba(16,60,36,.05); }
-.hero h1{ font-size:30px; line-height:1.25; margin-bottom:10px; }
+body{ font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:radial-gradient(1100px 500px at 70% -80px,#14351f 0%,var(--bg) 55%); line-height:1.6; min-height:100vh; }
+header{ padding:16px 20px; border-bottom:1px solid rgba(34,49,79,.6); position:sticky; top:0; background:rgba(11,18,32,.92); backdrop-filter:blur(8px); z-index:10; }
+header .wrap{ max-width:1080px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+.logo{ font-size:23px; font-weight:800; color:#fff; text-decoration:none; display:flex; align-items:center; gap:10px; }
+.logo .mark{ background:var(--green); color:#06280f; width:36px; height:36px; border-radius:10px; display:inline-flex; align-items:center; justify-content:center; font-size:20px; font-weight:900; box-shadow:0 0 18px rgba(34,181,115,.45); }
+.logo span{ color:var(--green); }
+nav a{ color:#c6d3e6; text-decoration:none; font-size:14.5px; margin-left:18px; font-weight:600; }
+nav a:hover{ color:#fff; }
+main{ max-width:1080px; margin:0 auto; padding:34px 20px 44px; }
+.hero{ text-align:center; padding:16px 0 6px; }
+.hero h1{ font-size:34px; line-height:1.25; margin-bottom:12px; }
 .hero h1 em{ color:var(--green); font-style:normal; }
-.hero p{ color:var(--muted); max-width:680px; margin:0 auto; }
-.badge{ display:inline-block; background:#e7f4ec; color:var(--green-dark); font-size:12.5px; font-weight:700; padding:4px 12px; border-radius:999px; margin-bottom:14px; }
-.trust{ display:flex; justify-content:center; gap:18px; flex-wrap:wrap; margin-top:16px; font-size:13.5px; color:var(--green-dark); font-weight:600; }
-h2.cat{ font-size:20px; margin:32px 0 6px; }
-p.cat-desc{ color:var(--muted); font-size:14.5px; margin-bottom:14px; }
-.cards{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; }
-.card{ background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px; }
-.card h3{ font-size:16.5px; margin-bottom:6px; }
-.card h3 a{ color:var(--ink); text-decoration:none; }
-.card h3 a:hover{ color:var(--green); }
-.card p{ font-size:14px; color:var(--muted); margin-bottom:10px; }
-.card a.btn{ display:inline-block; background:var(--green); color:#fff; text-decoration:none; font-weight:700; font-size:14px; padding:9px 16px; border-radius:9px; }
-.card a.btn:hover{ background:var(--green-dark); }
-section.texto{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:26px; margin-top:34px; box-shadow:0 2px 10px rgba(16,60,36,.05); }
+.hero p{ color:var(--muted); max-width:680px; margin:0 auto 22px; font-size:16.5px; }
+.search{ max-width:560px; margin:0 auto; position:relative; }
+.search input{ width:100%; padding:15px 20px 15px 48px; font-size:17px; border-radius:999px; border:1.5px solid var(--line); background:var(--bg2); color:var(--ink); outline:none; }
+.search input:focus{ border-color:var(--green); box-shadow:0 0 0 3px rgba(34,181,115,.25); }
+.search .ico{ position:absolute; left:18px; top:50%; transform:translateY(-50%); font-size:18px; opacity:.7; }
+.search .count{ margin-top:10px; font-size:13px; color:var(--muted); min-height:18px; }
+.sugestoes{ list-style:none; position:absolute; left:0; right:0; top:calc(100% - 24px); background:#fff; border-radius:14px; box-shadow:0 14px 40px rgba(0,0,0,.45); overflow:hidden; display:none; text-align:left; z-index:20; }
+.sugestoes.open{ display:block; }
+.sugestoes li a{ display:flex; align-items:center; gap:12px; padding:12px 16px; text-decoration:none; color:#1a2332; border-bottom:1px solid #eef2f5; }
+.sugestoes li:last-child a{ border-bottom:none; }
+.sugestoes li a:hover, .sugestoes li a.ativo{ background:#e8f4ec; }
+.sugestoes .s-ico{ font-size:22px; width:38px; height:38px; background:#eef4fb; border-radius:10px; display:flex; align-items:center; justify-content:center; flex:none; }
+.sugestoes .s-nome{ font-weight:700; font-size:15px; display:block; }
+.sugestoes .s-desc{ font-size:12.5px; color:#5b6b7f; display:block; line-height:1.4; }
+.chips{ display:flex; justify-content:center; flex-wrap:wrap; gap:8px; margin-top:14px; }
+.chips a{ font-size:13.5px; font-weight:600; color:#dff2e4; text-decoration:none; border:1px solid var(--line); background:var(--bg2); padding:7px 14px; border-radius:999px; }
+.chips a:hover{ border-color:var(--green); color:#fff; }
+.pop-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:12px; }
+.pop-card{ background:linear-gradient(160deg,#17351f,#131e33); border:1px solid #2c5238; border-radius:14px; padding:16px 14px; text-decoration:none; color:var(--ink); display:block; text-align:center; }
+.pop-card:hover{ border-color:var(--green); }
+.pop-card .icon{ font-size:28px; display:block; margin-bottom:6px; }
+.pop-card b{ font-size:14.5px; display:block; line-height:1.35; }
+.pop-card small{ color:var(--muted); font-size:12px; }
+.trust{ display:flex; justify-content:center; gap:18px; flex-wrap:wrap; margin-top:8px; font-size:13.5px; color:#b9f4d4; font-weight:600; }
+h2.cat{ font-size:21px; margin:38px 0 4px; display:flex; align-items:center; gap:10px; }
+h2.cat .n{ font-size:13px; color:var(--muted); font-weight:600; background:var(--bg2); border:1px solid var(--line); padding:2px 10px; border-radius:999px; }
+p.cat-desc{ color:var(--muted); font-size:14.5px; margin-bottom:16px; }
+.cards{ display:grid; grid-template-columns:repeat(auto-fill,minmax(232px,1fr)); gap:14px; }
+.card{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 18px; text-decoration:none; color:var(--ink); display:block; transition:background .15s, transform .15s, border-color .15s; }
+.card:hover{ background:var(--card-hover); border-color:var(--green); transform:translateY(-2px); }
+.card .icon{ width:52px; height:52px; border-radius:14px; background:#1b2a47; display:flex; align-items:center; justify-content:center; font-size:26px; margin-bottom:12px; }
+.card h3{ font-size:16px; margin-bottom:5px; line-height:1.35; }
+.card p{ font-size:13.5px; color:var(--muted); line-height:1.5; }
+.hidden{ display:none !important; }
+section.texto{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px; margin-top:42px; }
 section.texto h2{ font-size:20px; margin-bottom:10px; }
-section.texto p{ font-size:15px; color:#33404f; margin-bottom:10px; }
-.faq details{ background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:10px; }
+section.texto p{ font-size:15px; color:#c2cfe0; margin-bottom:10px; }
+.faq details{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin-bottom:10px; }
 .faq summary{ cursor:pointer; font-weight:600; font-size:15.5px; }
-.faq p{ margin-top:8px; color:#33404f; font-size:15px; }
-footer{ border-top:1px solid var(--line); padding:22px 20px 30px; text-align:center; font-size:13.5px; color:var(--muted); }
-footer a{ color:var(--green-dark); text-decoration:none; margin:0 8px; }
+.faq p{ margin-top:8px; color:#c2cfe0; font-size:15px; }
+footer{ border-top:1px solid rgba(34,49,79,.6); padding:22px 20px 30px; text-align:center; font-size:13.5px; color:var(--muted); }
+footer a{ color:#9fd8ba; text-decoration:none; margin:0 8px; }
 footer a:hover{ text-decoration:underline; }
-@media (max-width:640px){ .hero h1{ font-size:24px; } }
+@media (max-width:640px){ .hero h1{ font-size:26px; } nav a{ margin-left:12px; font-size:13.5px; } }
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
-    <a class="logo" href="/">Tudo<span>Calcula</span></a>
+    <a class="logo" href="/"><span class="mark">✓</span>Tudo<span>Calcula</span></a>
     <nav>
-      <a href="/calculadora-salario-liquido/">Salário Líquido</a>
-      <a href="/calculadora-decimo-terceiro-salario/">13º Salário</a>
-      <a href="/calculadora-rescisao/">Rescisão</a>
+      <a href="#trabalhistas">Trabalhistas</a>
+      <a href="#financeiras">Financeiras</a>
+      <a href="#utilidades">Utilidades</a>
       <a href="/sobre/">Sobre</a>
       <a href="/contato/">Contato</a>
     </nav>
@@ -107,50 +132,76 @@ footer a:hover{ text-decoration:underline; }
 <main>
 
 <section class="hero">
-  <span class="badge">20 calculadoras · Tabelas oficiais de 2026</span>
-  <h1>Calculadoras online <em>gratuitas</em> e atualizadas para 2026</h1>
-  <p>Salário líquido, 13º, rescisão, férias, INSS, FGTS, seguro-desemprego, financiamentos e tudo o que o brasileiro precisa conferir — direto no navegador, sem cadastro e sem enviar seus dados para nenhum servidor.</p>
+  <h1>A calculadora <em>de tudo</em> do trabalhador brasileiro</h1>
+  <p>Calculadoras trabalhistas, financeiras e do dia a dia num só lugar — com as tabelas oficiais de 2026, rápidas, gratuitas e sem complicação.</p>
+  <div class="search">
+    <span class="ico">🔍</span>
+    <input type="search" id="busca" placeholder="O que você quer calcular?" aria-label="Buscar calculadora" autocomplete="off">
+    <ul class="sugestoes" id="sugestoes"></ul>
+    <div class="count" id="busca-count"></div>
+  </div>
+  <div class="chips">
+    <a href="/calculadora-salario-liquido/">Salário Líquido</a>
+    <a href="/calculadora-rescisao/">Fui demitido — Rescisão</a>
+    <a href="/calculadora-decimo-terceiro-salario/">13º Salário</a>
+    <a href="/calculadora-ferias/">Férias</a>
+    <a href="/calculadora-seguro-desemprego/">Seguro-Desemprego</a>
+    <a href="/calculadora-pis-pasep/">PIS/PASEP</a>
+  </div>
   <div class="trust">
     <span>✓ 100% grátis</span>
     <span>✓ Sem cadastro</span>
     <span>✓ Cálculo no seu navegador</span>
-    <span>✓ Fontes oficiais citadas</span>
+    <span>✓ Tabelas atualizadas</span>
   </div>
 </section>
 
-<h2 class="cat">Calculadoras trabalhistas — 13 ferramentas</h2>
+<div id="populares">
+<h2 class="cat">🔥 Mais procuradas</h2>
+<p class="cat-desc">As calculadoras que os brasileiros mais usam — um toque e você já está calculando.</p>
+<div class="pop-grid">
+  <a class="pop-card" href="/calculadora-salario-liquido/"><span class="icon">💰</span><b>Salário Líquido</b><small>quanto cai na conta</small></a>
+  <a class="pop-card" href="/calculadora-rescisao/"><span class="icon">📄</span><b>Rescisão</b><small>fui demitido, e agora?</small></a>
+  <a class="pop-card" href="/calculadora-decimo-terceiro-salario/"><span class="icon">🎁</span><b>13º Salário</b><small>1ª e 2ª parcela</small></a>
+  <a class="pop-card" href="/calculadora-ferias/"><span class="icon">🌴</span><b>Férias</b><small>+ 1/3 e abono</small></a>
+  <a class="pop-card" href="/calculadora-seguro-desemprego/"><span class="icon">🤝</span><b>Seguro-Desemprego</b><small>valor e parcelas</small></a>
+  <a class="pop-card" href="/calculadora-inss/"><span class="icon">🛡️</span><b>INSS</b><small>desconto do mês</small></a>
+</div>
+</div>
+
+<h2 class="cat" id="trabalhistas">💼 Trabalhistas <span class="n">13 calculadoras</span></h2>
 <p class="cat-desc">Tudo sobre o salário CLT com o INSS 2026 (Portaria MPS/MF nº 13/2026), o salário mínimo de R$ 1.621 e a nova isenção do IR da Lei 15.270/2025.</p>
 <div class="cards">
-  <div class="card"><h3><a href="/calculadora-salario-liquido/">Calculadora de Salário Líquido 2026</a></h3><p>Quanto cai na conta: INSS progressivo, IRRF com a isenção da Lei 15.270/2025 e FGTS mostrado à parte.</p><a class="btn" href="/calculadora-salario-liquido/">Calcular agora</a></div>
-  <div class="card"><h3><a href="/calculadora-decimo-terceiro-salario/">Calculadora de 13º Salário 2026</a></h3><p>1ª e 2ª parcela, avos com a regra dos 15 dias, INSS em separado e IRRF exclusivo — com os prazos oficiais de 2026.</p><a class="btn" href="/calculadora-decimo-terceiro-salario/">Calcular agora</a></div>
-  <div class="card"><h3><a href="/calculadora-rescisao/">Calculadora de Rescisão 2026</a></h3><p>Saldo de salário, aviso prévio, 13º e férias proporcionais, multa e saque do FGTS — nos 4 tipos de desligamento.</p><a class="btn" href="/calculadora-rescisao/">Calcular agora</a></div>
-  <div class="card"><h3><a href="/calculadora-ferias/">Calculadora de Férias</a></h3><p>Férias + 1/3 constitucional, abono pecuniário (venda de dias, isento) e os descontos de INSS e IRRF.</p><a class="btn" href="/calculadora-ferias/">Calcular agora</a></div>
-  <div class="card"><h3><a href="/calculadora-horas-extras/">Calculadora de Horas Extras</a></h3><p>Horas a 50% e 100% com o reflexo no DSR — o valor que entra no seu bruto do mês.</p><a class="btn" href="/calculadora-horas-extras/">Calcular agora</a></div>
-  <div class="card"><h3><a href="/calculadora-inss/">Calculadora de INSS 2026</a></h3><p>Contribuição faixa a faixa, alíquota efetiva real e quanto falta para o teto de R$ 8.475,55.</p><a class="btn" href="/calculadora-inss/">Calcular agora</a></div>
-  <div class="card"><h3><a href="/calculadora-fgts/">Calculadora de FGTS</a></h3><p>Depósito mensal de 8%, saldo estimado no período e multas de 40% e 20% na demissão.</p><a class="btn" href="/calculadora-fgts/">Calcular agora</a></div>
-  <div class="card"><h3><a href="/calculadora-seguro-desemprego/">Calculadora de Seguro-Desemprego 2026</a></h3><p>Valor da parcela pela tabela vigente e número de parcelas pelo seu tempo de trabalho.</p><a class="btn" href="/calculadora-seguro-desemprego/">Calcular agora</a></div>
-  <div class="card"><h3><a href="/calculadora-adicional-noturno/">Calculadora de Adicional Noturno</a></h3><p>Hora ficta (52min30s), 20% urbano, 25% rural na lavoura e o reflexo no DSR.</p><a class="btn" href="/calculadora-adicional-noturno/">Calcular agora</a></div>
-  <div class="card"><h3><a href="/calculadora-irrf/">Calculadora de IRRF 2026</a></h3><p>O imposto de renda do mês com dependentes, pensão e a redução da Lei 15.270/2025.</p><a class="btn" href="/calculadora-irrf/">Calcular agora</a></div>
-  <div class="card"><h3><a href="/calculadora-aviso-previo/">Calculadora de Aviso Prévio</a></h3><p>30 dias + 3 por ano trabalhado (até 90), valor em dinheiro e data projetada do fim do contrato.</p><a class="btn" href="/calculadora-aviso-previo/">Calcular agora</a></div>
-  <div class="card"><h3><a href="/calculadora-pis-pasep/">Calculadora de PIS/PASEP 2026</a></h3><p>Abono salarial ano-base 2024 pela tabela oficial do MTE — de R$ 136 a R$ 1.621.</p><a class="btn" href="/calculadora-pis-pasep/">Calcular agora</a></div>
-  <div class="card"><h3><a href="/calculadora-saque-aniversario/">Calculadora de Saque-Aniversário FGTS</a></h3><p>Quanto você pode sacar por ano: alíquota da faixa do saldo + parcela adicional.</p><a class="btn" href="/calculadora-saque-aniversario/">Calcular agora</a></div>
+  <a class="card" href="/calculadora-salario-liquido/" data-k="salario liquido clt contracheque holerite inss irrf fgts desconto quanto vou receber quanto ganho pagamento do mes"><span class="icon">💰</span><h3>Salário Líquido 2026</h3><p>Quanto cai na conta: INSS progressivo, IRRF com a nova isenção e FGTS à parte.</p></a>
+  <a class="card" href="/calculadora-decimo-terceiro-salario/" data-k="decimo terceiro 13 salario parcela avos natal"><span class="icon">🎁</span><h3>13º Salário 2026</h3><p>1ª e 2ª parcela, avos, INSS em separado e IRRF exclusivo, com os prazos de 2026.</p></a>
+  <a class="card" href="/calculadora-rescisao/" data-k="rescisao demissao demitido dispensa acordo justa causa trct verbas fui demitido quanto recebo sair do emprego perdi emprego demissao sem justa causa"><span class="icon">📄</span><h3>Rescisão 2026</h3><p>Tudo o que você recebe ao sair do emprego, nos 4 tipos de desligamento.</p></a>
+  <a class="card" href="/calculadora-ferias/" data-k="ferias terco constitucional abono pecuniario venda dias descanso vender ferias quanto recebo de ferias"><span class="icon">🌴</span><h3>Férias</h3><p>Férias + 1/3, abono pecuniário isento e os descontos certos de INSS e IRRF.</p></a>
+  <a class="card" href="/calculadora-horas-extras/" data-k="horas extras 50 100 dsr descanso semanal banco de horas"><span class="icon">⏰</span><h3>Horas Extras</h3><p>Horas a 50% e 100% com o reflexo no DSR, direto para o bruto do mês.</p></a>
+  <a class="card" href="/calculadora-inss/" data-k="inss contribuicao previdencia faixa aliquota teto aposentadoria quanto desconta inss desconto folha"><span class="icon">🛡️</span><h3>INSS 2026</h3><p>Contribuição faixa a faixa, alíquota efetiva real e o teto de R$ 8.475,55.</p></a>
+  <a class="card" href="/calculadora-fgts/" data-k="fgts fundo garantia deposito 8 multa 40 saldo"><span class="icon">🏦</span><h3>FGTS</h3><p>Depósito mensal de 8%, saldo estimado e multas de 40% e 20%.</p></a>
+  <a class="card" href="/calculadora-seguro-desemprego/" data-k="seguro desemprego parcela desempregado demitido beneficio fui demitido perdi o emprego auxilio desemprego"><span class="icon">🤝</span><h3>Seguro-Desemprego 2026</h3><p>Valor da parcela pela tabela vigente e quantas parcelas você recebe.</p></a>
+  <a class="card" href="/calculadora-adicional-noturno/" data-k="adicional noturno noite hora ficta madrugada rural urbano"><span class="icon">🌙</span><h3>Adicional Noturno</h3><p>Hora ficta, 20% urbano, 25% rural na lavoura e reflexo no DSR.</p></a>
+  <a class="card" href="/calculadora-irrf/" data-k="irrf imposto renda leao dependente pensao desconto folha"><span class="icon">🦁</span><h3>IRRF 2026</h3><p>O imposto do mês com dependentes, pensão e a redução da Lei 15.270/2025.</p></a>
+  <a class="card" href="/calculadora-aviso-previo/" data-k="aviso previo proporcional 30 dias indenizado trabalhado projecao"><span class="icon">📅</span><h3>Aviso Prévio</h3><p>30 dias + 3 por ano (até 90), valor em dinheiro e data projetada.</p></a>
+  <a class="card" href="/calculadora-pis-pasep/" data-k="pis pasep abono salarial caixa banco brasil ano base"><span class="icon">💳</span><h3>PIS/PASEP 2026</h3><p>Abono salarial ano-base 2024 pela tabela oficial do MTE: até R$ 1.621.</p></a>
+  <a class="card" href="/calculadora-saque-aniversario/" data-k="saque aniversario fgts aliquota parcela adicional saldo aniversario"><span class="icon">🎂</span><h3>Saque-Aniversário FGTS</h3><p>Quanto dá para sacar por ano, pela faixa do seu saldo.</p></a>
 </div>
 
-<h2 class="cat">Calculadoras financeiras — 4 ferramentas</h2>
+<h2 class="cat" id="financeiras">💹 Financeiras <span class="n">4 calculadoras</span></h2>
 <p class="cat-desc">Financiamentos e investimentos com as contas abertas: parcela, total pago e juros — sem letra miúda.</p>
 <div class="cards">
-  <div class="card"><h3><a href="/calculadora-financiamento-imobiliario/">Calculadora de Financiamento Imobiliário</a></h3><p>SAC e Price lado a lado: parcela, total e juros dos dois sistemas para o mesmo imóvel.</p><a class="btn" href="/calculadora-financiamento-imobiliario/">Calcular agora</a></div>
-  <div class="card"><h3><a href="/calculadora-juros-compostos/">Calculadora de Juros Compostos</a></h3><p>Investimento inicial + aportes mensais: quanto vira e quanto disso é juro.</p><a class="btn" href="/calculadora-juros-compostos/">Calcular agora</a></div>
-  <div class="card"><h3><a href="/calculadora-financiamento-veiculo/">Calculadora de Financiamento de Veículo</a></h3><p>Parcela pela tabela Price, total financiado e o custo real do carro com juros.</p><a class="btn" href="/calculadora-financiamento-veiculo/">Calcular agora</a></div>
-  <div class="card"><h3><a href="/calculadora-cdb/">Calculadora de CDB e CDI</a></h3><p>Rendimento líquido do CDB pós-fixado, já sem o IR regressivo e o IOF.</p><a class="btn" href="/calculadora-cdb/">Calcular agora</a></div>
+  <a class="card" href="/calculadora-financiamento-imobiliario/" data-k="financiamento imobiliario casa apartamento sac price imovel entrada comprar casa financiar imovel minha casa"><span class="icon">🏠</span><h3>Financiamento Imobiliário</h3><p>SAC e Price lado a lado para o mesmo imóvel: parcela, total e juros.</p></a>
+  <a class="card" href="/calculadora-juros-compostos/" data-k="juros compostos investimento aporte rendimento poupanca aplicacao"><span class="icon">📈</span><h3>Juros Compostos</h3><p>Investimento inicial + aportes mensais: quanto vira e quanto é juro.</p></a>
+  <a class="card" href="/calculadora-financiamento-veiculo/" data-k="financiamento veiculo carro moto parcela price automovel"><span class="icon">🚗</span><h3>Financiamento de Veículo</h3><p>Parcela pela tabela Price e o custo real do carro com juros.</p></a>
+  <a class="card" href="/calculadora-cdb/" data-k="cdb cdi investimento renda fixa iof imposto rendimento banco"><span class="icon">📊</span><h3>CDB e CDI</h3><p>Rendimento líquido do CDB, já sem o IR regressivo e o IOF.</p></a>
 </div>
 
-<h2 class="cat">Datas e utilidades — 3 ferramentas</h2>
+<h2 class="cat" id="utilidades">🧮 Datas e Utilidades <span class="n">3 calculadoras</span></h2>
 <p class="cat-desc">As contas rápidas do dia a dia: prazos, idade e porcentagem.</p>
 <div class="cards">
-  <div class="card"><h3><a href="/calculadora-dias-uteis/">Calculadora de Dias Úteis</a></h3><p>Entre duas datas, descontando fins de semana e feriados nacionais de 2025 a 2027.</p><a class="btn" href="/calculadora-dias-uteis/">Calcular agora</a></div>
-  <div class="card"><h3><a href="/calculadora-idade/">Calculadora de Idade</a></h3><p>Idade exata em anos, meses e dias, total de dias vividos e contagem para o aniversário.</p><a class="btn" href="/calculadora-idade/">Calcular agora</a></div>
-  <div class="card"><h3><a href="/calculadora-porcentagem/">Calculadora de Porcentagem e Regra de Três</a></h3><p>X% de Y, variação percentual, aumento, desconto e regra de três simples.</p><a class="btn" href="/calculadora-porcentagem/">Calcular agora</a></div>
+  <a class="card" href="/calculadora-dias-uteis/" data-k="dias uteis data feriado prazo contagem semana"><span class="icon">🗓️</span><h3>Dias Úteis</h3><p>Entre duas datas, sem fins de semana e feriados nacionais.</p></a>
+  <a class="card" href="/calculadora-idade/" data-k="idade anos meses dias nascimento aniversario bebe"><span class="icon">🎈</span><h3>Idade</h3><p>Idade exata, dias vividos e contagem para o próximo aniversário.</p></a>
+  <a class="card" href="/calculadora-porcentagem/" data-k="porcentagem regra de tres desconto aumento variacao percentual"><span class="icon">➗</span><h3>Porcentagem e Regra de Três</h3><p>X% de Y, variação, aumento, desconto e regra de três simples.</p></a>
 </div>
 
 <section class="texto">
@@ -178,5 +229,80 @@ footer a:hover{ text-decoration:underline; }
   </p>
   <p style="margin-top:8px">TudoCalcula — 20 calculadoras gratuitas com as tabelas oficiais de 2026. Resultados são simulações; confira sempre as fontes oficiais.</p>
 </footer>
+
+<script>
+(function(){
+  var input = document.getElementById("busca");
+  var count = document.getElementById("busca-count");
+  var lista = document.getElementById("sugestoes");
+  var populares = document.getElementById("populares");
+  var cards = Array.prototype.slice.call(document.querySelectorAll(".card"));
+  var sections = Array.prototype.slice.call(document.querySelectorAll("h2.cat"));
+  var indice = cards.map(function(c){
+    return { nome: c.querySelector("h3").textContent,
+             desc: c.querySelector("p").textContent,
+             ico: c.querySelector(".icon").textContent,
+             href: c.getAttribute("href"),
+             busca: norm(c.querySelector("h3").textContent + " " + (c.getAttribute("data-k") || "")) };
+  });
+  var ativo = -1, atuais = [];
+  function norm(s){ return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
+  function fechar(){ lista.classList.remove("open"); lista.innerHTML = ""; ativo = -1; atuais = []; }
+  function mostrarSugestoes(q){
+    atuais = indice.filter(function(it){ return it.busca.indexOf(q) !== -1; }).slice(0, 6);
+    if (!q || atuais.length === 0){ fechar(); return; }
+    lista.innerHTML = atuais.map(function(it, i){
+      return '<li><a href="' + it.href + '" data-i="' + i + '"><span class="s-ico">' + it.ico + '</span><span><span class="s-nome">' + it.nome + '</span><span class="s-desc">' + it.desc + '</span></span></a></li>';
+    }).join("");
+    lista.classList.add("open");
+    ativo = -1;
+  }
+  function aplicar(){
+    var q = norm(input.value).trim();
+    var visiveis = 0;
+    cards.forEach(function(c){
+      var texto = norm(c.querySelector("h3").textContent + " " + (c.getAttribute("data-k") || ""));
+      var ok = !q || texto.indexOf(q) !== -1;
+      c.classList.toggle("hidden", !ok);
+      if (ok) visiveis++;
+    });
+    sections.forEach(function(h){
+      if (!h.id) return;
+      var desc = h.nextElementSibling;
+      var g = desc && desc.nextElementSibling;
+      if (!g || !g.classList.contains("cards")) return;
+      var algum = Array.prototype.some.call(g.children, function(ch){ return !ch.classList.contains("hidden"); });
+      h.classList.toggle("hidden", !algum);
+      desc.classList.toggle("hidden", !algum);
+      g.classList.toggle("hidden", !algum);
+    });
+    if (populares) populares.classList.toggle("hidden", !!q);
+    count.textContent = q ? (visiveis === 0 ? "Nenhuma calculadora encontrada — tente outra palavra." : visiveis + (visiveis === 1 ? " calculadora encontrada" : " calculadoras encontradas")) : "";
+    mostrarSugestoes(q);
+  }
+  function destacar(){
+    Array.prototype.forEach.call(lista.querySelectorAll("a"), function(a, i){
+      a.classList.toggle("ativo", i === ativo);
+    });
+  }
+  input.addEventListener("input", aplicar);
+  input.addEventListener("keydown", function(e){
+    if (e.key === "Enter"){
+      if (atuais.length){ window.location.href = (ativo >= 0 ? atuais[ativo] : atuais[0]).href; }
+    } else if (e.key === "ArrowDown"){ e.preventDefault(); if (atuais.length){ ativo = Math.min(ativo + 1, atuais.length - 1); destacar(); } }
+    else if (e.key === "ArrowUp"){ e.preventDefault(); if (atuais.length){ ativo = Math.max(ativo - 1, 0); destacar(); } }
+    else if (e.key === "Escape"){ input.value = ""; aplicar(); }
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && document.activeElement !== input && !/INPUT|TEXTAREA/.test(document.activeElement.tagName)){
+      e.preventDefault(); input.focus();
+    }
+  });
+  document.addEventListener("click", function(e){
+    if (!e.target.closest(".search")) fechar();
+  });
+  input.addEventListener("focus", function(){ if (norm(input.value).trim()) mostrarSugestoes(norm(input.value).trim()); });
+})();
+</script>
 </body>
 </html>
