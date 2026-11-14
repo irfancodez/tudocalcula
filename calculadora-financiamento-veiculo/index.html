@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Financiamento de Veículo — Parcela e juros | TudoCalcula</title>
+<meta name="description" content="Simule o financiamento do carro ou moto: parcela mensal pela tabela Price, total pago e juros do contrato. Descubra quanto o veículo realmente custa financiado.">
+<style>
+  :root{ --green:#0e7a3d; --green-dark:#0a5c2e; --gold:#f5b301; --ink:#1a2332; --muted:#5b6b7f; --bg:#f4f7f5; --card:#ffffff; --line:#e2e8e4; --red:#c0392b; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 16px 48px;}
+  header{background:var(--green-dark); color:#fff; padding:14px 0;}
+  header .wrap{padding-bottom:0;}
+  .brand{font-size:22px; font-weight:800; letter-spacing:-.3px;}
+  .brand span{color:var(--gold);}
+  .brand small{display:block; font-size:12px; font-weight:400; opacity:.85; letter-spacing:0;}
+  h1{font-size:28px; line-height:1.25; margin:26px 0 10px;}
+  .intro{color:var(--muted); font-size:16px; margin-bottom:20px;}
+  .intro strong{color:var(--ink);}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:0 2px 10px rgba(16,60,36,.05);}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media (max-width:720px){ .grid{grid-template-columns:1fr;} h1{font-size:24px;} }
+  label{display:block; font-size:13px; font-weight:600; margin:14px 0 6px;}
+  label:first-child{margin-top:0;}
+  input[type=number], input[type=text], select{width:100%; padding:12px 14px; font-size:17px; border:1.5px solid var(--line); border-radius:10px; outline:none; background:#fff;}
+  input:focus, select:focus{border-color:var(--green);}
+  .hint{font-size:12px; color:var(--muted); margin-top:4px;}
+  .result-title{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:10px;}
+  table.payslip{width:100%; border-collapse:collapse; font-size:15px;}
+  table.payslip td{padding:8px 2px; border-bottom:1px dashed var(--line);}
+  table.payslip td.v{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  table.payslip tr.total td{border-bottom:none; border-top:2px solid var(--ink); font-size:19px; font-weight:800; padding-top:12px;}
+  table.payslip tr.total td.v{color:var(--green-dark);}
+  .aliquota{display:block; font-size:11.5px; color:var(--muted); font-weight:400;}
+  h2{font-size:21px; margin:34px 0 12px;}
+  p.body{color:#33404f; margin-bottom:12px; font-size:15.5px;}
+  table.data{width:100%; border-collapse:collapse; font-size:14.5px; background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  table.data th{background:var(--green-dark); color:#fff; text-align:left; padding:10px 12px; font-size:13.5px;}
+  table.data td{padding:9px 12px; border-top:1px solid var(--line); font-variant-numeric:tabular-nums;}
+  table.data td:last-child, table.data th:last-child{text-align:right;}
+  .fonte{font-size:12.5px; color:var(--muted); margin-top:8px;}
+  ol.steps{margin:0 0 8px 20px; color:#33404f; font-size:15.5px;}
+  ol.steps li{margin-bottom:7px;}
+  .faq details{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:10px;}
+  .faq summary{cursor:pointer; font-weight:600; font-size:15.5px;}
+  .faq p{margin-top:8px; color:#33404f; font-size:15px;}
+  .stamp{display:inline-block; background:#e8f4ec; color:var(--green-dark); font-size:12.5px; font-weight:600; border-radius:20px; padding:5px 12px; margin-top:6px;}
+  .related{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:6px;}
+  .related a{display:block; background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; text-decoration:none; color:var(--ink); font-weight:600; font-size:14.5px;}
+  .related a:hover{border-color:var(--green);}
+  .related a small{display:block; font-weight:400; color:var(--muted); margin-top:3px; font-size:12.5px;}
+  footer{margin-top:40px; font-size:12.5px; color:var(--muted); border-top:1px solid var(--line); padding-top:16px;}
+</style>
+<link rel="canonical" href="https://tudocalcula.tudobem.workers.dev/calculadora-financiamento-veiculo/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TudoCalcula">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Calculadora de Financiamento de Veículo — Parcela e juros | TudoCalcula">
+<meta property="og:description" content="Simule o financiamento do carro ou moto: parcela mensal pela tabela Price, total pago e juros do contrato. Descubra quanto o veículo realmente custa financiado.">
+<meta property="og:url" content="https://tudocalcula.tudobem.workers.dev/calculadora-financiamento-veiculo/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Calculadora de Financiamento de Veículo — Parcela e juros | TudoCalcula">
+<meta name="twitter:description" content="Simule o financiamento do carro ou moto: parcela mensal pela tabela Price, total pago e juros do contrato. Descubra quanto o veículo realmente custa financiado.">
+<meta name="theme-color" content="#0a5c2e">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de Financiamento de Veículo — Parcela e juros", "url": "https://tudocalcula.tudobem.workers.dev/calculadora-financiamento-veiculo/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "pt-BR", "description": "Simule o financiamento do carro ou moto: parcela mensal pela tabela Price, total pago e juros do contrato. Descubra quanto o veículo realmente custa financiado.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}, "isPartOf": {"@type": "WebSite", "name": "TudoCalcula", "url": "https://tudocalcula.tudobem.workers.dev/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Qual prazo compensa mais: 36, 48 ou 60 meses?", "acceptedAnswer": {"@type": "Answer", "text": "Quanto menor o prazo, menos juros — mas a parcela sobe. Faça três simulações aqui e compare a coluna \"Total em juros\": a diferença entre 36 e 60 meses costuma passar de vários milhares de reais."}}, {"@type": "Question", "name": "Dar uma entrada maior vale a pena?", "acceptedAnswer": {"@type": "Answer", "text": "Vale: cada real a mais na entrada é um real a menos financiado — e sobre ele não incidem juros por anos. Teste aumentar a entrada em R$ 5.000 e veja a queda no total."}}, {"@type": "Question", "name": "Posso quitar antes e pagar menos juros?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Na liquidação antecipada, o banco deve abater os juros das parcelas vincendas (é seu direito pelo Código de Defesa do Consumidor). Amortizações parciais também reduzem o saldo e os juros futuros."}}, {"@type": "Question", "name": "A parcela real veio maior que a simulada. Por quê?", "acceptedAnswer": {"@type": "Answer", "text": "Seguro prestamista, TAC/taxa de cadastro, gravame e outros itens podem estar embutidos. Peça o CET (Custo Efetivo Total) detalhado e compare propostas pelo CET, não só pela taxa anunciada."}}, {"@type": "Question", "name": "Consórcio é melhor que financiamento?", "acceptedAnswer": {"@type": "Answer", "text": "São produtos diferentes: consórcio não tem juros, mas tem taxa de administração e você só recebe o bem quando contemplado (sorteio ou lance). Para quem precisa do carro já, o financiamento entrega na hora — ao custo dos juros."}}]}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">Tudo<span>Calcula</span>
+      <small>Calculadoras gratuitas e atualizadas para o seu dinheiro</small>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+
+  <h1>Calculadora de Financiamento de Veículo</h1>
+  <p class="intro">Antes de assinar, veja o custo real do carro financiado: <strong>parcela mensal</strong> pela tabela Price, <strong>total pago</strong> e <strong>quanto vai embora em juros</strong>. Ajuste a entrada e o prazo e compare — às vezes, 12 meses a menos cortam os juros quase pela metade.</p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label for="valor">Valor do veículo (R$)</label>
+        <input type="number" id="valor" value="60000" min="0" step="500" inputmode="decimal">
+        <label for="entrada">Entrada (R$)</label>
+        <input type="number" id="entrada" value="10000" min="0" step="500" inputmode="decimal">
+        <label for="taxa">Taxa de juros (% ao mês)</label>
+        <input type="number" id="taxa" value="1.49" min="0" step="0.01" inputmode="decimal">
+        <p class="hint">Use a taxa da proposta do banco/loja. Em contratos de veículo, ela aparece no CET e no quadro de financiamento.</p>
+        <label for="meses">Prazo (meses)</label>
+        <input type="number" id="meses" value="48" min="1" max="96" step="1" inputmode="numeric">
+      </div>
+      <div>
+        <div class="result-title">Seu financiamento — resultado</div>
+        <table class="payslip">
+          <tr><td>Valor financiado</td><td class="v" id="r-financiado">R$ 50.000,00</td></tr>
+          <tr><td>Número de parcelas</td><td class="v" id="r-n">48</td></tr>
+          <tr><td>Total em juros</td><td class="v" id="r-juros">—</td></tr>
+          <tr><td>Total pago no financiamento</td><td class="v" id="r-totalfin">—</td></tr>
+          <tr class="total"><td>Parcela mensal</td><td class="v" id="r-parcela">—</td></tr>
+          <tr><td>Custo total do veículo<span class="aliquota">entrada + total pago</span></td><td class="v" id="r-custototal">—</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <span class="stamp">✓ Fórmula conferida em novembro de 2026 — tabela Price, sem TAC, seguros ou taxas da loja</span>
+
+  <h2>Como o cálculo é feito</h2>
+  <ol class="steps">
+    <li><strong>Financiado:</strong> valor do veículo − entrada.</li>
+    <li><strong>Parcela (Price):</strong> financiado × i ÷ (1 − (1 + i)<sup>−n</sup>), com i = taxa mensal e n = número de meses.</li>
+    <li><strong>Total e juros:</strong> total pago = parcela × n; juros = total pago − valor financiado.</li>
+    <li><strong>Custo real do veículo:</strong> entrada + total pago — é esse número que você deve comparar com o preço à vista.</li>
+  </ol>
+
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details><summary>Qual prazo compensa mais: 36, 48 ou 60 meses?</summary>
+      <p>Quanto menor o prazo, menos juros — mas a parcela sobe. Faça três simulações aqui e compare a coluna "Total em juros": a diferença entre 36 e 60 meses costuma passar de vários milhares de reais.</p></details>
+    <details><summary>Dar uma entrada maior vale a pena?</summary>
+      <p>Vale: cada real a mais na entrada é um real a menos financiado — e sobre ele não incidem juros por anos. Teste aumentar a entrada em R$ 5.000 e veja a queda no total.</p></details>
+    <details><summary>Posso quitar antes e pagar menos juros?</summary>
+      <p>Sim. Na liquidação antecipada, o banco deve abater os juros das parcelas vincendas (é seu direito pelo Código de Defesa do Consumidor). Amortizações parciais também reduzem o saldo e os juros futuros.</p></details>
+    <details><summary>A parcela real veio maior que a simulada. Por quê?</summary>
+      <p>Seguro prestamista, TAC/taxa de cadastro, gravame e outros itens podem estar embutidos. Peça o CET (Custo Efetivo Total) detalhado e compare propostas pelo CET, não só pela taxa anunciada.</p></details>
+    <details><summary>Consórcio é melhor que financiamento?</summary>
+      <p>São produtos diferentes: consórcio não tem juros, mas tem taxa de administração e você só recebe o bem quando contemplado (sorteio ou lance). Para quem precisa do carro já, o financiamento entrega na hora — ao custo dos juros.</p></details>
+  </div>
+
+  <h2>Outras calculadoras</h2>
+  <div class="related">
+    <a href="/calculadora-financiamento-imobiliario/">Financiamento Imobiliário<small>SAC e Price comparados</small></a>
+    <a href="/calculadora-juros-compostos/">Juros Compostos<small>Investimentos e aportes mensais</small></a>
+    <a href="/calculadora-cdb/">Calculadora de CDB e CDI<small>Rendimento líquido com IR e IOF</small></a>
+    <a href="/calculadora-porcentagem/">Calculadora de Porcentagem<small>Percentuais e regra de três</small></a>
+  </div>
+
+  <footer>
+    TudoCalcula — ferramenta gratuita de estimativa. A simulação não inclui taxas, seguros ou IOF do contrato. Compare propostas pelo CET.
+  </footer>
+
+</div>
+
+<script>
+// ENGINE START
+function round2(v){ return Math.round((v + 1e-9) * 100) / 100; }
+function calcularFinanciamentoVeiculo(valor, entrada, taxaMensalPct, meses){
+  valor = Math.max(0, +valor || 0);
+  entrada = Math.min(valor, Math.max(0, +entrada || 0));
+  taxaMensalPct = Math.max(0, +taxaMensalPct || 0);
+  meses = Math.max(1, parseInt(meses, 10) || 1);
+  var P = round2(valor - entrada);
+  var i = taxaMensalPct / 100;
+  var pmt = i > 0 ? P * i / (1 - Math.pow(1 + i, -meses)) : P / meses;
+  var total = round2(pmt * meses);
+  return { valor: round2(valor), entrada: round2(entrada), financiado: P, meses: meses,
+           parcela: round2(pmt), totalFinanciamento: total, juros: round2(total - P),
+           custoTotal: round2(entrada + total) };
+}
+// ENGINE END
+
+function fmt(v){ return v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }); }
+function atualizar(){
+  var r = calcularFinanciamentoVeiculo(
+    parseFloat(document.getElementById("valor").value) || 0,
+    parseFloat(document.getElementById("entrada").value) || 0,
+    parseFloat(document.getElementById("taxa").value) || 0,
+    document.getElementById("meses").value
+  );
+  document.getElementById("r-financiado").textContent = fmt(r.financiado);
+  document.getElementById("r-n").textContent = r.meses;
+  document.getElementById("r-parcela").textContent = fmt(r.parcela);
+  document.getElementById("r-totalfin").textContent = fmt(r.totalFinanciamento);
+  document.getElementById("r-juros").textContent = fmt(r.juros);
+  document.getElementById("r-custototal").textContent = fmt(r.custoTotal);
+}
+["valor", "entrada", "taxa", "meses"].forEach(function(id){
+  document.getElementById(id).addEventListener("input", atualizar);
+  document.getElementById(id).addEventListener("change", atualizar);
+});
+atualizar();
+</script>
+</body>
+</html>
