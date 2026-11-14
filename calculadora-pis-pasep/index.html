@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de PIS/PASEP 2026 — Abono salarial ano-base 2024 | TudoCalcula</title>
+<meta name="description" content="Calcule o abono salarial PIS/PASEP 2026 (ano-base 2024): 1/12 do salário mínimo por mês trabalhado, de R$ 136 a R$ 1.621. Veja o valor exato pela tabela oficial do MTE.">
+<style>
+  :root{ --green:#0e7a3d; --green-dark:#0a5c2e; --gold:#f5b301; --ink:#1a2332; --muted:#5b6b7f; --bg:#f4f7f5; --card:#ffffff; --line:#e2e8e4; --red:#c0392b; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 16px 48px;}
+  header{background:var(--green-dark); color:#fff; padding:14px 0;}
+  header .wrap{padding-bottom:0;}
+  .brand{font-size:22px; font-weight:800; letter-spacing:-.3px;}
+  .brand span{color:var(--gold);}
+  .brand small{display:block; font-size:12px; font-weight:400; opacity:.85; letter-spacing:0;}
+  h1{font-size:28px; line-height:1.25; margin:26px 0 10px;}
+  .intro{color:var(--muted); font-size:16px; margin-bottom:20px;}
+  .intro strong{color:var(--ink);}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:0 2px 10px rgba(16,60,36,.05);}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media (max-width:720px){ .grid{grid-template-columns:1fr;} h1{font-size:24px;} }
+  label{display:block; font-size:13px; font-weight:600; margin:14px 0 6px;}
+  label:first-child{margin-top:0;}
+  input[type=number], input[type=text], select{width:100%; padding:12px 14px; font-size:17px; border:1.5px solid var(--line); border-radius:10px; outline:none; background:#fff;}
+  input:focus, select:focus{border-color:var(--green);}
+  .check{display:flex; align-items:center; gap:9px; margin-top:16px; font-size:14px; font-weight:500;}
+  .check input{width:18px; height:18px; accent-color:var(--green);}
+  .hint{font-size:12px; color:var(--muted); margin-top:4px;}
+  .result-title{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:10px;}
+  table.payslip{width:100%; border-collapse:collapse; font-size:15px;}
+  table.payslip td{padding:8px 2px; border-bottom:1px dashed var(--line);}
+  table.payslip td.v{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  table.payslip tr.total td{border-bottom:none; border-top:2px solid var(--ink); font-size:19px; font-weight:800; padding-top:12px;}
+  table.payslip tr.total td.v{color:var(--green-dark);}
+  .aliquota{display:block; font-size:11.5px; color:var(--muted); font-weight:400;}
+  .alerta{background:#fff8e1; border:1px solid #ffe082; border-radius:10px; padding:12px 14px; font-size:14px; margin-top:14px; display:none;}
+  h2{font-size:21px; margin:34px 0 12px;}
+  p.body{color:#33404f; margin-bottom:12px; font-size:15.5px;}
+  table.data{width:100%; border-collapse:collapse; font-size:14.5px; background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  table.data th{background:var(--green-dark); color:#fff; text-align:left; padding:10px 12px; font-size:13.5px;}
+  table.data td{padding:9px 12px; border-top:1px solid var(--line); font-variant-numeric:tabular-nums;}
+  table.data td:last-child, table.data th:last-child{text-align:right;}
+  .fonte{font-size:12.5px; color:var(--muted); margin-top:8px;}
+  ol.steps{margin:0 0 8px 20px; color:#33404f; font-size:15.5px;}
+  ol.steps li{margin-bottom:7px;}
+  .faq details{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:10px;}
+  .faq summary{cursor:pointer; font-weight:600; font-size:15.5px;}
+  .faq p{margin-top:8px; color:#33404f; font-size:15px;}
+  .stamp{display:inline-block; background:#e8f4ec; color:var(--green-dark); font-size:12.5px; font-weight:600; border-radius:20px; padding:5px 12px; margin-top:6px;}
+  .related{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:6px;}
+  .related a{display:block; background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; text-decoration:none; color:var(--ink); font-weight:600; font-size:14.5px;}
+  .related a:hover{border-color:var(--green);}
+  .related a small{display:block; font-weight:400; color:var(--muted); margin-top:3px; font-size:12.5px;}
+  footer{margin-top:40px; font-size:12.5px; color:var(--muted); border-top:1px solid var(--line); padding-top:16px;}
+</style>
+<link rel="canonical" href="https://tudocalcula.tudobem.workers.dev/calculadora-pis-pasep/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TudoCalcula">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Calculadora de PIS/PASEP 2026 — Abono salarial ano-base 2024 | TudoCalcula">
+<meta property="og:description" content="Calcule o abono salarial PIS/PASEP 2026 (ano-base 2024): 1/12 do salário mínimo por mês trabalhado, de R$ 136 a R$ 1.621. Veja o valor exato pela tabela oficial do MTE.">
+<meta property="og:url" content="https://tudocalcula.tudobem.workers.dev/calculadora-pis-pasep/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Calculadora de PIS/PASEP 2026 — Abono salarial ano-base 2024 | TudoCalcula">
+<meta name="twitter:description" content="Calcule o abono salarial PIS/PASEP 2026 (ano-base 2024): 1/12 do salário mínimo por mês trabalhado, de R$ 136 a R$ 1.621. Veja o valor exato pela tabela oficial do MTE.">
+<meta name="theme-color" content="#0a5c2e">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de PIS/PASEP 2026 — Abono salarial ano-base 2024", "url": "https://tudocalcula.tudobem.workers.dev/calculadora-pis-pasep/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "pt-BR", "description": "Calcule o abono salarial PIS/PASEP 2026 (ano-base 2024): 1/12 do salário mínimo por mês trabalhado, de R$ 136 a R$ 1.621. Veja o valor exato pela tabela oficial do MTE.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}, "isPartOf": {"@type": "WebSite", "name": "TudoCalcula", "url": "https://tudocalcula.tudobem.workers.dev/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Trabalhei em 2025. Recebo o abono em 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Não por esse trabalho: o calendário de 2026 usa o ano-base 2024. Quem trabalhou em 2025 entra no calendário seguinte (ano-base 2025). É a confusão mais comum com o abono."}}, {"@type": "Question", "name": "MEI tem direito ao abono salarial?", "acceptedAnswer": {"@type": "Answer", "text": "Só pelo vínculo CLT, se tiver um. O MEI, por si só, não gera abono salarial — mas quem é MEI e também trabalha com carteira assinada pode receber pelo emprego formal, se cumprir os requisitos."}}, {"@type": "Question", "name": "Empregado doméstico recebe abono?", "acceptedAnswer": {"@type": "Answer", "text": "Não. O abono salarial não alcança o empregado doméstico, mesmo com carteira assinada."}}, {"@type": "Question", "name": "Como sei se o dinheiro já caiu?", "acceptedAnswer": {"@type": "Answer", "text": "Consulte no app Carteira de Trabalho Digital (com a conta Gov.br) ou no app Caixa Tem/Caixa. Quem tem conta na Caixa costuma receber automaticamente na data do seu lote."}}, {"@type": "Question", "name": "Não recebi e acho que tenho direito. O que fazer?", "acceptedAnswer": {"@type": "Answer", "text": "Confira primeiro se o empregador enviou seus dados ao eSocial no ano-base. Se estiver tudo certo, o recurso pode ser feito pelo app Carteira de Trabalho Digital ou pelo telefone 158."}}]}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">Tudo<span>Calcula</span>
+      <small>Calculadoras trabalhistas gratuitas, com as tabelas oficiais de 2026</small>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+
+  <h1>Calculadora de PIS/PASEP 2026 — Abono Salarial</h1>
+  <p class="intro">O abono salarial de 2026 é pago para quem trabalhou em <strong>2024 (ano-base)</strong> e vale <strong>1/12 do salário mínimo por mês trabalhado</strong>: de <strong>R$ 136,00</strong> (1 mês) a <strong>R$ 1.621,00</strong> (12 meses). Informe os meses trabalhados em 2024 e veja o valor exato da <strong>tabela oficial do MTE</strong>.</p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label for="meses">Meses trabalhados em 2024 (ano-base)</label>
+        <input type="number" id="meses" value="12" min="1" max="12" step="1" inputmode="numeric">
+        <p class="hint">Fração de mês com 15 dias ou mais conta como mês completo.</p>
+        <label class="check"><input type="checkbox" id="req-cadastro" checked> Estou cadastrado no PIS/PASEP há pelo menos 5 anos</label>
+        <label class="check"><input type="checkbox" id="req-salario" checked> Minha remuneração média em 2024 foi de até R$ 2.766,00/mês</label>
+        <label class="check"><input type="checkbox" id="req-dados" checked> Meu empregador informou meus dados no eSocial</label>
+        <div class="alerta" id="alerta"></div>
+      </div>
+      <div>
+        <div class="result-title">Seu abono — resultado</div>
+        <table class="payslip">
+          <tr><td>Valor por mês trabalhado<span class="aliquota">R$ 1.621,00 ÷ 12, com arredondamento oficial</span></td><td class="v" id="r-pormes">R$ 136,00</td></tr>
+          <tr><td>Meses no ano-base 2024</td><td class="v" id="r-meses">12</td></tr>
+          <tr class="total"><td>Abono salarial 2026</td><td class="v" id="r-valor">R$ 1.621,00</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <span class="stamp">✓ Valores conferidos em novembro de 2026 — MTE, Resolução Codefat/MTE nº 1.032/2025 (calendário 2026, ano-base 2024)</span>
+
+  <h2>Tabela oficial do abono salarial 2026</h2>
+  <table class="data">
+    <tr><th>Meses trabalhados em 2024</th><th>Valor do abono</th></tr>
+    <tr><td>1 mês</td><td>R$ 136,00</td></tr>
+    <tr><td>2 meses</td><td>R$ 271,00</td></tr>
+    <tr><td>3 meses</td><td>R$ 406,00</td></tr>
+    <tr><td>4 meses</td><td>R$ 541,00</td></tr>
+    <tr><td>5 meses</td><td>R$ 675,00</td></tr>
+    <tr><td>6 meses</td><td>R$ 811,00</td></tr>
+    <tr><td>7 meses</td><td>R$ 946,00</td></tr>
+    <tr><td>8 meses</td><td>R$ 1.081,00</td></tr>
+    <tr><td>9 meses</td><td>R$ 1.216,00</td></tr>
+    <tr><td>10 meses</td><td>R$ 1.351,00</td></tr>
+    <tr><td>11 meses</td><td>R$ 1.486,00</td></tr>
+    <tr><td>12 meses</td><td>R$ 1.621,00</td></tr>
+  </table>
+  <p class="fonte">Fonte: Ministério do Trabalho e Emprego — tabela do exercício 2026 sobre o salário mínimo de R$ 1.621,00.</p>
+
+  <h2>Quem tem direito ao abono de 2026</h2>
+  <ol class="steps">
+    <li>Estar cadastrado no PIS/PASEP há <strong>pelo menos 5 anos</strong>.</li>
+    <li>Ter trabalhado com carteira assinada (ou vínculo público) por <strong>30 dias ou mais em 2024</strong>.</li>
+    <li>Ter recebido remuneração média de até <strong>R$ 2.766,00 por mês</strong> em 2024.</li>
+    <li>Ter os dados informados corretamente pelo empregador no <strong>eSocial</strong>.</li>
+  </ol>
+  <p class="body">O pagamento segue o mês de nascimento, com lotes liberados entre fevereiro e agosto de 2026, e o saque pode ser feito até o fim de dezembro de 2026. Trabalhadores da iniciativa privada recebem pela Caixa (PIS); servidores públicos, pelo Banco do Brasil (PASEP). A consulta oficial é pelo app Carteira de Trabalho Digital ou pelo telefone 158.</p>
+
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details><summary>Trabalhei em 2025. Recebo o abono em 2026?</summary>
+      <p>Não por esse trabalho: o calendário de 2026 usa o ano-base 2024. Quem trabalhou em 2025 entra no calendário seguinte (ano-base 2025). É a confusão mais comum com o abono.</p></details>
+    <details><summary>MEI tem direito ao abono salarial?</summary>
+      <p>Só pelo vínculo CLT, se tiver um. O MEI, por si só, não gera abono salarial — mas quem é MEI e também trabalha com carteira assinada pode receber pelo emprego formal, se cumprir os requisitos.</p></details>
+    <details><summary>Empregado doméstico recebe abono?</summary>
+      <p>Não. O abono salarial não alcança o empregado doméstico, mesmo com carteira assinada.</p></details>
+    <details><summary>Como sei se o dinheiro já caiu?</summary>
+      <p>Consulte no app Carteira de Trabalho Digital (com a conta Gov.br) ou no app Caixa Tem/Caixa. Quem tem conta na Caixa costuma receber automaticamente na data do seu lote.</p></details>
+    <details><summary>Não recebi e acho que tenho direito. O que fazer?</summary>
+      <p>Confira primeiro se o empregador enviou seus dados ao eSocial no ano-base. Se estiver tudo certo, o recurso pode ser feito pelo app Carteira de Trabalho Digital ou pelo telefone 158.</p></details>
+  </div>
+
+  <h2>Outras calculadoras</h2>
+  <div class="related">
+    <a href="/calculadora-fgts/">Calculadora de FGTS<small>Depósito de 8% e saldo estimado</small></a>
+    <a href="/calculadora-seguro-desemprego/">Calculadora de Seguro-Desemprego<small>Parcelas e valores de 2026</small></a>
+    <a href="/calculadora-salario-liquido/">Calculadora de Salário Líquido<small>INSS, IRRF e FGTS do mês</small></a>
+    <a href="/calculadora-inss/">Calculadora de INSS<small>Somente a contribuição 2026</small></a>
+  </div>
+
+  <footer>
+    TudoCalcula — ferramenta gratuita de estimativa. A consulta oficial do abono é feita nos canais do governo (Carteira de Trabalho Digital, Gov.br, 158). Regras: Lei nº 7.998/1990 e Resolução Codefat/MTE nº 1.032/2025.
+  </footer>
+
+</div>
+
+<script>
+// ENGINE START
+// Tabela oficial MTE do abono salarial 2026 (ano-base 2024), salário mínimo R$ 1.621,00
+var ABONO_2026 = [136, 271, 406, 541, 675, 811, 946, 1081, 1216, 1351, 1486, 1621];
+function calcularAbonoPIS(meses){
+  meses = Math.min(12, Math.max(1, parseInt(meses, 10) || 1));
+  return { meses: meses, valor: ABONO_2026[meses - 1], porMes: ABONO_2026[0] };
+}
+// ENGINE END
+
+function fmt(v){ return v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }); }
+function atualizar(){
+  var r = calcularAbonoPIS(document.getElementById("meses").value);
+  document.getElementById("r-pormes").textContent = fmt(r.porMes);
+  document.getElementById("r-meses").textContent = r.meses;
+  document.getElementById("r-valor").textContent = fmt(r.valor);
+  var faltando = [];
+  if (!document.getElementById("req-cadastro").checked) faltando.push("o cadastro de 5 anos no PIS/PASEP");
+  if (!document.getElementById("req-salario").checked) faltando.push("a média salarial de até R$ 2.766,00 em 2024");
+  if (!document.getElementById("req-dados").checked) faltando.push("os dados corretos no eSocial");
+  var alerta = document.getElementById("alerta");
+  if (faltando.length){
+    alerta.style.display = "block";
+    alerta.textContent = "Atenção: sem " + faltando.join(", sem ") + ", o abono não é liberado, mesmo com os meses trabalhados. O valor acima é apenas a simulação pela tabela.";
+  } else {
+    alerta.style.display = "none";
+  }
+}
+["meses", "req-cadastro", "req-salario", "req-dados"].forEach(function(id){
+  document.getElementById(id).addEventListener("input", atualizar);
+  document.getElementById(id).addEventListener("change", atualizar);
+});
+atualizar();
+</script>
+</body>
+</html>
