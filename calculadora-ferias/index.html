@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Férias 2026 — Férias + 1/3, abono e descontos | TudoCalcula</title>
+<meta name="description" content="Calcule suas férias 2026: valor das férias + 1/3 constitucional, abono pecuniário (venda de 10 dias, isento), INSS e IRRF. Exemplo: salário de R$ 3.000 gera R$ 4.000 brutos e R$ 3.631,40 líquidos em 30 dias de férias.">
+<style>
+  :root{ --green:#0e7a3d; --green-dark:#0a5c2e; --gold:#f5b301; --ink:#1a2332; --muted:#5b6b7f; --bg:#f4f7f5; --card:#ffffff; --line:#e2e8e4; --red:#c0392b; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 16px 48px;}
+  header{background:var(--green-dark); color:#fff; padding:14px 0;}
+  header .wrap{padding-bottom:0;}
+  .brand{font-size:22px; font-weight:800; letter-spacing:-.3px;}
+  .brand span{color:var(--gold);}
+  .brand small{display:block; font-size:12px; font-weight:400; opacity:.85; letter-spacing:0;}
+  h1{font-size:28px; line-height:1.25; margin:26px 0 10px;}
+  .intro{color:var(--muted); font-size:16px; margin-bottom:20px;}
+  .intro strong{color:var(--ink);}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:0 2px 10px rgba(16,60,36,.05);}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media (max-width:720px){ .grid{grid-template-columns:1fr;} h1{font-size:24px;} }
+  label{display:block; font-size:13px; font-weight:600; margin:14px 0 6px;}
+  label:first-child{margin-top:0;}
+  input[type=number], input[type=text], input[type=date], select{width:100%; padding:12px 14px; font-size:17px; border:1.5px solid var(--line); border-radius:10px; outline:none; background:#fff;}
+  input:focus, select:focus{border-color:var(--green);}
+  .check{display:flex; align-items:center; gap:9px; margin-top:16px; font-size:14px; font-weight:500;}
+  .check input{width:18px; height:18px; accent-color:var(--green);}
+  .hint{font-size:12px; color:var(--muted); margin-top:4px;}
+  .result-title{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:10px;}
+  table.payslip{width:100%; border-collapse:collapse; font-size:15px;}
+  table.payslip td{padding:8px 2px; border-bottom:1px dashed var(--line);}
+  table.payslip td.v{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  table.payslip tr.neg td.v{color:var(--red);}
+  table.payslip tr.total td{border-bottom:none; border-top:2px solid var(--ink); font-size:19px; font-weight:800; padding-top:12px;}
+  table.payslip tr.total td.v{color:var(--green-dark);}
+  table.payslip tr.fgts td{color:var(--muted); font-size:13.5px; border-bottom:none;}
+  .aliquota{display:block; font-size:11.5px; color:var(--muted); font-weight:400;}
+  details.memoria{margin-top:14px; font-size:13.5px; color:var(--muted);}
+  details.memoria summary{cursor:pointer; font-weight:600; color:var(--green-dark);}
+  details.memoria p{margin-top:8px; white-space:pre-line;}
+  h2{font-size:21px; margin:34px 0 12px;}
+  p.body{color:#33404f; margin-bottom:12px; font-size:15.5px;}
+  table.data{width:100%; border-collapse:collapse; font-size:14.5px; background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  table.data th{background:var(--green-dark); color:#fff; text-align:left; padding:10px 12px; font-size:13.5px;}
+  table.data td{padding:9px 12px; border-top:1px solid var(--line); font-variant-numeric:tabular-nums;}
+  table.data td:last-child, table.data th:last-child{text-align:right;}
+  .fonte{font-size:12.5px; color:var(--muted); margin-top:8px;}
+  ol.steps{margin:0 0 8px 20px; color:#33404f; font-size:15.5px;}
+  ol.steps li{margin-bottom:7px;}
+  .faq details{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:10px;}
+  .faq summary{cursor:pointer; font-weight:600; font-size:15.5px;}
+  .faq p{margin-top:8px; color:#33404f; font-size:15px;}
+  .stamp{display:inline-block; background:#e8f4ec; color:var(--green-dark); font-size:12.5px; font-weight:600; border-radius:20px; padding:5px 12px; margin-top:6px;}
+  .related{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:6px;}
+  .related a{display:block; background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; text-decoration:none; color:var(--ink); font-weight:600; font-size:14.5px;}
+  .related a:hover{border-color:var(--green);}
+  .related a small{display:block; font-weight:400; color:var(--muted); margin-top:3px; font-size:12.5px;}
+  footer{margin-top:40px; font-size:12.5px; color:var(--muted); border-top:1px solid var(--line); padding-top:16px;}
+</style>
+<link rel="canonical" href="https://tudocalcula.tudobem.workers.dev/calculadora-ferias/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TudoCalcula">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Calculadora de Férias 2026 — Férias + 1/3, abono e descontos | TudoCalcula">
+<meta property="og:description" content="Calcule suas férias 2026: valor das férias + 1/3 constitucional, abono pecuniário (venda de 10 dias, isento), INSS e IRRF. Exemplo: salário de R$ 3.000 gera R$ 4.000 brutos e R$ 3.631,40 líquidos em 30 dias de férias.">
+<meta property="og:url" content="https://tudocalcula.tudobem.workers.dev/calculadora-ferias/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Calculadora de Férias 2026 — Férias + 1/3, abono e descontos | TudoCalcula">
+<meta name="twitter:description" content="Calcule suas férias 2026: valor das férias + 1/3 constitucional, abono pecuniário (venda de 10 dias, isento), INSS e IRRF. Exemplo: salário de R$ 3.000 gera R$ 4.000 brutos e R$ 3.631,40 líquidos em 30 dias de férias.">
+<meta name="theme-color" content="#0a5c2e">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de Férias 2026 — Férias + 1/3, abono e descontos", "url": "https://tudocalcula.tudobem.workers.dev/calculadora-ferias/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "pt-BR", "description": "Calcule suas férias 2026: valor das férias + 1/3 constitucional, abono pecuniário (venda de 10 dias, isento), INSS e IRRF. Exemplo: salário de R$ 3.000 gera R$ 4.000 brutos e R$ 3.631,40 líquidos em 30 dias de férias.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}, "isPartOf": {"@type": "WebSite", "name": "TudoCalcula", "url": "https://tudocalcula.tudobem.workers.dev/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Posso vender 10 dias de férias? A empresa pode recusar?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, vender até 1/3 das férias (o abono pecuniário) é um direito do empregado, desde que o pedido seja feito até 15 dias antes do fim do período aquisitivo. A empresa não pode recusar o pedido feito no prazo."}}, {"@type": "Question", "name": "O abono pecuniário tem desconto de INSS e imposto de renda?", "acceptedAnswer": {"@type": "Answer", "text": "Não. Tanto o valor dos dias vendidos quanto o 1/3 sobre ele são isentos de INSS e de IRRF."}}, {"@type": "Question", "name": "Quando o dinheiro das férias cai na conta?", "acceptedAnswer": {"@type": "Answer", "text": "Até 2 dias antes do início do descanso (art. 145 da CLT). Se você começa as férias na segunda-feira, o pagamento deve estar disponível até a sexta-feira anterior, conforme a contagem de dias úteis adotada pela empresa."}}, {"@type": "Question", "name": "Posso dividir as férias em quantas partes?", "acceptedAnswer": {"@type": "Answer", "text": "Em até 3 períodos, com acordo do empregado: um deles com pelo menos 14 dias corridos e os demais com no mínimo 5 dias cada."}}, {"@type": "Question", "name": "E se a empresa não conceder as férias no prazo?", "acceptedAnswer": {"@type": "Answer", "text": "As férias vencidas e não concedidas dentro do período concessivo devem ser pagas em dobro (art. 137 da CLT), inclusive na rescisão."}}, {"@type": "Question", "name": "Quem tem salário variável (comissões, horas extras) recebe férias como?", "acceptedAnswer": {"@type": "Answer", "text": "Pela média dos valores variáveis dos últimos 12 meses, somada à parte fixa. Esta calculadora usa o salário informado como base; inclua sua média mensal no campo de salário para aproximar o resultado."}}]}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">Tudo<span>Calcula</span>
+      <small>Calculadoras trabalhistas gratuitas, com as tabelas oficiais de 2026</small>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+
+  <h1>Calculadora de Férias 2026</h1>
+  <p class="intro">Descubra quanto você recebe de férias: salário proporcional aos dias de descanso, <strong>mais 1/3 constitucional</strong>, com os descontos de INSS e IRRF de 2026. Exemplo: com salário de <strong>R$ 3.000,00</strong> e 30 dias de férias, o bruto é R$ 4.000,00 e você recebe <strong>R$ 3.631,40 líquidos</strong> após o INSS — e o pagamento deve cair até 2 dias antes do início das férias.</p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label for="salario">Salário bruto mensal (R$)</label>
+        <input type="number" id="salario" value="3000" min="0" step="0.01" inputmode="decimal">
+        <label for="dependentes">Número de dependentes</label>
+        <input type="number" id="dependentes" value="0" min="0" max="20" step="1" inputmode="numeric">
+        <label for="dias">Dias de férias que vai tirar (gozo)</label>
+        <input type="number" id="dias" value="30" min="1" max="30" step="1" inputmode="numeric">
+        <label for="vendidos">Dias vendidos (abono pecuniário)</label>
+        <input type="number" id="vendidos" value="0" min="0" max="10" step="1" inputmode="numeric">
+        <p class="hint">Você pode vender até 1/3 das férias (10 dias). O abono e o seu 1/3 são <strong>isentos</strong> de INSS e IRRF.</p>
+      </div>
+      <div>
+        <div class="result-title">Suas férias — resultado</div>
+        <table class="payslip">
+          <tr><td>Férias (<span id="r-dias-lbl">30</span> dias)</td><td class="v" id="r-ferias">R$ 3.000,00</td></tr>
+          <tr><td>1/3 constitucional das férias</td><td class="v" id="r-terco">R$ 1.000,00</td></tr>
+          <tr id="row-abono" style="display:none;"><td>Abono pecuniário (isento)</td><td class="v" id="r-abono">R$ 0,00</td></tr>
+          <tr id="row-terco-abono" style="display:none;"><td>1/3 do abono (isento)</td><td class="v" id="r-terco-abono">R$ 0,00</td></tr>
+          <tr class="neg"><td>INSS<span class="aliquota">sobre férias + 1/3 (o abono não entra)</span></td><td class="v" id="r-inss">− R$ 368,60</td></tr>
+          <tr class="neg"><td>IRRF<span class="aliquota" id="r-irrf-aliq"></span></td><td class="v" id="r-irrf">− R$ 0,00</td></tr>
+          <tr class="total"><td>Total líquido das férias</td><td class="v" id="r-liquido">R$ 3.631,40</td></tr>
+        </table>
+        <details class="memoria">
+          <summary>Ver memória de cálculo</summary>
+          <p id="memoria-texto"></p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <span class="stamp">✓ Tabelas conferidas em novembro de 2026 — Portaria Interministerial MPS/MF nº 13/2026 e Lei nº 15.270/2025</span>
+
+  <h2>Quantos dias de férias você tem direito?</h2>
+  <p class="body">A cada 12 meses de trabalho (período aquisitivo), o empregado CLT ganha 30 dias de férias — mas faltas injustificadas reduzem esse total, conforme o art. 130 da CLT:</p>
+  <table class="data">
+    <tr><th>Faltas injustificadas no período</th><th>Dias de férias</th></tr>
+    <tr><td>Até 5 faltas</td><td>30 dias</td></tr>
+    <tr><td>De 6 a 14 faltas</td><td>24 dias</td></tr>
+    <tr><td>De 15 a 23 faltas</td><td>18 dias</td></tr>
+    <tr><td>De 24 a 32 faltas</td><td>12 dias</td></tr>
+    <tr><td>Mais de 32 faltas</td><td>Perde o direito no período</td></tr>
+  </table>
+  <p class="fonte">Fonte: CLT, art. 130. As férias devem ser concedidas nos 12 meses seguintes (período concessivo); se a empresa atrasar, paga em dobro (art. 137).</p>
+
+  <h2>Como o cálculo é feito</h2>
+  <ol class="steps">
+    <li><strong>Valor do dia:</strong> salário mensal ÷ 30.</li>
+    <li><strong>Férias:</strong> valor do dia × dias de gozo, mais 1/3 desse valor (terço constitucional).</li>
+    <li><strong>Abono (se vender dias):</strong> valor do dia × dias vendidos, mais 1/3 — tudo isento de INSS e IRRF.</li>
+    <li><strong>Descontos:</strong> INSS progressivo de 2026 e IRRF (com a redução da Lei 15.270/2025) incidem apenas sobre férias + 1/3.</li>
+    <li><strong>Pagamento:</strong> o valor líquido deve ser pago até 2 dias antes do início das férias (art. 145 da CLT).</li>
+  </ol>
+
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details><summary>Posso vender 10 dias de férias? A empresa pode recusar?</summary>
+      <p>Sim, vender até 1/3 das férias (o abono pecuniário) é um direito do empregado, desde que o pedido seja feito até 15 dias antes do fim do período aquisitivo. A empresa não pode recusar o pedido feito no prazo.</p></details>
+    <details><summary>O abono pecuniário tem desconto de INSS e imposto de renda?</summary>
+      <p>Não. Tanto o valor dos dias vendidos quanto o 1/3 sobre ele são isentos de INSS e de IRRF.</p></details>
+    <details><summary>Quando o dinheiro das férias cai na conta?</summary>
+      <p>Até 2 dias antes do início do descanso (art. 145 da CLT). Se você começa as férias na segunda-feira, o pagamento deve estar disponível até a sexta-feira anterior, conforme a contagem de dias úteis adotada pela empresa.</p></details>
+    <details><summary>Posso dividir as férias em quantas partes?</summary>
+      <p>Em até 3 períodos, com acordo do empregado: um deles com pelo menos 14 dias corridos e os demais com no mínimo 5 dias cada.</p></details>
+    <details><summary>E se a empresa não conceder as férias no prazo?</summary>
+      <p>As férias vencidas e não concedidas dentro do período concessivo devem ser pagas em dobro (art. 137 da CLT), inclusive na rescisão.</p></details>
+    <details><summary>Quem tem salário variável (comissões, horas extras) recebe férias como?</summary>
+      <p>Pela média dos valores variáveis dos últimos 12 meses, somada à parte fixa. Esta calculadora usa o salário informado como base; inclua sua média mensal no campo de salário para aproximar o resultado.</p></details>
+  </div>
+
+  <h2>Outras calculadoras</h2>
+  <div class="related">
+    <a href="/calculadora-salario-liquido/">Calculadora de Salário Líquido<small>INSS, IRRF e FGTS do mês</small></a>
+    <a href="/calculadora-decimo-terceiro-salario/">Calculadora de 13º Salário<small>1ª e 2ª parcela, com INSS e IRRF</small></a>
+    <a href="/calculadora-rescisao/">Calculadora de Rescisão<small>Todos os tipos de desligamento</small></a>
+    <a href="/calculadora-horas-extras/">Calculadora de Horas Extras<small>50%, 100% e reflexo no DSR</small></a>
+  </div>
+
+  <footer>
+    TudoCalcula — ferramenta gratuita de estimativa. Os resultados são aproximados e não substituem o recibo oficial de férias nem a orientação de um contador. Tabelas: Portaria Interministerial MPS/MF nº 13/2026, Receita Federal e Lei nº 15.270/2025; regras de férias: CLT, arts. 129–145.
+  </footer>
+
+</div>
+
+<script>
+// ENGINE START
+function round2(v){ return Math.round((v + 1e-9) * 100) / 100; }
+var INSS_FAIXAS = [
+  { ate: 1621.00, aliq: 0.075 },
+  { ate: 2902.84, aliq: 0.09  },
+  { ate: 4354.27, aliq: 0.12  },
+  { ate: 8475.55, aliq: 0.14  }
+];
+function calcINSS(bruto){
+  var total = 0, anterior = 0, detalhe = [];
+  for (var i = 0; i < INSS_FAIXAS.length; i++){
+    var f = INSS_FAIXAS[i];
+    if (bruto <= anterior) break;
+    var base = Math.min(bruto, f.ate) - anterior;
+    var valor = base * f.aliq;
+    total += valor;
+    detalhe.push({ faixa: i + 1, base: round2(base), aliq: f.aliq * 100, valor: round2(valor) });
+    anterior = f.ate;
+  }
+  return { total: round2(total), detalhe: detalhe };
+}
+var IRRF_TABELA = [
+  { ate: 2428.80, aliq: 0,     deduzir: 0 },
+  { ate: 2826.65, aliq: 0.075, deduzir: 182.16 },
+  { ate: 3751.05, aliq: 0.15,  deduzir: 394.16 },
+  { ate: 4664.68, aliq: 0.225, deduzir: 675.49 },
+  { ate: Infinity, aliq: 0.275, deduzir: 908.73 }
+];
+function irrfPelaTabela(base){
+  if (base <= 0) return { imposto: 0, aliq: 0 };
+  for (var i = 0; i < IRRF_TABELA.length; i++){
+    var f = IRRF_TABELA[i];
+    if (base <= f.ate){
+      return { imposto: Math.max(0, round2(base * f.aliq - f.deduzir)), aliq: f.aliq * 100 };
+    }
+  }
+  var u = IRRF_TABELA[IRRF_TABELA.length - 1];
+  return { imposto: Math.max(0, round2(base * u.aliq - u.deduzir)), aliq: u.aliq * 100 };
+}
+function reducaoLei15270(rendimento){
+  if (rendimento <= 5000) return 312.89;
+  if (rendimento >= 7350) return 0;
+  return Math.max(0, round2(978.62 - 0.133145 * rendimento));
+}
+function calcIRRF(bruto, inss, dependentes){
+  var baseLegal = bruto - inss - 189.59 * dependentes;
+  var baseSimplificada = bruto - 607.20;
+  var tLegal = irrfPelaTabela(baseLegal);
+  var tSimp  = irrfPelaTabela(baseSimplificada);
+  var escolhido = (tSimp.imposto <= tLegal.imposto)
+    ? { t: tSimp,  base: baseSimplificada, modo: "desconto simplificado de R$ 607,20" }
+    : { t: tLegal, base: baseLegal,        modo: "INSS + dependentes" };
+  var reducao = reducaoLei15270(bruto);
+  var imposto = Math.max(0, round2(escolhido.t.imposto - reducao));
+  return { imposto: imposto, base: round2(escolhido.base), aliq: escolhido.t.aliq,
+           antesReducao: escolhido.t.imposto, reducao: reducao, modo: escolhido.modo };
+}
+function calcularFerias(salario, dependentes, diasGozo, diasVendidos){
+  salario = Math.max(0, +salario || 0);
+  dependentes = Math.max(0, parseInt(dependentes, 10) || 0);
+  diasGozo = Math.min(30, Math.max(0, parseInt(diasGozo, 10) || 0));
+  diasVendidos = Math.min(10, Math.max(0, parseInt(diasVendidos, 10) || 0));
+  var dia = salario / 30;
+  var ferias = round2(dia * diasGozo);
+  var terco = round2(ferias / 3);
+  var abono = round2(dia * diasVendidos);
+  var tercoAbono = round2(abono / 3);
+  var tributavel = round2(ferias + terco);
+  var inssR = calcINSS(tributavel);
+  var irrfR = calcIRRF(tributavel, inssR.total, dependentes);
+  var brutoTotal = round2(tributavel + abono + tercoAbono);
+  var liquido = round2(brutoTotal - inssR.total - irrfR.imposto);
+  return { salario: round2(salario), diasGozo: diasGozo, diasVendidos: diasVendidos,
+           valorDia: round2(dia), ferias: ferias, terco: terco, abono: abono, tercoAbono: tercoAbono,
+           tributavel: tributavel, inss: inssR.total, irrf: irrfR.imposto, irrfAliq: irrfR.aliq,
+           brutoTotal: brutoTotal, liquido: liquido };
+}
+// ENGINE END
+
+function fmt(v){ return v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }); }
+function atualizar(){
+  var r = calcularFerias(
+    parseFloat(document.getElementById("salario").value) || 0,
+    document.getElementById("dependentes").value,
+    document.getElementById("dias").value,
+    document.getElementById("vendidos").value
+  );
+  document.getElementById("r-dias-lbl").textContent = r.diasGozo;
+  document.getElementById("r-ferias").textContent = fmt(r.ferias);
+  document.getElementById("r-terco").textContent = fmt(r.terco);
+  document.getElementById("row-abono").style.display = r.diasVendidos > 0 ? "" : "none";
+  document.getElementById("r-abono").textContent = fmt(r.abono);
+  document.getElementById("row-terco-abono").style.display = r.diasVendidos > 0 ? "" : "none";
+  document.getElementById("r-terco-abono").textContent = fmt(r.tercoAbono);
+  document.getElementById("r-inss").textContent = "− " + fmt(r.inss);
+  document.getElementById("r-irrf").textContent = "− " + fmt(r.irrf);
+  document.getElementById("r-irrf-aliq").textContent = r.irrf > 0 ? "tabela mensal de 2026" : "isento ou zerado pela Lei 15.270/2025";
+  document.getElementById("r-liquido").textContent = fmt(r.liquido);
+  var linhas = [];
+  linhas.push("Valor do dia: " + fmt(r.salario) + " ÷ 30 = " + fmt(r.valorDia));
+  linhas.push("Férias: " + r.diasGozo + " dias = " + fmt(r.ferias) + "; 1/3 = " + fmt(r.terco) + ".");
+  if (r.diasVendidos > 0) linhas.push("Abono: " + r.diasVendidos + " dias vendidos = " + fmt(r.abono) + "; 1/3 do abono = " + fmt(r.tercoAbono) + " (ambos isentos).");
+  linhas.push("Base de INSS/IRRF: " + fmt(r.tributavel) + " (férias + 1/3).");
+  linhas.push("INSS: " + fmt(r.inss) + "; IRRF: " + fmt(r.irrf) + "; Líquido: " + fmt(r.liquido) + ".");
+  document.getElementById("memoria-texto").textContent = linhas.join("\n");
+}
+["salario", "dependentes", "dias", "vendidos"].forEach(function(id){
+  document.getElementById(id).addEventListener("input", atualizar);
+  document.getElementById(id).addEventListener("change", atualizar);
+});
+atualizar();
+</script>
+</body>
+</html>
