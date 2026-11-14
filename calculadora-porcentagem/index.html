@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Porcentagem e Regra de Três | TudoCalcula</title>
+<meta name="description" content="Quanto é X% de Y? X é quantos por cento de Y? Variação percentual entre dois valores e regra de três simples — todas as contas de porcentagem em uma página só.">
+<style>
+  :root{ --green:#0e7a3d; --green-dark:#0a5c2e; --gold:#f5b301; --ink:#1a2332; --muted:#5b6b7f; --bg:#f4f7f5; --card:#ffffff; --line:#e2e8e4; --red:#c0392b; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 16px 48px;}
+  header{background:var(--green-dark); color:#fff; padding:14px 0;}
+  header .wrap{padding-bottom:0;}
+  .brand{font-size:22px; font-weight:800; letter-spacing:-.3px;}
+  .brand span{color:var(--gold);}
+  .brand small{display:block; font-size:12px; font-weight:400; opacity:.85; letter-spacing:0;}
+  h1{font-size:28px; line-height:1.25; margin:26px 0 10px;}
+  .intro{color:var(--muted); font-size:16px; margin-bottom:20px;}
+  .intro strong{color:var(--ink);}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:0 2px 10px rgba(16,60,36,.05); margin-bottom:18px;}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media (max-width:720px){ .grid{grid-template-columns:1fr;} h1{font-size:24px;} }
+  label{display:block; font-size:13px; font-weight:600; margin:14px 0 6px;}
+  label:first-child{margin-top:0;}
+  input[type=number], input[type=text], select{width:100%; padding:12px 14px; font-size:17px; border:1.5px solid var(--line); border-radius:10px; outline:none; background:#fff;}
+  input:focus, select:focus{border-color:var(--green);}
+  .hint{font-size:12px; color:var(--muted); margin-top:4px;}
+  .result-title{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:10px;}
+  table.payslip{width:100%; border-collapse:collapse; font-size:15px;}
+  table.payslip td{padding:8px 2px; border-bottom:1px dashed var(--line);}
+  table.payslip td.v{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  table.payslip tr.total td{border-bottom:none; border-top:2px solid var(--ink); font-size:19px; font-weight:800; padding-top:12px;}
+  table.payslip tr.total td.v{color:var(--green-dark);}
+  .aliquota{display:block; font-size:11.5px; color:var(--muted); font-weight:400;}
+  h2{font-size:21px; margin:34px 0 12px;}
+  p.body{color:#33404f; margin-bottom:12px; font-size:15.5px;}
+  ol.steps{margin:0 0 8px 20px; color:#33404f; font-size:15.5px;}
+  ol.steps li{margin-bottom:7px;}
+  .faq details{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:10px;}
+  .faq summary{cursor:pointer; font-weight:600; font-size:15.5px;}
+  .faq p{margin-top:8px; color:#33404f; font-size:15px;}
+  .stamp{display:inline-block; background:#e8f4ec; color:var(--green-dark); font-size:12.5px; font-weight:600; border-radius:20px; padding:5px 12px; margin-top:6px;}
+  .related{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:6px;}
+  .related a{display:block; background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; text-decoration:none; color:var(--ink); font-weight:600; font-size:14.5px;}
+  .related a:hover{border-color:var(--green);}
+  .related a small{display:block; font-weight:400; color:var(--muted); margin-top:3px; font-size:12.5px;}
+  footer{margin-top:40px; font-size:12.5px; color:var(--muted); border-top:1px solid var(--line); padding-top:16px;}
+</style>
+<link rel="canonical" href="https://tudocalcula.tudobem.workers.dev/calculadora-porcentagem/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TudoCalcula">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Calculadora de Porcentagem e Regra de Três | TudoCalcula">
+<meta property="og:description" content="Quanto é X% de Y? X é quantos por cento de Y? Variação percentual entre dois valores e regra de três simples — todas as contas de porcentagem em uma página só.">
+<meta property="og:url" content="https://tudocalcula.tudobem.workers.dev/calculadora-porcentagem/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Calculadora de Porcentagem e Regra de Três | TudoCalcula">
+<meta name="twitter:description" content="Quanto é X% de Y? X é quantos por cento de Y? Variação percentual entre dois valores e regra de três simples — todas as contas de porcentagem em uma página só.">
+<meta name="theme-color" content="#0a5c2e">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de Porcentagem e Regra de Três", "url": "https://tudocalcula.tudobem.workers.dev/calculadora-porcentagem/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "inLanguage": "pt-BR", "description": "Quanto é X% de Y? X é quantos por cento de Y? Variação percentual entre dois valores e regra de três simples — todas as contas de porcentagem em uma página só.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}, "isPartOf": {"@type": "WebSite", "name": "TudoCalcula", "url": "https://tudocalcula.tudobem.workers.dev/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Como calculo 20% de desconto de cabeça?", "acceptedAnswer": {"@type": "Answer", "text": "Tire 10% (mova a vírgula uma casa) e dobre: 10% de 250 = 25, logo 20% = 50 e o preço final é 200. Para 5%, calcule 10% e divida por 2."}}, {"@type": "Question", "name": "Aumento de 50% e depois desconto de 50% volta ao preço original?", "acceptedAnswer": {"@type": "Answer", "text": "Não! 100 → +50% = 150 → −50% = 75. Percentuais se aplicam sobre bases diferentes — é a pegadinha clássica das promoções."}}, {"@type": "Question", "name": "Regra de três inversa: quando uso?", "acceptedAnswer": {"@type": "Answer", "text": "Quando uma grandeza sobe e a outra desce na mesma proporção (mais pedreiros → menos dias de obra). Nesses casos, X = B × A ÷ C. Esta calculadora faz a regra de três direta, a mais comum."}}, {"@type": "Question", "name": "Como calculo a porcentagem de uma prova?", "acceptedAnswer": {"@type": "Answer", "text": "Divida os acertos pelo total e multiplique por 100: 18 acertos em 25 questões = 72% — é a segunda conta desta página (X é quantos % de Y)."}}]}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">Tudo<span>Calcula</span>
+      <small>Calculadoras gratuitas e atualizadas para o seu dia a dia</small>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+
+  <h1>Calculadora de Porcentagem e Regra de Três</h1>
+  <p class="intro">Todas as contas de porcentagem do dia a dia em um lugar só: <strong>quanto é X% de um valor</strong> (desconto, comissão, gorjeta), <strong>um valor é quantos % de outro</strong>, a <strong>variação percentual</strong> entre dois preços — e, no segundo bloco, a <strong>regra de três simples</strong> para receitas, proporções e conversões.</p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label for="a">Primeiro valor (X)</label>
+        <input type="number" id="a" value="10" step="0.01" inputmode="decimal">
+        <label for="b">Segundo valor (Y)</label>
+        <input type="number" id="b" value="250" step="0.01" inputmode="decimal">
+      </div>
+      <div>
+        <div class="result-title">Resultados</div>
+        <table class="payslip">
+          <tr><td>Quanto é <span id="lbl-p1">10</span>% de <span id="lbl-p1b">250</span>?</td><td class="v" id="r-p1">25,00</td></tr>
+          <tr><td><span id="lbl-p2">10</span> é quantos % de <span id="lbl-p2b">250</span>?</td><td class="v" id="r-p2">4,00%</td></tr>
+          <tr><td><span id="lbl-p3b">250</span> + <span id="lbl-p3">10</span>% (aumento)</td><td class="v" id="r-p3">275,00</td></tr>
+          <tr><td><span id="lbl-p4b">250</span> − <span id="lbl-p4">10</span>% (desconto)</td><td class="v" id="r-p4">225,00</td></tr>
+          <tr><td>Variação de <span id="lbl-p5b">250</span> para <span id="lbl-p5">10</span></td><td class="v" id="r-p5">−96,00%</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <div class="result-title">Regra de três simples</div>
+        <label for="rta">Se A vale…</label>
+        <input type="number" id="rta" value="4" step="0.01" inputmode="decimal">
+        <label for="rtb">…então B vale…</label>
+        <input type="number" id="rtb" value="100" step="0.01" inputmode="decimal">
+        <label for="rtc">…e C vale quanto (X)? — informe C</label>
+        <input type="number" id="rtc" value="7" step="0.01" inputmode="decimal">
+        <p class="hint">Exemplo: 4 maçãs custam R$ 100? Troque pelos seus números: A = 4, B = 100, C = 7.</p>
+      </div>
+      <div>
+        <div class="result-title">Resultado da regra de três</div>
+        <table class="payslip">
+          <tr><td>Proporção<span class="aliquota">A está para B, assim como C está para X</span></td><td class="v" id="r-rt-prop">4 → 100 · 7 → X</td></tr>
+          <tr class="total"><td>X vale</td><td class="v" id="r-rt">175,00</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <span class="stamp">✓ Fórmulas conferidas em novembro de 2026</span>
+
+  <h2>Como cada conta é feita</h2>
+  <ol class="steps">
+    <li><strong>X% de Y:</strong> Y × X ÷ 100. Ex.: 10% de 250 = 25.</li>
+    <li><strong>X é quantos % de Y:</strong> X ÷ Y × 100. Ex.: 10 de 250 = 4%.</li>
+    <li><strong>Aumento de X%:</strong> Y × (1 + X/100). <strong>Desconto de X%:</strong> Y × (1 − X/100).</li>
+    <li><strong>Variação percentual:</strong> (novo − antigo) ÷ antigo × 100. Positiva = subiu; negativa = caiu.</li>
+    <li><strong>Regra de três:</strong> X = B × C ÷ A — vale quando as grandezas são proporcionais.</li>
+  </ol>
+
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details><summary>Como calculo 20% de desconto de cabeça?</summary>
+      <p>Tire 10% (mova a vírgula uma casa) e dobre: 10% de 250 = 25, logo 20% = 50 e o preço final é 200. Para 5%, calcule 10% e divida por 2.</p></details>
+    <details><summary>Aumento de 50% e depois desconto de 50% volta ao preço original?</summary>
+      <p>Não! 100 → +50% = 150 → −50% = 75. Percentuais se aplicam sobre bases diferentes — é a pegadinha clássica das promoções.</p></details>
+    <details><summary>Regra de três inversa: quando uso?</summary>
+      <p>Quando uma grandeza sobe e a outra desce na mesma proporção (mais pedreiros → menos dias de obra). Nesses casos, X = B × A ÷ C. Esta calculadora faz a regra de três direta, a mais comum.</p></details>
+    <details><summary>Como calculo a porcentagem de uma prova?</summary>
+      <p>Divida os acertos pelo total e multiplique por 100: 18 acertos em 25 questões = 72% — é a segunda conta desta página (X é quantos % de Y).</p></details>
+  </div>
+
+  <h2>Outras calculadoras</h2>
+  <div class="related">
+    <a href="/calculadora-juros-compostos/">Juros Compostos<small>Investimentos e aportes mensais</small></a>
+    <a href="/calculadora-dias-uteis/">Calculadora de Dias Úteis<small>Entre datas, com feriados</small></a>
+    <a href="/calculadora-idade/">Calculadora de Idade<small>Idade exata e dias vividos</small></a>
+    <a href="/calculadora-salario-liquido/">Calculadora de Salário Líquido<small>INSS, IRRF e FGTS do mês</small></a>
+  </div>
+
+  <footer>
+    TudoCalcula — ferramenta gratuita. Resultados com duas casas decimais; confira o arredondamento em cálculos financeiros formais.
+  </footer>
+
+</div>
+
+<script>
+// ENGINE START
+function round2(v){ return Math.round((v + 1e-9) * 100) / 100; }
+function calcularPorcentagens(x, y){
+  x = +x || 0; y = +y || 0;
+  return {
+    pctDe: round2(y * x / 100),                    // X% de Y
+    ehQuantosPct: y !== 0 ? round2(x / y * 10000) / 100 : 0,  // X é % de Y
+    aumento: round2(y * (1 + x / 100)),             // Y + X%
+    desconto: round2(y * (1 - x / 100)),            // Y − X%
+    variacao: y !== 0 ? round2((x - y) / Math.abs(y) * 10000) / 100 : 0 // de Y para X
+  };
+}
+function regraDeTres(a, b, c){
+  a = +a || 0; b = +b || 0; c = +c || 0;
+  if (a === 0) return 0;
+  return round2(b * c / a);
+}
+// ENGINE END
+
+function num(v){ return v.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+function atualizar(){
+  var x = parseFloat(document.getElementById("a").value);
+  var y = parseFloat(document.getElementById("b").value);
+  var r = calcularPorcentagens(x, y);
+  ["p1", "p1b", "p2", "p2b", "p3", "p3b", "p4", "p4b", "p5", "p5b"].forEach(function(k){});
+  document.getElementById("lbl-p1").textContent = isNaN(x) ? "X" : x;
+  document.getElementById("lbl-p1b").textContent = isNaN(y) ? "Y" : y;
+  document.getElementById("lbl-p2").textContent = isNaN(x) ? "X" : x;
+  document.getElementById("lbl-p2b").textContent = isNaN(y) ? "Y" : y;
+  document.getElementById("lbl-p3").textContent = isNaN(x) ? "X" : x;
+  document.getElementById("lbl-p3b").textContent = isNaN(y) ? "Y" : y;
+  document.getElementById("lbl-p4").textContent = isNaN(x) ? "X" : x;
+  document.getElementById("lbl-p4b").textContent = isNaN(y) ? "Y" : y;
+  document.getElementById("lbl-p5").textContent = isNaN(x) ? "X" : x;
+  document.getElementById("lbl-p5b").textContent = isNaN(y) ? "Y" : y;
+  document.getElementById("r-p1").textContent = num(r.pctDe);
+  document.getElementById("r-p2").textContent = num(r.ehQuantosPct) + "%";
+  document.getElementById("r-p3").textContent = num(r.aumento);
+  document.getElementById("r-p4").textContent = num(r.desconto);
+  document.getElementById("r-p5").textContent = (r.variacao > 0 ? "+" : "") + num(r.variacao) + "%";
+  var a = parseFloat(document.getElementById("rta").value);
+  var b = parseFloat(document.getElementById("rtb").value);
+  var c = parseFloat(document.getElementById("rtc").value);
+  document.getElementById("r-rt-prop").textContent = (isNaN(a) ? "A" : a) + " → " + (isNaN(b) ? "B" : b) + " · " + (isNaN(c) ? "C" : c) + " → X";
+  document.getElementById("r-rt").textContent = num(regraDeTres(a, b, c));
+}
+["a", "b", "rta", "rtb", "rtc"].forEach(function(id){
+  document.getElementById(id).addEventListener("input", atualizar);
+  document.getElementById(id).addEventListener("change", atualizar);
+});
+atualizar();
+</script>
+</body>
+</html>
