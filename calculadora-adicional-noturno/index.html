@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Adicional Noturno 2026 — Hora ficta e 20% | TudoCalcula</title>
+<meta name="description" content="Calcule o adicional noturno: 20% urbano com hora ficta (52min30s = 1h), 25% rural da lavoura e reflexo no DSR. Exemplo: 40h noturnas sobre R$ 2.200 geram R$ 109,72 no mês.">
+<style>
+  :root{ --green:#0e7a3d; --green-dark:#0a5c2e; --gold:#f5b301; --ink:#1a2332; --muted:#5b6b7f; --bg:#f4f7f5; --card:#ffffff; --line:#e2e8e4; --red:#c0392b; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 16px 48px;}
+  header{background:var(--green-dark); color:#fff; padding:14px 0;}
+  header .wrap{padding-bottom:0;}
+  .brand{font-size:22px; font-weight:800; letter-spacing:-.3px;}
+  .brand span{color:var(--gold);}
+  .brand small{display:block; font-size:12px; font-weight:400; opacity:.85; letter-spacing:0;}
+  h1{font-size:28px; line-height:1.25; margin:26px 0 10px;}
+  .intro{color:var(--muted); font-size:16px; margin-bottom:20px;}
+  .intro strong{color:var(--ink);}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:0 2px 10px rgba(16,60,36,.05);}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media (max-width:720px){ .grid{grid-template-columns:1fr;} h1{font-size:24px;} }
+  label{display:block; font-size:13px; font-weight:600; margin:14px 0 6px;}
+  label:first-child{margin-top:0;}
+  input[type=number], input[type=text], select{width:100%; padding:12px 14px; font-size:17px; border:1.5px solid var(--line); border-radius:10px; outline:none; background:#fff;}
+  input:focus, select:focus{border-color:var(--green);}
+  .hint{font-size:12px; color:var(--muted); margin-top:4px;}
+  .result-title{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:10px;}
+  table.payslip{width:100%; border-collapse:collapse; font-size:15px;}
+  table.payslip td{padding:8px 2px; border-bottom:1px dashed var(--line);}
+  table.payslip td.v{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  table.payslip tr.total td{border-bottom:none; border-top:2px solid var(--ink); font-size:19px; font-weight:800; padding-top:12px;}
+  table.payslip tr.total td.v{color:var(--green-dark);}
+  .aliquota{display:block; font-size:11.5px; color:var(--muted); font-weight:400;}
+  details.memoria{margin-top:14px; font-size:13.5px; color:var(--muted);}
+  details.memoria summary{cursor:pointer; font-weight:600; color:var(--green-dark);}
+  details.memoria p{margin-top:8px; white-space:pre-line;}
+  h2{font-size:21px; margin:34px 0 12px;}
+  p.body{color:#33404f; margin-bottom:12px; font-size:15.5px;}
+  table.data{width:100%; border-collapse:collapse; font-size:14.5px; background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  table.data th{background:var(--green-dark); color:#fff; text-align:left; padding:10px 12px; font-size:13.5px;}
+  table.data td{padding:9px 12px; border-top:1px solid var(--line); font-variant-numeric:tabular-nums;}
+  table.data td:last-child, table.data th:last-child{text-align:right;}
+  .fonte{font-size:12.5px; color:var(--muted); margin-top:8px;}
+  ol.steps{margin:0 0 8px 20px; color:#33404f; font-size:15.5px;}
+  ol.steps li{margin-bottom:7px;}
+  .faq details{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:10px;}
+  .faq summary{cursor:pointer; font-weight:600; font-size:15.5px;}
+  .faq p{margin-top:8px; color:#33404f; font-size:15px;}
+  .stamp{display:inline-block; background:#e8f4ec; color:var(--green-dark); font-size:12.5px; font-weight:600; border-radius:20px; padding:5px 12px; margin-top:6px;}
+  .related{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:6px;}
+  .related a{display:block; background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; text-decoration:none; color:var(--ink); font-weight:600; font-size:14.5px;}
+  .related a:hover{border-color:var(--green);}
+  .related a small{display:block; font-weight:400; color:var(--muted); margin-top:3px; font-size:12.5px;}
+  footer{margin-top:40px; font-size:12.5px; color:var(--muted); border-top:1px solid var(--line); padding-top:16px;}
+</style>
+<link rel="canonical" href="https://tudocalcula.tudobem.workers.dev/calculadora-adicional-noturno/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TudoCalcula">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Calculadora de Adicional Noturno 2026 — Hora ficta e 20% | TudoCalcula">
+<meta property="og:description" content="Calcule o adicional noturno: 20% urbano com hora ficta (52min30s = 1h), 25% rural da lavoura e reflexo no DSR. Exemplo: 40h noturnas sobre R$ 2.200 geram R$ 109,72 no mês.">
+<meta property="og:url" content="https://tudocalcula.tudobem.workers.dev/calculadora-adicional-noturno/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Calculadora de Adicional Noturno 2026 — Hora ficta e 20% | TudoCalcula">
+<meta name="twitter:description" content="Calcule o adicional noturno: 20% urbano com hora ficta (52min30s = 1h), 25% rural da lavoura e reflexo no DSR. Exemplo: 40h noturnas sobre R$ 2.200 geram R$ 109,72 no mês.">
+<meta name="theme-color" content="#0a5c2e">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de Adicional Noturno 2026 — Hora ficta e 20%", "url": "https://tudocalcula.tudobem.workers.dev/calculadora-adicional-noturno/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "pt-BR", "description": "Calcule o adicional noturno: 20% urbano com hora ficta (52min30s = 1h), 25% rural da lavoura e reflexo no DSR. Exemplo: 40h noturnas sobre R$ 2.200 geram R$ 109,72 no mês.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}, "isPartOf": {"@type": "WebSite", "name": "TudoCalcula", "url": "https://tudocalcula.tudobem.workers.dev/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Trabalho das 18h às 22h tem adicional noturno?", "acceptedAnswer": {"@type": "Answer", "text": "Não no trabalho urbano: o período noturno começa às 22h. Antes disso, só há adicional se for hora extra ou se a convenção coletiva disser diferente."}}, {"@type": "Question", "name": "Hora extra noturna soma os dois adicionais?", "acceptedAnswer": {"@type": "Answer", "text": "Soma: a hora extra feita de madrugada recebe o adicional noturno (20%) e, sobre ele, o adicional de hora extra (50% ou 100%). Calcule a parte de hora extra na nossa calculadora de horas extras."}}, {"@type": "Question", "name": "Quem trabalha em escala 12x36 à noite recebe adicional?", "acceptedAnswer": {"@type": "Answer", "text": "Recebe pelas horas dentro do período noturno (22h–5h no urbano), com hora ficta. A reforma trabalhista permitiu pactuar a jornada 12x36 inclusive com trabalho noturno, mantido o adicional."}}, {"@type": "Question", "name": "O adicional noturno entra no 13º e nas férias?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, quando habitual: integra a remuneração para 13º salário, férias + 1/3, FGTS, INSS e aviso prévio, pela média dos valores recebidos."}}, {"@type": "Question", "name": "A empresa pode \"embutir\" o adicional no salário?", "acceptedAnswer": {"@type": "Answer", "text": "O chamado salário complessivo é proibido: o adicional deve aparecer destacado no holerite (Súmula 91 do TST). Se o seu contracheque não mostra a parcela, vale questionar."}}]}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">Tudo<span>Calcula</span>
+      <small>Calculadoras trabalhistas gratuitas, com as tabelas oficiais de 2026</small>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+
+  <h1>Calculadora de Adicional Noturno 2026</h1>
+  <p class="intro">Quem trabalha à noite recebe mais: <strong>20% de adicional</strong> no trabalho urbano — e cada hora noturna vale <strong>52 minutos e 30 segundos</strong> (a famosa hora ficta), o que aumenta ainda mais o total. Exemplo: salário de <strong>R$ 2.200,00</strong> com 40 horas noturnas no mês → <strong>R$ 109,72</strong> de adicional, já com o DSR.</p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label for="salario">Salário bruto mensal (R$)</label>
+        <input type="number" id="salario" value="2200" min="0" step="0.01" inputmode="decimal">
+        <label for="jornada">Jornada mensal (horas)</label>
+        <input type="number" id="jornada" value="220" min="1" step="1" inputmode="numeric">
+        <label for="horas">Horas trabalhadas no período noturno (por mês)</label>
+        <input type="number" id="horas" value="40" min="0" step="0.5" inputmode="decimal">
+        <label for="tipo">Tipo de trabalho noturno</label>
+        <select id="tipo">
+          <option value="urbano" selected>Urbano — 20%, com hora ficta</option>
+          <option value="lavoura">Rural (lavoura) — 25%, sem hora ficta</option>
+          <option value="pecuaria">Rural (pecuária) — 20%, sem hora ficta</option>
+        </select>
+        <label for="uteis">Dias úteis no mês</label>
+        <input type="number" id="uteis" value="25" min="1" max="31" step="1" inputmode="numeric">
+        <label for="descanso">Domingos + feriados no mês</label>
+        <input type="number" id="descanso" value="5" min="0" max="15" step="1" inputmode="numeric">
+      </div>
+      <div>
+        <div class="result-title">Adicional noturno — resultado</div>
+        <table class="payslip">
+          <tr><td>Valor da sua hora normal</td><td class="v" id="r-hora">R$ 10,00</td></tr>
+          <tr><td>Horas noturnas computadas<span class="aliquota" id="r-ficta-lbl"></span></td><td class="v" id="r-fictas">45,71h</td></tr>
+          <tr><td>Adicional noturno<span class="aliquota" id="r-perc-lbl"></span></td><td class="v" id="r-adicional">R$ 91,43</td></tr>
+          <tr><td>Reflexo no DSR</td><td class="v" id="r-dsr">R$ 18,29</td></tr>
+          <tr class="total"><td>Total do adicional no mês</td><td class="v" id="r-total">R$ 109,72</td></tr>
+        </table>
+        <details class="memoria">
+          <summary>Ver memória de cálculo</summary>
+          <p id="memoria-texto"></p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <span class="stamp">✓ Regras conferidas em novembro de 2026 — CLT, arts. 73–75, e Lei nº 5.889/1973 (trabalho rural)</span>
+
+  <h2>Períodos e percentuais do trabalho noturno</h2>
+  <table class="data">
+    <tr><th>Tipo</th><th>Horário noturno</th><th>Adicional</th><th>Hora ficta?</th></tr>
+    <tr><td>Urbano</td><td>22h às 5h</td><td>20%</td><td>Sim — 52min30s = 1h</td></tr>
+    <tr><td>Rural — lavoura</td><td>21h às 5h</td><td>25%</td><td>Não — hora de 60 min</td></tr>
+    <tr><td>Rural — pecuária</td><td>20h às 4h</td><td>20%</td><td>Não — hora de 60 min</td></tr>
+  </table>
+  <p class="fonte">Fonte: CLT, art. 73; Lei nº 5.889/1973, art. 7º. Convenções coletivas podem elevar os percentuais (vigias e porteiros, por exemplo, costumam ter 20% ou mais garantidos em norma coletiva).</p>
+
+  <h2>Como o cálculo é feito</h2>
+  <ol class="steps">
+    <li><strong>Valor da hora:</strong> salário ÷ jornada mensal.</li>
+    <li><strong>Hora ficta (só urbano):</strong> horas do relógio × 60 ÷ 52,5 — por isso 7 horas noturnas no relógio viram 8 horas pagas.</li>
+    <li><strong>Adicional:</strong> horas computadas × valor da hora × percentual (20% ou 25%).</li>
+    <li><strong>DSR:</strong> adicional ÷ dias úteis × domingos e feriados, quando o adicional é habitual.</li>
+    <li><strong>Prorrogação:</strong> se a jornada noturna continua depois das 5h, o adicional também vale para as horas prorrogadas (Súmula 60 do TST).</li>
+  </ol>
+
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details><summary>Trabalho das 18h às 22h tem adicional noturno?</summary>
+      <p>Não no trabalho urbano: o período noturno começa às 22h. Antes disso, só há adicional se for hora extra ou se a convenção coletiva disser diferente.</p></details>
+    <details><summary>Hora extra noturna soma os dois adicionais?</summary>
+      <p>Soma: a hora extra feita de madrugada recebe o adicional noturno (20%) e, sobre ele, o adicional de hora extra (50% ou 100%). Calcule a parte de hora extra na nossa calculadora de horas extras.</p></details>
+    <details><summary>Quem trabalha em escala 12x36 à noite recebe adicional?</summary>
+      <p>Recebe pelas horas dentro do período noturno (22h–5h no urbano), com hora ficta. A reforma trabalhista permitiu pactuar a jornada 12x36 inclusive com trabalho noturno, mantido o adicional.</p></details>
+    <details><summary>O adicional noturno entra no 13º e nas férias?</summary>
+      <p>Sim, quando habitual: integra a remuneração para 13º salário, férias + 1/3, FGTS, INSS e aviso prévio, pela média dos valores recebidos.</p></details>
+    <details><summary>A empresa pode "embutir" o adicional no salário?</summary>
+      <p>O chamado salário complessivo é proibido: o adicional deve aparecer destacado no holerite (Súmula 91 do TST). Se o seu contracheque não mostra a parcela, vale questionar.</p></details>
+  </div>
+
+  <h2>Outras calculadoras</h2>
+  <div class="related">
+    <a href="/calculadora-horas-extras/">Calculadora de Horas Extras<small>50%, 100% e reflexo no DSR</small></a>
+    <a href="/calculadora-salario-liquido/">Calculadora de Salário Líquido<small>INSS, IRRF e FGTS do mês</small></a>
+    <a href="/calculadora-ferias/">Calculadora de Férias<small>Com o terço constitucional</small></a>
+    <a href="/calculadora-decimo-terceiro-salario/">Calculadora de 13º Salário<small>1ª e 2ª parcela, com INSS e IRRF</small></a>
+  </div>
+
+  <footer>
+    TudoCalcula — ferramenta gratuita de estimativa. Os resultados são aproximados e não substituem o holerite oficial. Regras: CLT, arts. 73–75; Lei nº 5.889/1973.
+  </footer>
+
+</div>
+
+<script>
+// ENGINE START
+function round2(v){ return Math.round((v + 1e-9) * 100) / 100; }
+function calcularAdicionalNoturno(salario, jornada, horasNoturnas, tipo, diasUteis, diasDescanso){
+  salario = Math.max(0, +salario || 0);
+  jornada = Math.max(1, +jornada || 220);
+  horasNoturnas = Math.max(0, +horasNoturnas || 0);
+  diasUteis = Math.max(1, parseInt(diasUteis, 10) || 25);
+  diasDescanso = Math.max(0, parseInt(diasDescanso, 10) || 0);
+  var perc = tipo === "lavoura" ? 0.25 : 0.20;
+  var fictas = tipo === "urbano" ? horasNoturnas * 60 / 52.5 : horasNoturnas;
+  var hora = salario / jornada;
+  var adicional = round2(fictas * hora * perc);
+  var dsr = round2(adicional / diasUteis * diasDescanso);
+  return { salario: round2(salario), hora: round2(hora), perc: perc * 100,
+           horasRelogio: horasNoturnas, fictas: round2(fictas * 100) / 100,
+           adicional: adicional, dsr: dsr, total: round2(adicional + dsr) };
+}
+// ENGINE END
+
+function fmt(v){ return v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }); }
+function atualizar(){
+  var tipo = document.getElementById("tipo").value;
+  var r = calcularAdicionalNoturno(
+    parseFloat(document.getElementById("salario").value) || 0,
+    parseFloat(document.getElementById("jornada").value) || 220,
+    parseFloat(document.getElementById("horas").value) || 0,
+    tipo,
+    document.getElementById("uteis").value,
+    document.getElementById("descanso").value
+  );
+  document.getElementById("r-hora").textContent = fmt(r.hora);
+  document.getElementById("r-fictas").textContent = String(r.fictas).replace(".", ",") + "h";
+  document.getElementById("r-ficta-lbl").textContent = tipo === "urbano" ? "hora ficta: 52min30s contam como 1h" : "hora cheia de 60 minutos";
+  document.getElementById("r-adicional").textContent = fmt(r.adicional);
+  document.getElementById("r-perc-lbl").textContent = String(r.perc).replace(".", ",") + "% sobre a hora normal";
+  document.getElementById("r-dsr").textContent = fmt(r.dsr);
+  document.getElementById("r-total").textContent = fmt(r.total);
+  var linhas = [];
+  linhas.push("Hora normal: " + fmt(r.hora) + ".");
+  linhas.push(tipo === "urbano"
+    ? "Horas do relógio: " + r.horasRelogio + "h → computadas: " + String(r.fictas).replace(".", ",") + "h (fator 60/52,5)."
+    : "Horas computadas: " + String(r.fictas).replace(".", ",") + "h (sem hora ficta no rural).");
+  linhas.push("Adicional: " + fmt(r.adicional) + "; DSR: " + fmt(r.dsr) + "; Total: " + fmt(r.total) + ".");
+  document.getElementById("memoria-texto").textContent = linhas.join("\n");
+}
+["salario", "jornada", "horas", "tipo", "uteis", "descanso"].forEach(function(id){
+  document.getElementById(id).addEventListener("input", atualizar);
+  document.getElementById(id).addEventListener("change", atualizar);
+});
+atualizar();
+</script>
+</body>
+</html>
