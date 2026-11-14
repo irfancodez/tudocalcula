@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de INSS 2026 — Tabela progressiva e teto | TudoCalcula</title>
+<meta name="description" content="Calcule sua contribuição ao INSS em 2026 com a tabela progressiva da Portaria MPS/MF nº 13/2026: desconto por faixa, alíquota efetiva e teto de R$ 988,09. Salário de R$ 5.000 → R$ 501,51.">
+<style>
+  :root{ --green:#0e7a3d; --green-dark:#0a5c2e; --gold:#f5b301; --ink:#1a2332; --muted:#5b6b7f; --bg:#f4f7f5; --card:#ffffff; --line:#e2e8e4; --red:#c0392b; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 16px 48px;}
+  header{background:var(--green-dark); color:#fff; padding:14px 0;}
+  header .wrap{padding-bottom:0;}
+  .brand{font-size:22px; font-weight:800; letter-spacing:-.3px;}
+  .brand span{color:var(--gold);}
+  .brand small{display:block; font-size:12px; font-weight:400; opacity:.85; letter-spacing:0;}
+  h1{font-size:28px; line-height:1.25; margin:26px 0 10px;}
+  .intro{color:var(--muted); font-size:16px; margin-bottom:20px;}
+  .intro strong{color:var(--ink);}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:0 2px 10px rgba(16,60,36,.05);}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media (max-width:720px){ .grid{grid-template-columns:1fr;} h1{font-size:24px;} }
+  label{display:block; font-size:13px; font-weight:600; margin:14px 0 6px;}
+  label:first-child{margin-top:0;}
+  input[type=number], input[type=text], select{width:100%; padding:12px 14px; font-size:17px; border:1.5px solid var(--line); border-radius:10px; outline:none; background:#fff;}
+  input:focus, select:focus{border-color:var(--green);}
+  .hint{font-size:12px; color:var(--muted); margin-top:4px;}
+  .result-title{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:10px;}
+  table.payslip{width:100%; border-collapse:collapse; font-size:15px;}
+  table.payslip td{padding:8px 2px; border-bottom:1px dashed var(--line);}
+  table.payslip td.v{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  table.payslip tr.total td{border-bottom:none; border-top:2px solid var(--ink); font-size:19px; font-weight:800; padding-top:12px;}
+  table.payslip tr.total td.v{color:var(--green-dark);}
+  .aliquota{display:block; font-size:11.5px; color:var(--muted); font-weight:400;}
+  details.memoria{margin-top:14px; font-size:13.5px; color:var(--muted);}
+  details.memoria summary{cursor:pointer; font-weight:600; color:var(--green-dark);}
+  details.memoria p{margin-top:8px; white-space:pre-line;}
+  h2{font-size:21px; margin:34px 0 12px;}
+  p.body{color:#33404f; margin-bottom:12px; font-size:15.5px;}
+  table.data{width:100%; border-collapse:collapse; font-size:14.5px; background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  table.data th{background:var(--green-dark); color:#fff; text-align:left; padding:10px 12px; font-size:13.5px;}
+  table.data td{padding:9px 12px; border-top:1px solid var(--line); font-variant-numeric:tabular-nums;}
+  table.data td:last-child, table.data th:last-child{text-align:right;}
+  .fonte{font-size:12.5px; color:var(--muted); margin-top:8px;}
+  ol.steps{margin:0 0 8px 20px; color:#33404f; font-size:15.5px;}
+  ol.steps li{margin-bottom:7px;}
+  .faq details{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:10px;}
+  .faq summary{cursor:pointer; font-weight:600; font-size:15.5px;}
+  .faq p{margin-top:8px; color:#33404f; font-size:15px;}
+  .stamp{display:inline-block; background:#e8f4ec; color:var(--green-dark); font-size:12.5px; font-weight:600; border-radius:20px; padding:5px 12px; margin-top:6px;}
+  .related{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:6px;}
+  .related a{display:block; background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; text-decoration:none; color:var(--ink); font-weight:600; font-size:14.5px;}
+  .related a:hover{border-color:var(--green);}
+  .related a small{display:block; font-weight:400; color:var(--muted); margin-top:3px; font-size:12.5px;}
+  footer{margin-top:40px; font-size:12.5px; color:var(--muted); border-top:1px solid var(--line); padding-top:16px;}
+</style>
+<link rel="canonical" href="https://tudocalcula.tudobem.workers.dev/calculadora-inss/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TudoCalcula">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Calculadora de INSS 2026 — Tabela progressiva e teto | TudoCalcula">
+<meta property="og:description" content="Calcule sua contribuição ao INSS em 2026 com a tabela progressiva da Portaria MPS/MF nº 13/2026: desconto por faixa, alíquota efetiva e teto de R$ 988,09. Salário de R$ 5.000 → R$ 501,51.">
+<meta property="og:url" content="https://tudocalcula.tudobem.workers.dev/calculadora-inss/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Calculadora de INSS 2026 — Tabela progressiva e teto | TudoCalcula">
+<meta name="twitter:description" content="Calcule sua contribuição ao INSS em 2026 com a tabela progressiva da Portaria MPS/MF nº 13/2026: desconto por faixa, alíquota efetiva e teto de R$ 988,09. Salário de R$ 5.000 → R$ 501,51.">
+<meta name="theme-color" content="#0a5c2e">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de INSS 2026 — Tabela progressiva e teto", "url": "https://tudocalcula.tudobem.workers.dev/calculadora-inss/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "pt-BR", "description": "Calcule sua contribuição ao INSS em 2026 com a tabela progressiva da Portaria MPS/MF nº 13/2026: desconto por faixa, alíquota efetiva e teto de R$ 988,09. Salário de R$ 5.000 → R$ 501,51.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}, "isPartOf": {"@type": "WebSite", "name": "TudoCalcula", "url": "https://tudocalcula.tudobem.workers.dev/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quem ganha R$ 10.000 paga quanto de INSS?", "acceptedAnswer": {"@type": "Answer", "text": "R$ 988,09 — o teto. A base de contribuição para em R$ 8.475,55, então salários maiores não aumentam o desconto do empregado."}}, {"@type": "Question", "name": "O INSS também desconta no 13º salário?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, mas em guia separada e calculado só sobre o 13º, sem misturar com o salário de dezembro. Veja a calculadora de 13º salário."}}, {"@type": "Question", "name": "INSS desconta nas férias?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, sobre as férias + 1/3 (o abono pecuniário é isento). Use a calculadora de férias para ver o valor."}}, {"@type": "Question", "name": "Por que a alíquota do meu holerite parece diferente?", "acceptedAnswer": {"@type": "Answer", "text": "Alguns holerites mostram a alíquota da última faixa em vez da efetiva. O valor descontado é o que importa: confira com o cálculo faixa por faixa desta página."}}, {"@type": "Question", "name": "Quem paga o INSS do empregado?", "acceptedAnswer": {"@type": "Answer", "text": "A empresa desconta a parte do empregado (esta calculadora) e paga a parte patronal por fora (em geral 20% + RAT + terceiros), sem descontar de você."}}]}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">Tudo<span>Calcula</span>
+      <small>Calculadoras trabalhistas gratuitas, com as tabelas oficiais de 2026</small>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+
+  <h1>Calculadora de INSS 2026</h1>
+  <p class="intro">Veja exatamente quanto de <strong>INSS</strong> é descontado do seu salário em 2026, faixa por faixa, com a tabela progressiva oficial. Exemplo: salário de <strong>R$ 5.000,00</strong> → desconto de <strong>R$ 501,51</strong> (alíquota efetiva de 10,03%). Quem ganha acima do teto de R$ 8.475,55 paga no máximo <strong>R$ 988,09</strong>.</p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label for="salario">Salário bruto mensal (R$)</label>
+        <input type="number" id="salario" value="5000" min="0" step="0.01" inputmode="decimal">
+        <p class="hint">Vale para empregado CLT, doméstico e trabalhador avulso. Autônomos: veja a tabela de contribuinte individual abaixo.</p>
+      </div>
+      <div>
+        <div class="result-title">Sua contribuição — resultado</div>
+        <table class="payslip">
+          <tr><td>Base de contribuição<span class="aliquota" id="r-base-lbl"></span></td><td class="v" id="r-base">R$ 5.000,00</td></tr>
+          <tr class="total"><td>Desconto de INSS</td><td class="v" id="r-inss">R$ 501,51</td></tr>
+          <tr><td>Alíquota efetiva</td><td class="v" id="r-efetiva">10,03%</td></tr>
+          <tr><td>Salário após o INSS</td><td class="v" id="r-resta">R$ 4.498,49</td></tr>
+        </table>
+        <details class="memoria">
+          <summary>Ver cálculo faixa por faixa</summary>
+          <p id="memoria-texto"></p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <span class="stamp">✓ Tabela conferida em novembro de 2026 — Portaria Interministerial MPS/MF nº 13, de 9 de janeiro de 2026</span>
+
+  <h2>Tabela do INSS 2026 (empregado CLT)</h2>
+  <table class="data">
+    <tr><th>Faixa salarial</th><th>Alíquota</th></tr>
+    <tr><td>Até R$ 1.621,00</td><td>7,5%</td></tr>
+    <tr><td>De R$ 1.621,01 a R$ 2.902,84</td><td>9%</td></tr>
+    <tr><td>De R$ 2.902,85 a R$ 4.354,27</td><td>12%</td></tr>
+    <tr><td>De R$ 4.354,28 a R$ 8.475,55 (teto)</td><td>14%</td></tr>
+  </table>
+  <p class="fonte">Fonte: Portaria Interministerial MPS/MF nº 13/2026. Salário mínimo 2026: R$ 1.621,00; teto do INSS: R$ 8.475,55; contribuição máxima do empregado: R$ 988,09.</p>
+
+  <h2>E quem é autônomo (contribuinte individual)?</h2>
+  <p class="body">Quem trabalha por conta própria recolhe pela guia GPS, com regras diferentes:</p>
+  <table class="data">
+    <tr><th>Plano</th><th>Como funciona em 2026</th></tr>
+    <tr><td>Plano normal — 20%</td><td>20% sobre a remuneração, entre o mínimo (R$ 324,20) e o teto (R$ 1.695,11). Dá direito a todos os benefícios, inclusive aposentadoria por tempo de contribuição nas regras de transição.</td></tr>
+    <tr><td>Plano simplificado — 11%</td><td>11% do salário mínimo = R$ 178,31/mês. Sem aposentadoria por tempo de contribuição.</td></tr>
+    <tr><td>MEI — 5%</td><td>5% do salário mínimo = R$ 81,05/mês, dentro do DAS. Benefícios limitados ao salário mínimo.</td></tr>
+  </table>
+  <p class="fonte">Valores calculados sobre o salário mínimo de 2026 (R$ 1.621,00) e o teto de R$ 8.475,55.</p>
+
+  <h2>Como o cálculo é feito</h2>
+  <ol class="steps">
+    <li><strong>Progressivo, não fixo:</strong> cada pedaço do salário é tributado pela alíquota da sua faixa — não é a alíquota maior sobre tudo.</li>
+    <li><strong>Teto:</strong> a base para em R$ 8.475,55; acima disso, o desconto é sempre R$ 988,09.</li>
+    <li><strong>Alíquota efetiva:</strong> desconto total ÷ salário — é ela que mostra quanto você paga de verdade.</li>
+  </ol>
+
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details><summary>Quem ganha R$ 10.000 paga quanto de INSS?</summary>
+      <p>R$ 988,09 — o teto. A base de contribuição para em R$ 8.475,55, então salários maiores não aumentam o desconto do empregado.</p></details>
+    <details><summary>O INSS também desconta no 13º salário?</summary>
+      <p>Sim, mas em guia separada e calculado só sobre o 13º, sem misturar com o salário de dezembro. Veja a calculadora de 13º salário.</p></details>
+    <details><summary>INSS desconta nas férias?</summary>
+      <p>Sim, sobre as férias + 1/3 (o abono pecuniário é isento). Use a calculadora de férias para ver o valor.</p></details>
+    <details><summary>Por que a alíquota do meu holerite parece diferente?</summary>
+      <p>Alguns holerites mostram a alíquota da última faixa em vez da efetiva. O valor descontado é o que importa: confira com o cálculo faixa por faixa desta página.</p></details>
+    <details><summary>Quem paga o INSS do empregado?</summary>
+      <p>A empresa desconta a parte do empregado (esta calculadora) e paga a parte patronal por fora (em geral 20% + RAT + terceiros), sem descontar de você.</p></details>
+  </div>
+
+  <h2>Outras calculadoras</h2>
+  <div class="related">
+    <a href="/calculadora-salario-liquido/">Calculadora de Salário Líquido<small>INSS, IRRF e FGTS do mês</small></a>
+    <a href="/calculadora-irrf/">Calculadora de IRRF<small>Imposto de renda com a Lei 15.270</small></a>
+    <a href="/calculadora-fgts/">Calculadora de FGTS<small>Depósito de 8% e saldo estimado</small></a>
+    <a href="/calculadora-pis-pasep/">Calculadora de PIS/PASEP<small>Abono salarial 2026</small></a>
+  </div>
+
+  <footer>
+    TudoCalcula — ferramenta gratuita de estimativa. Os resultados são aproximados e não substituem o holerite oficial. Tabela: Portaria Interministerial MPS/MF nº 13/2026.
+  </footer>
+
+</div>
+
+<script>
+// ENGINE START
+function round2(v){ return Math.round((v + 1e-9) * 100) / 100; }
+var INSS_FAIXAS = [
+  { ate: 1621.00, aliq: 0.075 },
+  { ate: 2902.84, aliq: 0.09  },
+  { ate: 4354.27, aliq: 0.12  },
+  { ate: 8475.55, aliq: 0.14  }
+];
+var INSS_TETO_BASE = 8475.55;
+function calcINSS(bruto){
+  var total = 0, anterior = 0, detalhe = [];
+  for (var i = 0; i < INSS_FAIXAS.length; i++){
+    var f = INSS_FAIXAS[i];
+    if (bruto <= anterior) break;
+    var base = Math.min(bruto, f.ate) - anterior;
+    var valor = base * f.aliq;
+    total += valor;
+    detalhe.push({ faixa: i + 1, base: round2(base), aliq: f.aliq * 100, valor: round2(valor) });
+    anterior = f.ate;
+  }
+  return { total: round2(total), detalhe: detalhe };
+}
+function calcularINSS(salario){
+  salario = Math.max(0, +salario || 0);
+  var r = calcINSS(salario);
+  return { salario: round2(salario), base: round2(Math.min(salario, INSS_TETO_BASE)),
+           inss: r.total, detalhe: r.detalhe,
+           efetiva: salario > 0 ? round2(r.total / salario * 10000) / 100 : 0,
+           resta: round2(salario - r.total), noTeto: salario >= INSS_TETO_BASE };
+}
+// ENGINE END
+
+function fmt(v){ return v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }); }
+function pct(v){ return String(v.toFixed(2)).replace(".", ",") + "%"; }
+function atualizar(){
+  var r = calcularINSS(parseFloat(document.getElementById("salario").value) || 0);
+  document.getElementById("r-base").textContent = fmt(r.base);
+  document.getElementById("r-base-lbl").textContent = r.noTeto ? "limitada ao teto de R$ 8.475,55" : "";
+  document.getElementById("r-inss").textContent = fmt(r.inss);
+  document.getElementById("r-efetiva").textContent = pct(r.efetiva);
+  document.getElementById("r-resta").textContent = fmt(r.resta);
+  var linhas = [];
+  r.detalhe.forEach(function(d){
+    linhas.push("• Faixa " + d.faixa + ": " + fmt(d.base) + " × " + String(d.aliq).replace(".", ",") + "% = " + fmt(d.valor));
+  });
+  linhas.push("Total: " + fmt(r.inss) + " (alíquota efetiva de " + pct(r.efetiva) + ").");
+  if (r.noTeto) linhas.push("Salário acima do teto: desconto máximo de R$ 988,09.");
+  document.getElementById("memoria-texto").textContent = linhas.join("\n");
+}
+document.getElementById("salario").addEventListener("input", atualizar);
+document.getElementById("salario").addEventListener("change", atualizar);
+atualizar();
+</script>
+</body>
+</html>
