@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Idade — Idade exata, dias vividos e aniversário | TudoCalcula</title>
+<meta name="description" content="Descubra sua idade exata em anos, meses e dias, quantos dias você já viveu e quantos faltam para o próximo aniversário.">
+<style>
+  :root{ --green:#0e7a3d; --green-dark:#0a5c2e; --gold:#f5b301; --ink:#1a2332; --muted:#5b6b7f; --bg:#f4f7f5; --card:#ffffff; --line:#e2e8e4; --red:#c0392b; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 16px 48px;}
+  header{background:var(--green-dark); color:#fff; padding:14px 0;}
+  header .wrap{padding-bottom:0;}
+  .brand{font-size:22px; font-weight:800; letter-spacing:-.3px;}
+  .brand span{color:var(--gold);}
+  .brand small{display:block; font-size:12px; font-weight:400; opacity:.85; letter-spacing:0;}
+  h1{font-size:28px; line-height:1.25; margin:26px 0 10px;}
+  .intro{color:var(--muted); font-size:16px; margin-bottom:20px;}
+  .intro strong{color:var(--ink);}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:0 2px 10px rgba(16,60,36,.05);}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media (max-width:720px){ .grid{grid-template-columns:1fr;} h1{font-size:24px;} }
+  label{display:block; font-size:13px; font-weight:600; margin:14px 0 6px;}
+  label:first-child{margin-top:0;}
+  input[type=number], input[type=text], input[type=date], select{width:100%; padding:12px 14px; font-size:17px; border:1.5px solid var(--line); border-radius:10px; outline:none; background:#fff;}
+  input:focus, select:focus{border-color:var(--green);}
+  .hint{font-size:12px; color:var(--muted); margin-top:4px;}
+  .result-title{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:10px;}
+  table.payslip{width:100%; border-collapse:collapse; font-size:15px;}
+  table.payslip td{padding:8px 2px; border-bottom:1px dashed var(--line);}
+  table.payslip td.v{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  table.payslip tr.total td{border-bottom:none; border-top:2px solid var(--ink); font-size:19px; font-weight:800; padding-top:12px;}
+  table.payslip tr.total td.v{color:var(--green-dark);}
+  .aliquota{display:block; font-size:11.5px; color:var(--muted); font-weight:400;}
+  h2{font-size:21px; margin:34px 0 12px;}
+  p.body{color:#33404f; margin-bottom:12px; font-size:15.5px;}
+  ol.steps{margin:0 0 8px 20px; color:#33404f; font-size:15.5px;}
+  ol.steps li{margin-bottom:7px;}
+  .faq details{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:10px;}
+  .faq summary{cursor:pointer; font-weight:600; font-size:15.5px;}
+  .faq p{margin-top:8px; color:#33404f; font-size:15px;}
+  .stamp{display:inline-block; background:#e8f4ec; color:var(--green-dark); font-size:12.5px; font-weight:600; border-radius:20px; padding:5px 12px; margin-top:6px;}
+  .related{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:6px;}
+  .related a{display:block; background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; text-decoration:none; color:var(--ink); font-weight:600; font-size:14.5px;}
+  .related a:hover{border-color:var(--green);}
+  .related a small{display:block; font-weight:400; color:var(--muted); margin-top:3px; font-size:12.5px;}
+  footer{margin-top:40px; font-size:12.5px; color:var(--muted); border-top:1px solid var(--line); padding-top:16px;}
+</style>
+<link rel="canonical" href="https://tudocalcula.tudobem.workers.dev/calculadora-idade/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TudoCalcula">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Calculadora de Idade — Idade exata, dias vividos e aniversário | TudoCalcula">
+<meta property="og:description" content="Descubra sua idade exata em anos, meses e dias, quantos dias você já viveu e quantos faltam para o próximo aniversário.">
+<meta property="og:url" content="https://tudocalcula.tudobem.workers.dev/calculadora-idade/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Calculadora de Idade — Idade exata, dias vividos e aniversário | TudoCalcula">
+<meta name="twitter:description" content="Descubra sua idade exata em anos, meses e dias, quantos dias você já viveu e quantos faltam para o próximo aniversário.">
+<meta name="theme-color" content="#0a5c2e">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de Idade — Idade exata, dias vividos e aniversário", "url": "https://tudocalcula.tudobem.workers.dev/calculadora-idade/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web", "inLanguage": "pt-BR", "description": "Descubra sua idade exata em anos, meses e dias, quantos dias você já viveu e quantos faltam para o próximo aniversário.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}, "isPartOf": {"@type": "WebSite", "name": "TudoCalcula", "url": "https://tudocalcula.tudobem.workers.dev/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Como calculo a idade do meu bebê em meses?", "acceptedAnswer": {"@type": "Answer", "text": "Use esta mesma calculadora: o campo \"Total em meses\" mostra a idade completa em meses, que é como pediatras e calendários de vacina costumam contar."}}, {"@type": "Question", "name": "Idade para concurso e aposentadoria usa esta conta?", "acceptedAnswer": {"@type": "Answer", "text": "A base é a mesma (anos completos na data de referência do edital ou da regra). Escolha no segundo campo a data-limite do edital para saber a idade considerada naquele dia."}}, {"@type": "Question", "name": "Quem nasceu em 29 de fevereiro faz aniversário quando?", "acceptedAnswer": {"@type": "Answer", "text": "Nos anos sem 29/02, a comemoração costuma ser em 28 de fevereiro ou 1º de março. Para documentos, a maioridade é atingida no dia 28/02 ou 1º/03 conforme o entendimento aplicado — esta calculadora usa 28/02."}}, {"@type": "Question", "name": "Quantos dias tem uma vida de 80 anos?", "acceptedAnswer": {"@type": "Answer", "text": "Cerca de 29.200 dias (80 × 365 + uns 20 dias bissextos). Coloque a data e veja o seu número exato — é um jeito famoso de lembrar que o tempo é o recurso mais valioso."}}]}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">Tudo<span>Calcula</span>
+      <small>Calculadoras gratuitas e atualizadas para o seu dia a dia</small>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+
+  <h1>Calculadora de Idade</h1>
+  <p class="intro">Informe a data de nascimento e descubra a <strong>idade exata</strong> — anos, meses e dias — além de <strong>quantos dias você já viveu</strong>, o dia da semana em que nasceu e quanto falta para o <strong>próximo aniversário</strong>. Serve para você, para o bebê, para o pet (na idade dele) e para conferir a idade em qualquer data passada ou futura.</p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label for="nasc">Data de nascimento</label>
+        <input type="date" id="nasc" value="1990-05-15">
+        <label for="ref">Calcular a idade em qual data?</label>
+        <input type="date" id="ref">
+        <p class="hint">Deixe a segunda data como está para saber a idade hoje — ou escolha outra data (um concurso, uma viagem, a aposentadoria).</p>
+      </div>
+      <div>
+        <div class="result-title">Idade — resultado</div>
+        <table class="payslip">
+          <tr class="total"><td>Idade exata</td><td class="v" id="r-idade">—</td></tr>
+          <tr><td>Total em meses</td><td class="v" id="r-meses">—</td></tr>
+          <tr><td>Total em dias vividos</td><td class="v" id="r-dias">—</td></tr>
+          <tr><td>Dia da semana do nascimento</td><td class="v" id="r-semana">—</td></tr>
+          <tr><td>Próximo aniversário<span class="aliquota" id="r-aniv-lbl"></span></td><td class="v" id="r-aniv">—</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <span class="stamp">✓ Cálculo conferido em novembro de 2026 — anos bissextos incluídos</span>
+
+  <h2>Como o cálculo é feito</h2>
+  <ol class="steps">
+    <li><strong>Anos completos:</strong> do nascimento até o último aniversário já ocorrido na data de referência.</li>
+    <li><strong>Meses e dias:</strong> contados a partir desse aniversário, mês a mês, respeitando o tamanho real de cada mês.</li>
+    <li><strong>Dias vividos:</strong> a diferença total em dias entre as duas datas, incluindo os dias 29 de fevereiro dos anos bissextos.</li>
+    <li><strong>Próximo aniversário:</strong> a próxima ocorrência do dia/mês de nascimento — quem nasceu em 29/02 comemora em 28/02 ou 1º/03 nos anos comuns; aqui, consideramos 28/02.</li>
+  </ol>
+
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details><summary>Como calculo a idade do meu bebê em meses?</summary>
+      <p>Use esta mesma calculadora: o campo "Total em meses" mostra a idade completa em meses, que é como pediatras e calendários de vacina costumam contar.</p></details>
+    <details><summary>Idade para concurso e aposentadoria usa esta conta?</summary>
+      <p>A base é a mesma (anos completos na data de referência do edital ou da regra). Escolha no segundo campo a data-limite do edital para saber a idade considerada naquele dia.</p></details>
+    <details><summary>Quem nasceu em 29 de fevereiro faz aniversário quando?</summary>
+      <p>Nos anos sem 29/02, a comemoração costuma ser em 28 de fevereiro ou 1º de março. Para documentos, a maioridade é atingida no dia 28/02 ou 1º/03 conforme o entendimento aplicado — esta calculadora usa 28/02.</p></details>
+    <details><summary>Quantos dias tem uma vida de 80 anos?</summary>
+      <p>Cerca de 29.200 dias (80 × 365 + uns 20 dias bissextos). Coloque a data e veja o seu número exato — é um jeito famoso de lembrar que o tempo é o recurso mais valioso.</p></details>
+  </div>
+
+  <h2>Outras calculadoras</h2>
+  <div class="related">
+    <a href="/calculadora-dias-uteis/">Calculadora de Dias Úteis<small>Entre datas, com feriados</small></a>
+    <a href="/calculadora-porcentagem/">Calculadora de Porcentagem<small>Percentuais e regra de três</small></a>
+    <a href="/calculadora-salario-liquido/">Calculadora de Salário Líquido<small>INSS, IRRF e FGTS do mês</small></a>
+    <a href="/calculadora-pis-pasep/">Calculadora de PIS/PASEP<small>Abono salarial 2026</small></a>
+  </div>
+
+  <footer>
+    TudoCalcula — ferramenta gratuita. Nenhuma data informada é enviada ou armazenada; todo o cálculo acontece no seu navegador.
+  </footer>
+
+</div>
+
+<script>
+// ENGINE START
+var DIAS_SEMANA = ["domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado"];
+function somarAnos(d, anos){
+  var r = new Date(d);
+  r.setFullYear(r.getFullYear() + anos);
+  // Se transbordou o mês (29/02 → 01/03 em ano comum), volta ao último dia do mês anterior (28/02)
+  if (r.getMonth() !== d.getMonth()) r.setDate(0);
+  return r;
+}
+function somarMeses(d, meses){
+  var r = new Date(d);
+  r.setMonth(r.getMonth() + meses);
+  return r;
+}
+function calcularIdade(nascISO, refISO){
+  var n = new Date(nascISO + "T12:00:00");
+  var ref = new Date(refISO + "T12:00:00");
+  if (isNaN(n) || isNaN(ref) || ref < n) return null;
+  var anos = ref.getFullYear() - n.getFullYear();
+  if (somarAnos(n, anos) > ref) anos--;
+  var ancora = somarAnos(n, anos);
+  var meses = 0;
+  while (somarMeses(ancora, meses + 1) <= ref) meses++;
+  ancora = somarMeses(ancora, meses);
+  var dias = Math.round((ref - ancora) / 86400000);
+  var totalDias = Math.round((ref - n) / 86400000);
+  var prox = somarAnos(n, anos + 1);
+  var faltam = Math.round((prox - ref) / 86400000);
+  return { anos: anos, meses: meses, dias: dias,
+           totalMeses: anos * 12 + meses, totalDias: totalDias,
+           diaSemana: DIAS_SEMANA[n.getDay()],
+           proxAnivISO: prox.toISOString().slice(0, 10), faltam: faltam };
+}
+// ENGINE END
+
+function fmtData(iso){
+  var p = iso.split("-");
+  return p[2] + "/" + p[1] + "/" + p[0];
+}
+function atualizar(){
+  var r = calcularIdade(document.getElementById("nasc").value, document.getElementById("ref").value);
+  if (!r){
+    document.getElementById("r-idade").textContent = "—";
+    return;
+  }
+  document.getElementById("r-idade").textContent = r.anos + " anos, " + r.meses + " meses e " + r.dias + " dias";
+  document.getElementById("r-meses").textContent = r.totalMeses + " meses";
+  document.getElementById("r-dias").textContent = r.totalDias.toLocaleString("pt-BR") + " dias";
+  document.getElementById("r-semana").textContent = r.diaSemana;
+  document.getElementById("r-aniv").textContent = fmtData(r.proxAnivISO);
+  document.getElementById("r-aniv-lbl").textContent = r.faltam === 0 ? "é hoje — parabéns!" : "faltam " + r.faltam + " dias";
+}
+(function(){
+  var hoje = new Date();
+  var iso = hoje.getFullYear() + "-" + String(hoje.getMonth() + 1).padStart(2, "0") + "-" + String(hoje.getDate()).padStart(2, "0");
+  document.getElementById("ref").value = iso;
+})();
+["nasc", "ref"].forEach(function(id){
+  document.getElementById(id).addEventListener("input", atualizar);
+  document.getElementById(id).addEventListener("change", atualizar);
+});
+atualizar();
+</script>
+</body>
+</html>
