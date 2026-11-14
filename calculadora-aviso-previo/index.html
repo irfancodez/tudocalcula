@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Aviso Prévio 2026 — 30 dias + 3 por ano | TudoCalcula</title>
+<meta name="description" content="Calcule o aviso prévio proporcional da Lei 12.506/2011: 30 dias + 3 dias por ano trabalhado, até 90 dias. Exemplo: salário de R$ 3.000 e 6 anos de casa → 48 dias = R$ 4.800,00.">
+<style>
+  :root{ --green:#0e7a3d; --green-dark:#0a5c2e; --gold:#f5b301; --ink:#1a2332; --muted:#5b6b7f; --bg:#f4f7f5; --card:#ffffff; --line:#e2e8e4; --red:#c0392b; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 16px 48px;}
+  header{background:var(--green-dark); color:#fff; padding:14px 0;}
+  header .wrap{padding-bottom:0;}
+  .brand{font-size:22px; font-weight:800; letter-spacing:-.3px;}
+  .brand span{color:var(--gold);}
+  .brand small{display:block; font-size:12px; font-weight:400; opacity:.85; letter-spacing:0;}
+  h1{font-size:28px; line-height:1.25; margin:26px 0 10px;}
+  .intro{color:var(--muted); font-size:16px; margin-bottom:20px;}
+  .intro strong{color:var(--ink);}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:0 2px 10px rgba(16,60,36,.05);}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media (max-width:720px){ .grid{grid-template-columns:1fr;} h1{font-size:24px;} }
+  label{display:block; font-size:13px; font-weight:600; margin:14px 0 6px;}
+  label:first-child{margin-top:0;}
+  input[type=number], input[type=text], input[type=date], select{width:100%; padding:12px 14px; font-size:17px; border:1.5px solid var(--line); border-radius:10px; outline:none; background:#fff;}
+  input:focus, select:focus{border-color:var(--green);}
+  .hint{font-size:12px; color:var(--muted); margin-top:4px;}
+  .result-title{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:10px;}
+  table.payslip{width:100%; border-collapse:collapse; font-size:15px;}
+  table.payslip td{padding:8px 2px; border-bottom:1px dashed var(--line);}
+  table.payslip td.v{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  table.payslip tr.total td{border-bottom:none; border-top:2px solid var(--ink); font-size:19px; font-weight:800; padding-top:12px;}
+  table.payslip tr.total td.v{color:var(--green-dark);}
+  .aliquota{display:block; font-size:11.5px; color:var(--muted); font-weight:400;}
+  h2{font-size:21px; margin:34px 0 12px;}
+  p.body{color:#33404f; margin-bottom:12px; font-size:15.5px;}
+  table.data{width:100%; border-collapse:collapse; font-size:14.5px; background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  table.data th{background:var(--green-dark); color:#fff; text-align:left; padding:10px 12px; font-size:13.5px;}
+  table.data td{padding:9px 12px; border-top:1px solid var(--line); font-variant-numeric:tabular-nums;}
+  table.data td:last-child, table.data th:last-child{text-align:right;}
+  .fonte{font-size:12.5px; color:var(--muted); margin-top:8px;}
+  ol.steps{margin:0 0 8px 20px; color:#33404f; font-size:15.5px;}
+  ol.steps li{margin-bottom:7px;}
+  .faq details{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:10px;}
+  .faq summary{cursor:pointer; font-weight:600; font-size:15.5px;}
+  .faq p{margin-top:8px; color:#33404f; font-size:15px;}
+  .stamp{display:inline-block; background:#e8f4ec; color:var(--green-dark); font-size:12.5px; font-weight:600; border-radius:20px; padding:5px 12px; margin-top:6px;}
+  .related{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:6px;}
+  .related a{display:block; background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; text-decoration:none; color:var(--ink); font-weight:600; font-size:14.5px;}
+  .related a:hover{border-color:var(--green);}
+  .related a small{display:block; font-weight:400; color:var(--muted); margin-top:3px; font-size:12.5px;}
+  footer{margin-top:40px; font-size:12.5px; color:var(--muted); border-top:1px solid var(--line); padding-top:16px;}
+</style>
+<link rel="canonical" href="https://tudocalcula.tudobem.workers.dev/calculadora-aviso-previo/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TudoCalcula">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Calculadora de Aviso Prévio 2026 — 30 dias + 3 por ano | TudoCalcula">
+<meta property="og:description" content="Calcule o aviso prévio proporcional da Lei 12.506/2011: 30 dias + 3 dias por ano trabalhado, até 90 dias. Exemplo: salário de R$ 3.000 e 6 anos de casa → 48 dias = R$ 4.800,00.">
+<meta property="og:url" content="https://tudocalcula.tudobem.workers.dev/calculadora-aviso-previo/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Calculadora de Aviso Prévio 2026 — 30 dias + 3 por ano | TudoCalcula">
+<meta name="twitter:description" content="Calcule o aviso prévio proporcional da Lei 12.506/2011: 30 dias + 3 dias por ano trabalhado, até 90 dias. Exemplo: salário de R$ 3.000 e 6 anos de casa → 48 dias = R$ 4.800,00.">
+<meta name="theme-color" content="#0a5c2e">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de Aviso Prévio 2026 — 30 dias + 3 por ano", "url": "https://tudocalcula.tudobem.workers.dev/calculadora-aviso-previo/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "pt-BR", "description": "Calcule o aviso prévio proporcional da Lei 12.506/2011: 30 dias + 3 dias por ano trabalhado, até 90 dias. Exemplo: salário de R$ 3.000 e 6 anos de casa → 48 dias = R$ 4.800,00.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}, "isPartOf": {"@type": "WebSite", "name": "TudoCalcula", "url": "https://tudocalcula.tudobem.workers.dev/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Pedi demissão: meu aviso também é proporcional?", "acceptedAnswer": {"@type": "Answer", "text": "Não. No pedido de demissão, o aviso devido é de 30 dias. Se você não cumprir e a empresa não dispensar, ela pode descontar 1 salário das suas verbas rescisórias."}}, {"@type": "Question", "name": "Quem é demitido por acordo cumpre aviso?", "acceptedAnswer": {"@type": "Answer", "text": "Se indenizado, o aviso por acordo é pago pela metade (art. 484-A da CLT); se trabalhado, é cumprido integralmente."}}, {"@type": "Question", "name": "Faltei durante o aviso trabalhado. E agora?", "acceptedAnswer": {"@type": "Answer", "text": "Faltas injustificadas no aviso permitem à empresa descontar os dias e, dependendo do caso, até converter a demissão em justa causa por desídia. As únicas ausências protegidas são a redução de jornada (2h/dia) ou os 7 dias finais, quando o aviso é dado pela empresa."}}, {"@type": "Question", "name": "Arrumar outro emprego durante o aviso trabalhado, pode?", "acceptedAnswer": {"@type": "Answer", "text": "Pode: comprovando o novo emprego, você é dispensado do restante do aviso sem desconto (Súmula 276 do TST), recebendo só pelos dias trabalhados."}}, {"@type": "Question", "name": "O aviso indenizado entra no cálculo da rescisão como?", "acceptedAnswer": {"@type": "Answer", "text": "Como verba indenizatória própria, e o período é projetado para aumentar o 13º e as férias proporcionais e o FGTS. Veja o cálculo completo na calculadora de rescisão."}}]}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">Tudo<span>Calcula</span>
+      <small>Calculadoras trabalhistas gratuitas, com as tabelas oficiais de 2026</small>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+
+  <h1>Calculadora de Aviso Prévio 2026</h1>
+  <p class="intro">O aviso prévio não é sempre 30 dias: pela <strong>Lei 12.506/2011</strong>, ele cresce <strong>3 dias por ano completo de trabalho</strong>, até o máximo de <strong>90 dias</strong>. Exemplo: salário de <strong>R$ 3.000,00</strong> e 6 anos de empresa → aviso de <strong>48 dias = R$ 4.800,00</strong>.</p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label for="salario">Salário bruto mensal (R$)</label>
+        <input type="number" id="salario" value="3000" min="0" step="0.01" inputmode="decimal">
+        <label for="admissao">Data de admissão</label>
+        <input type="date" id="admissao" value="2020-06-01">
+        <label for="desligamento">Data do desligamento (início do aviso)</label>
+        <input type="date" id="desligamento" value="2026-06-01">
+        <label for="tipo">Como o aviso será cumprido?</label>
+        <select id="tipo">
+          <option value="indenizado" selected>Indenizado — a empresa paga sem você trabalhar</option>
+          <option value="trabalhado">Trabalhado — você trabalha o período</option>
+        </select>
+        <p class="hint">No aviso trabalhado dado pela empresa, você escolhe: sair 2 horas mais cedo por dia ou faltar os últimos 7 dias corridos — sem desconto.</p>
+      </div>
+      <div>
+        <div class="result-title">Seu aviso prévio — resultado</div>
+        <table class="payslip">
+          <tr><td>Anos completos de casa</td><td class="v" id="r-anos">6</td></tr>
+          <tr><td>Dias de aviso<span class="aliquota" id="r-dias-lbl">30 + 18 proporcionais</span></td><td class="v" id="r-dias">48 dias</td></tr>
+          <tr><td>Data projetada do fim do contrato<span class="aliquota">conta para 13º, férias e FGTS</span></td><td class="v" id="r-projecao">19/07/2026</td></tr>
+          <tr class="total"><td>Valor do aviso prévio</td><td class="v" id="r-valor">R$ 4.800,00</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <span class="stamp">✓ Regras conferidas em novembro de 2026 — Lei nº 12.506/2011 e CLT, arts. 487–491</span>
+
+  <h2>Tabela do aviso prévio proporcional</h2>
+  <table class="data">
+    <tr><th>Anos completos na empresa</th><th>Dias de aviso</th></tr>
+    <tr><td>Até 1 ano</td><td>30 dias</td></tr>
+    <tr><td>2 anos</td><td>36 dias</td></tr>
+    <tr><td>5 anos</td><td>45 dias</td></tr>
+    <tr><td>10 anos</td><td>60 dias</td></tr>
+    <tr><td>15 anos</td><td>75 dias</td></tr>
+    <tr><td>20 anos ou mais</td><td>90 dias (máximo)</td></tr>
+  </table>
+  <p class="fonte">Fonte: Lei nº 12.506/2011 — 30 dias + 3 dias por ano completo de serviço, limitado a 90 dias. A proporcionalidade vale a favor do empregado; no pedido de demissão, o aviso devido à empresa é de 30 dias.</p>
+
+  <h2>Como o cálculo é feito</h2>
+  <ol class="steps">
+    <li><strong>Anos completos:</strong> conte os aniversários de admissão até o desligamento (fração de ano não conta).</li>
+    <li><strong>Dias:</strong> 30 + 3 × anos completos, no máximo 90.</li>
+    <li><strong>Valor:</strong> salário ÷ 30 × dias de aviso (incluindo a média de adicionais habituais, quando houver).</li>
+    <li><strong>Projeção:</strong> o aviso indenizado projeta o fim do contrato — esse período conta para 13º proporcional, férias proporcionais e depósito de FGTS.</li>
+    <li><strong>Descontos:</strong> o aviso indenizado não tem INSS nem IRRF; o trabalhado é salário normal, com descontos.</li>
+  </ol>
+
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details><summary>Pedi demissão: meu aviso também é proporcional?</summary>
+      <p>Não. No pedido de demissão, o aviso devido é de 30 dias. Se você não cumprir e a empresa não dispensar, ela pode descontar 1 salário das suas verbas rescisórias.</p></details>
+    <details><summary>Quem é demitido por acordo cumpre aviso?</summary>
+      <p>Se indenizado, o aviso por acordo é pago pela metade (art. 484-A da CLT); se trabalhado, é cumprido integralmente.</p></details>
+    <details><summary>Faltei durante o aviso trabalhado. E agora?</summary>
+      <p>Faltas injustificadas no aviso permitem à empresa descontar os dias e, dependendo do caso, até converter a demissão em justa causa por desídia. As únicas ausências protegidas são a redução de jornada (2h/dia) ou os 7 dias finais, quando o aviso é dado pela empresa.</p></details>
+    <details><summary>Arrumar outro emprego durante o aviso trabalhado, pode?</summary>
+      <p>Pode: comprovando o novo emprego, você é dispensado do restante do aviso sem desconto (Súmula 276 do TST), recebendo só pelos dias trabalhados.</p></details>
+    <details><summary>O aviso indenizado entra no cálculo da rescisão como?</summary>
+      <p>Como verba indenizatória própria, e o período é projetado para aumentar o 13º e as férias proporcionais e o FGTS. Veja o cálculo completo na calculadora de rescisão.</p></details>
+  </div>
+
+  <h2>Outras calculadoras</h2>
+  <div class="related">
+    <a href="/calculadora-rescisao/">Calculadora de Rescisão<small>Todos os tipos de desligamento</small></a>
+    <a href="/calculadora-seguro-desemprego/">Calculadora de Seguro-Desemprego<small>Parcelas e valores de 2026</small></a>
+    <a href="/calculadora-fgts/">Calculadora de FGTS<small>Depósito de 8% e saldo estimado</small></a>
+    <a href="/calculadora-ferias/">Calculadora de Férias<small>Com o terço constitucional</small></a>
+  </div>
+
+  <footer>
+    TudoCalcula — ferramenta gratuita de estimativa. Os resultados são aproximados e não substituem o TRCT oficial. Regras: Lei nº 12.506/2011 e CLT, arts. 487–491.
+  </footer>
+
+</div>
+
+<script>
+// ENGINE START
+function round2(v){ return Math.round((v + 1e-9) * 100) / 100; }
+function anosCompletos(admissaoISO, desligamentoISO){
+  var a = new Date(admissaoISO + "T12:00:00");
+  var d = new Date(desligamentoISO + "T12:00:00");
+  if (isNaN(a) || isNaN(d) || d < a) return 0;
+  var anos = d.getFullYear() - a.getFullYear();
+  var aniversario = new Date(a);
+  aniversario.setFullYear(a.getFullYear() + anos);
+  if (aniversario > d) anos--;
+  return Math.max(0, anos);
+}
+function diasAvisoPrevio(anos){ return Math.min(90, 30 + 3 * Math.max(0, anos)); }
+function calcularAvisoPrevio(salario, admissaoISO, desligamentoISO){
+  salario = Math.max(0, +salario || 0);
+  var anos = anosCompletos(admissaoISO, desligamentoISO);
+  var dias = diasAvisoPrevio(anos);
+  var valor = round2(salario / 30 * dias);
+  var fim = new Date(desligamentoISO + "T12:00:00");
+  fim.setDate(fim.getDate() + dias);
+  return { salario: round2(salario), anos: anos, dias: dias, diasProporcionais: dias - 30,
+           valor: valor, projecaoISO: fim.toISOString().slice(0, 10) };
+}
+// ENGINE END
+
+function fmt(v){ return v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }); }
+function fmtData(iso){
+  var p = iso.split("-");
+  return p[2] + "/" + p[1] + "/" + p[0];
+}
+function atualizar(){
+  var r = calcularAvisoPrevio(
+    parseFloat(document.getElementById("salario").value) || 0,
+    document.getElementById("admissao").value,
+    document.getElementById("desligamento").value
+  );
+  document.getElementById("r-anos").textContent = r.anos;
+  document.getElementById("r-dias").textContent = r.dias + " dias";
+  document.getElementById("r-dias-lbl").textContent = "30" + (r.diasProporcionais > 0 ? " + " + r.diasProporcionais + " proporcionais" : "");
+  document.getElementById("r-projecao").textContent = fmtData(r.projecaoISO);
+  document.getElementById("r-valor").textContent = fmt(r.valor);
+}
+["salario", "admissao", "desligamento", "tipo"].forEach(function(id){
+  document.getElementById(id).addEventListener("input", atualizar);
+  document.getElementById(id).addEventListener("change", atualizar);
+});
+atualizar();
+</script>
+</body>
+</html>
