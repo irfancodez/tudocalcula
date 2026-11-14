@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tudocalcula.tudocalcula.workers.dev/sitemap.xml
+Sitemap: https://tudocalcula.tudobem.workers.dev/sitemap.xml
