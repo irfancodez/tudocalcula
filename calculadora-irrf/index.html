@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de IRRF 2026 — Com a isenção da Lei 15.270/2025 | TudoCalcula</title>
+<meta name="description" content="Calcule o IRRF 2026 descontado do salário: tabela mensal, desconto simplificado de R$ 607,20 e a redução da Lei 15.270/2025 que isenta quem ganha até R$ 5.000. Salário de R$ 6.000 → R$ 385,10.">
+<style>
+  :root{ --green:#0e7a3d; --green-dark:#0a5c2e; --gold:#f5b301; --ink:#1a2332; --muted:#5b6b7f; --bg:#f4f7f5; --card:#ffffff; --line:#e2e8e4; --red:#c0392b; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 16px 48px;}
+  header{background:var(--green-dark); color:#fff; padding:14px 0;}
+  header .wrap{padding-bottom:0;}
+  .brand{font-size:22px; font-weight:800; letter-spacing:-.3px;}
+  .brand span{color:var(--gold);}
+  .brand small{display:block; font-size:12px; font-weight:400; opacity:.85; letter-spacing:0;}
+  h1{font-size:28px; line-height:1.25; margin:26px 0 10px;}
+  .intro{color:var(--muted); font-size:16px; margin-bottom:20px;}
+  .intro strong{color:var(--ink);}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:0 2px 10px rgba(16,60,36,.05);}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media (max-width:720px){ .grid{grid-template-columns:1fr;} h1{font-size:24px;} }
+  label{display:block; font-size:13px; font-weight:600; margin:14px 0 6px;}
+  label:first-child{margin-top:0;}
+  input[type=number], input[type=text], select{width:100%; padding:12px 14px; font-size:17px; border:1.5px solid var(--line); border-radius:10px; outline:none; background:#fff;}
+  input:focus, select:focus{border-color:var(--green);}
+  .hint{font-size:12px; color:var(--muted); margin-top:4px;}
+  .result-title{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); margin-bottom:10px;}
+  table.payslip{width:100%; border-collapse:collapse; font-size:15px;}
+  table.payslip td{padding:8px 2px; border-bottom:1px dashed var(--line);}
+  table.payslip td.v{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  table.payslip tr.neg td.v{color:var(--red);}
+  table.payslip tr.total td{border-bottom:none; border-top:2px solid var(--ink); font-size:19px; font-weight:800; padding-top:12px;}
+  table.payslip tr.total td.v{color:var(--green-dark);}
+  .aliquota{display:block; font-size:11.5px; color:var(--muted); font-weight:400;}
+  details.memoria{margin-top:14px; font-size:13.5px; color:var(--muted);}
+  details.memoria summary{cursor:pointer; font-weight:600; color:var(--green-dark);}
+  details.memoria p{margin-top:8px; white-space:pre-line;}
+  h2{font-size:21px; margin:34px 0 12px;}
+  p.body{color:#33404f; margin-bottom:12px; font-size:15.5px;}
+  table.data{width:100%; border-collapse:collapse; font-size:14.5px; background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  table.data th{background:var(--green-dark); color:#fff; text-align:left; padding:10px 12px; font-size:13.5px;}
+  table.data td{padding:9px 12px; border-top:1px solid var(--line); font-variant-numeric:tabular-nums;}
+  table.data td:last-child, table.data th:last-child{text-align:right;}
+  .fonte{font-size:12.5px; color:var(--muted); margin-top:8px;}
+  ol.steps{margin:0 0 8px 20px; color:#33404f; font-size:15.5px;}
+  ol.steps li{margin-bottom:7px;}
+  .faq details{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:10px;}
+  .faq summary{cursor:pointer; font-weight:600; font-size:15.5px;}
+  .faq p{margin-top:8px; color:#33404f; font-size:15px;}
+  .stamp{display:inline-block; background:#e8f4ec; color:var(--green-dark); font-size:12.5px; font-weight:600; border-radius:20px; padding:5px 12px; margin-top:6px;}
+  .related{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:6px;}
+  .related a{display:block; background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; text-decoration:none; color:var(--ink); font-weight:600; font-size:14.5px;}
+  .related a:hover{border-color:var(--green);}
+  .related a small{display:block; font-weight:400; color:var(--muted); margin-top:3px; font-size:12.5px;}
+  footer{margin-top:40px; font-size:12.5px; color:var(--muted); border-top:1px solid var(--line); padding-top:16px;}
+</style>
+<link rel="canonical" href="https://tudocalcula.tudobem.workers.dev/calculadora-irrf/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TudoCalcula">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Calculadora de IRRF 2026 — Com a isenção da Lei 15.270/2025 | TudoCalcula">
+<meta property="og:description" content="Calcule o IRRF 2026 descontado do salário: tabela mensal, desconto simplificado de R$ 607,20 e a redução da Lei 15.270/2025 que isenta quem ganha até R$ 5.000. Salário de R$ 6.000 → R$ 385,10.">
+<meta property="og:url" content="https://tudocalcula.tudobem.workers.dev/calculadora-irrf/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Calculadora de IRRF 2026 — Com a isenção da Lei 15.270/2025 | TudoCalcula">
+<meta name="twitter:description" content="Calcule o IRRF 2026 descontado do salário: tabela mensal, desconto simplificado de R$ 607,20 e a redução da Lei 15.270/2025 que isenta quem ganha até R$ 5.000. Salário de R$ 6.000 → R$ 385,10.">
+<meta name="theme-color" content="#0a5c2e">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de IRRF 2026 — Com a isenção da Lei 15.270/2025", "url": "https://tudocalcula.tudobem.workers.dev/calculadora-irrf/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "pt-BR", "description": "Calcule o IRRF 2026 descontado do salário: tabela mensal, desconto simplificado de R$ 607,20 e a redução da Lei 15.270/2025 que isenta quem ganha até R$ 5.000. Salário de R$ 6.000 → R$ 385,10.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}, "isPartOf": {"@type": "WebSite", "name": "TudoCalcula", "url": "https://tudocalcula.tudobem.workers.dev/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quem ganha R$ 5.000 está isento em 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Na prática, sim: o imposto apurado pela tabela é menor que a redução de R$ 312,89, então o IRRF fica zero. A isenção vale para o salário mensal; outros rendimentos seguem as regras próprias."}}, {"@type": "Question", "name": "O desconto simplificado de R$ 607,20 vale para todo mundo?", "acceptedAnswer": {"@type": "Answer", "text": "A folha de pagamento pode usá-lo quando for mais vantajoso que as deduções legais — comum em salários menores ou sem dependentes. Na declaração anual, o modelo simplificado segue regra própria (20% dos rendimentos, com teto)."}}, {"@type": "Question", "name": "IRRF do 13º salário usa esta tabela?", "acceptedAnswer": {"@type": "Answer", "text": "Usa a mesma tabela, mas com tributação exclusiva: o 13º é tributado em separado, sem misturar com o salário, e a redução da Lei 15.270 também se aplica sobre ele. Veja a calculadora de 13º."}}, {"@type": "Question", "name": "O que mais pode reduzir meu IRRF?", "acceptedAnswer": {"@type": "Answer", "text": "Dependentes (R$ 189,59 cada na base), pensão alimentícia judicial, previdência privada PGBL (na declaração anual, até 12% da renda tributável) e despesas dedutíveis na declaração completa (saúde, educação, dependentes)."}}, {"@type": "Question", "name": "Por que o imposto do meu holerite é diferente?", "acceptedAnswer": {"@type": "Answer", "text": "Adicionais tributáveis (horas extras, adicional noturno, comissões) aumentam a base; já benefícios como vale-transporte (até 6% descontado) e faltas alteram o bruto do mês. Some os adicionais ao salário para aproximar."}}]}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">Tudo<span>Calcula</span>
+      <small>Calculadoras trabalhistas gratuitas, com as tabelas oficiais de 2026</small>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+
+  <h1>Calculadora de IRRF 2026</h1>
+  <p class="intro">Calcule o <strong>Imposto de Renda Retido na Fonte</strong> do seu salário em 2026, já com a grande novidade: a <strong>Lei 15.270/2025</strong> reduziu o imposto e, na prática, <strong>isenta quem ganha até R$ 5.000 por mês</strong>. Exemplo: salário de <strong>R$ 6.000,00</strong> → IRRF de <strong>R$ 385,10</strong> (sem a lei, seria R$ 564,85).</p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label for="bruto">Salário bruto mensal (R$)</label>
+        <input type="number" id="bruto" value="6000" min="0" step="0.01" inputmode="decimal">
+        <label for="dependentes">Número de dependentes</label>
+        <input type="number" id="dependentes" value="0" min="0" max="20" step="1" inputmode="numeric">
+        <label for="pensao">Pensão alimentícia judicial (R$)</label>
+        <input type="number" id="pensao" value="0" min="0" step="0.01" inputmode="decimal">
+        <p class="hint">O INSS é calculado automaticamente sobre o salário. A calculadora compara a base legal com o desconto simplificado e usa a menor.</p>
+      </div>
+      <div>
+        <div class="result-title">Seu IRRF — resultado</div>
+        <table class="payslip">
+          <tr><td>INSS (calculado)</td><td class="v" id="r-inss">R$ 641,51</td></tr>
+          <tr><td>Base de cálculo<span class="aliquota" id="r-modo"></span></td><td class="v" id="r-base">R$ 5.358,49</td></tr>
+          <tr><td>Imposto pela tabela</td><td class="v" id="r-tabela">R$ 564,85</td></tr>
+          <tr><td>Redução Lei 15.270/2025</td><td class="v" id="r-reducao">− R$ 179,75</td></tr>
+          <tr class="total"><td>IRRF a descontar</td><td class="v" id="r-irrf">R$ 385,10</td></tr>
+        </table>
+        <details class="memoria">
+          <summary>Ver memória de cálculo</summary>
+          <p id="memoria-texto"></p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <span class="stamp">✓ Tabelas conferidas em novembro de 2026 — Receita Federal e Lei nº 15.270/2025</span>
+
+  <h2>Tabela do IRRF 2026 (mensal)</h2>
+  <table class="data">
+    <tr><th>Base de cálculo</th><th>Alíquota</th><th>Parcela a deduzir</th></tr>
+    <tr><td>Até R$ 2.428,80</td><td>Isento</td><td>—</td></tr>
+    <tr><td>De R$ 2.428,81 a R$ 2.826,65</td><td>7,5%</td><td>R$ 182,16</td></tr>
+    <tr><td>De R$ 2.826,66 a R$ 3.751,05</td><td>15%</td><td>R$ 394,16</td></tr>
+    <tr><td>De R$ 3.751,06 a R$ 4.664,68</td><td>22,5%</td><td>R$ 675,49</td></tr>
+    <tr><td>Acima de R$ 4.664,68</td><td>27,5%</td><td>R$ 908,73</td></tr>
+  </table>
+  <p class="fonte">Fonte: Receita Federal do Brasil. Sobre o imposto apurado aplica-se ainda a redução da Lei 15.270/2025: R$ 312,89 de abatimento para rendimentos de até R$ 5.000, diminuindo gradualmente até zero em R$ 7.350.</p>
+
+  <h2>Como o cálculo é feito</h2>
+  <ol class="steps">
+    <li><strong>INSS primeiro:</strong> o imposto de renda só incide sobre o salário depois do desconto do INSS.</li>
+    <li><strong>Duas bases possíveis:</strong> (a) legal — salário − INSS − R$ 189,59 por dependente − pensão; (b) simplificada — salário − R$ 607,20. Vale a que der menos imposto.</li>
+    <li><strong>Tabela progressiva:</strong> alíquota da faixa menos a parcela a deduzir.</li>
+    <li><strong>Redução da Lei 15.270:</strong> abate até R$ 312,89 do imposto (zero para rendimentos de R$ 7.350 ou mais), nunca deixando o imposto negativo.</li>
+  </ol>
+
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details><summary>Quem ganha R$ 5.000 está isento em 2026?</summary>
+      <p>Na prática, sim: o imposto apurado pela tabela é menor que a redução de R$ 312,89, então o IRRF fica zero. A isenção vale para o salário mensal; outros rendimentos seguem as regras próprias.</p></details>
+    <details><summary>O desconto simplificado de R$ 607,20 vale para todo mundo?</summary>
+      <p>A folha de pagamento pode usá-lo quando for mais vantajoso que as deduções legais — comum em salários menores ou sem dependentes. Na declaração anual, o modelo simplificado segue regra própria (20% dos rendimentos, com teto).</p></details>
+    <details><summary>IRRF do 13º salário usa esta tabela?</summary>
+      <p>Usa a mesma tabela, mas com tributação exclusiva: o 13º é tributado em separado, sem misturar com o salário, e a redução da Lei 15.270 também se aplica sobre ele. Veja a calculadora de 13º.</p></details>
+    <details><summary>O que mais pode reduzir meu IRRF?</summary>
+      <p>Dependentes (R$ 189,59 cada na base), pensão alimentícia judicial, previdência privada PGBL (na declaração anual, até 12% da renda tributável) e despesas dedutíveis na declaração completa (saúde, educação, dependentes).</p></details>
+    <details><summary>Por que o imposto do meu holerite é diferente?</summary>
+      <p>Adicionais tributáveis (horas extras, adicional noturno, comissões) aumentam a base; já benefícios como vale-transporte (até 6% descontado) e faltas alteram o bruto do mês. Some os adicionais ao salário para aproximar.</p></details>
+  </div>
+
+  <h2>Outras calculadoras</h2>
+  <div class="related">
+    <a href="/calculadora-salario-liquido/">Calculadora de Salário Líquido<small>INSS, IRRF e FGTS do mês</small></a>
+    <a href="/calculadora-inss/">Calculadora de INSS<small>Somente a contribuição 2026</small></a>
+    <a href="/calculadora-decimo-terceiro-salario/">Calculadora de 13º Salário<small>1ª e 2ª parcela, com INSS e IRRF</small></a>
+    <a href="/calculadora-ferias/">Calculadora de Férias<small>Com o terço constitucional</small></a>
+  </div>
+
+  <footer>
+    TudoCalcula — ferramenta gratuita de estimativa. Os resultados são aproximados e não substituem o holerite oficial nem a orientação de um contador. Tabelas: Receita Federal e Lei nº 15.270/2025.
+  </footer>
+
+</div>
+
+<script>
+// ENGINE START
+function round2(v){ return Math.round((v + 1e-9) * 100) / 100; }
+var INSS_FAIXAS = [
+  { ate: 1621.00, aliq: 0.075 },
+  { ate: 2902.84, aliq: 0.09  },
+  { ate: 4354.27, aliq: 0.12  },
+  { ate: 8475.55, aliq: 0.14  }
+];
+function calcINSS(bruto){
+  var total = 0, anterior = 0, detalhe = [];
+  for (var i = 0; i < INSS_FAIXAS.length; i++){
+    var f = INSS_FAIXAS[i];
+    if (bruto <= anterior) break;
+    var base = Math.min(bruto, f.ate) - anterior;
+    var valor = base * f.aliq;
+    total += valor;
+    detalhe.push({ faixa: i + 1, base: round2(base), aliq: f.aliq * 100, valor: round2(valor) });
+    anterior = f.ate;
+  }
+  return { total: round2(total), detalhe: detalhe };
+}
+var IRRF_TABELA = [
+  { ate: 2428.80, aliq: 0,     deduzir: 0 },
+  { ate: 2826.65, aliq: 0.075, deduzir: 182.16 },
+  { ate: 3751.05, aliq: 0.15,  deduzir: 394.16 },
+  { ate: 4664.68, aliq: 0.225, deduzir: 675.49 },
+  { ate: Infinity, aliq: 0.275, deduzir: 908.73 }
+];
+function irrfPelaTabela(base){
+  if (base <= 0) return { imposto: 0, aliq: 0 };
+  for (var i = 0; i < IRRF_TABELA.length; i++){
+    var f = IRRF_TABELA[i];
+    if (base <= f.ate){
+      return { imposto: Math.max(0, round2(base * f.aliq - f.deduzir)), aliq: f.aliq * 100 };
+    }
+  }
+  var u = IRRF_TABELA[IRRF_TABELA.length - 1];
+  return { imposto: Math.max(0, round2(base * u.aliq - u.deduzir)), aliq: u.aliq * 100 };
+}
+function reducaoLei15270(rendimento){
+  if (rendimento <= 5000) return 312.89;
+  if (rendimento >= 7350) return 0;
+  return Math.max(0, round2(978.62 - 0.133145 * rendimento));
+}
+function calcularIRRF(bruto, dependentes, pensao){
+  bruto = Math.max(0, +bruto || 0);
+  dependentes = Math.max(0, parseInt(dependentes, 10) || 0);
+  pensao = Math.max(0, +pensao || 0);
+  var inss = calcINSS(bruto).total;
+  var baseLegal = bruto - inss - 189.59 * dependentes - pensao;
+  var baseSimplificada = bruto - 607.20;
+  var tLegal = irrfPelaTabela(baseLegal);
+  var tSimp  = irrfPelaTabela(baseSimplificada);
+  var usarSimp = tSimp.imposto <= tLegal.imposto;
+  var t = usarSimp ? tSimp : tLegal;
+  var base = usarSimp ? baseSimplificada : baseLegal;
+  var reducao = reducaoLei15270(bruto);
+  var imposto = Math.max(0, round2(t.imposto - reducao));
+  return { bruto: round2(bruto), inss: inss, base: round2(base),
+           modo: usarSimp ? "desconto simplificado de R$ 607,20" : "INSS + dependentes" + (pensao > 0 ? " + pensão" : ""),
+           aliq: t.aliq, tabela: t.imposto, reducao: reducao, irrf: imposto };
+}
+// ENGINE END
+
+function fmt(v){ return v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }); }
+function atualizar(){
+  var r = calcularIRRF(
+    parseFloat(document.getElementById("bruto").value) || 0,
+    document.getElementById("dependentes").value,
+    parseFloat(document.getElementById("pensao").value) || 0
+  );
+  document.getElementById("r-inss").textContent = fmt(r.inss);
+  document.getElementById("r-base").textContent = fmt(r.base);
+  document.getElementById("r-modo").textContent = r.modo + (r.aliq > 0 ? " — alíquota de " + String(r.aliq).replace(".", ",") + "%" : " — faixa isenta");
+  document.getElementById("r-tabela").textContent = fmt(r.tabela);
+  document.getElementById("r-reducao").textContent = "− " + fmt(r.reducao);
+  document.getElementById("r-irrf").textContent = fmt(r.irrf);
+  var linhas = [];
+  linhas.push("Salário bruto: " + fmt(r.bruto) + "; INSS: " + fmt(r.inss) + ".");
+  linhas.push("Base escolhida (" + r.modo + "): " + fmt(r.base) + " → imposto pela tabela: " + fmt(r.tabela) + ".");
+  linhas.push("Redução Lei 15.270/2025: " + fmt(r.reducao) + " → IRRF final: " + fmt(r.irrf) + ".");
+  document.getElementById("memoria-texto").textContent = linhas.join("\n");
+}
+["bruto", "dependentes", "pensao"].forEach(function(id){
+  document.getElementById(id).addEventListener("input", atualizar);
+  document.getElementById(id).addEventListener("change", atualizar);
+});
+atualizar();
+</script>
+</body>
+</html>
